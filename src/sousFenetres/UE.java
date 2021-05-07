@@ -10,7 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.Color;
 
-public class RepartitionEtudiants extends JPanel {
+public class UE extends JPanel {
 
 	private JPanel contentPane;
 
@@ -21,7 +21,7 @@ public class RepartitionEtudiants extends JPanel {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					RepartitionEtudiants frame = new RepartitionEtudiants();
+					UE frame = new UE();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,15 +33,9 @@ public class RepartitionEtudiants extends JPanel {
 	/**
 	 * Create the frame.
 	 */
-	public RepartitionEtudiants() {
-		setBackground(Color.RED);
+	public UE() {
+		setBackground(new Color(100, 149, 237));
 		setBounds(100, 100, 450, 300);
-		
-		JButton btnNewButton = new JButton("New button");
-		add(btnNewButton);
-		
-		JLabel lblNewLabel = new JLabel("New label");
-		add(lblNewLabel);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
