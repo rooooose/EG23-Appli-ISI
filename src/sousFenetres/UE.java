@@ -1,10 +1,12 @@
 package sousFenetres;
 
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -34,11 +36,17 @@ public class UE extends JPanel {
 	 * Create the frame.
 	 */
 	public UE() {
-		setBackground(new Color(100, 149, 237));
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setLayout(new CardLayout(0, 0));
+		
+		JPanel contentPane = new JPanel();
+		contentPane.setBackground(new Color(100, 149, 237));
+		add(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
+		
+		JLabel lblNewLabel = new JLabel("GESTION DES UE");
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		contentPane.add(lblNewLabel);
 	}
 
 }

@@ -6,6 +6,14 @@ import java.awt.EventQueue;
 
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import java.awt.CardLayout;
+import java.awt.FlowLayout;
+import javax.swing.JLabel;
+import java.awt.GridLayout;
+import net.miginfocom.swing.MigLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import javax.swing.SwingConstants;
 
 public class SemestreEnCours extends JPanel {
 
@@ -31,11 +39,19 @@ public class SemestreEnCours extends JPanel {
 	 * Create the frame.
 	 */
 	public SemestreEnCours() {
-		setBackground(new Color(0xff094067));
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		//setBounds(100, 100, 450, 300);
+		setLayout(new CardLayout(0, 0));
+		
+		JPanel contentPane = new JPanel();
+		contentPane.setBackground(new Color(0xff094067));
+		add(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
+		//contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		JLabel lblNewLabel = new JLabel("GESTION DU SEMESTRE EN COURS");
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		contentPane.add(lblNewLabel);
 	}
 
 }
