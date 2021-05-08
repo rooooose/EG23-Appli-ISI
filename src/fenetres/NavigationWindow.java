@@ -7,6 +7,8 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import java.awt.Image;
 import java.awt.CardLayout;
 import javax.swing.GroupLayout;
@@ -31,10 +33,13 @@ import javax.swing.JInternalFrame;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class NavigationWindow {
 
-	private static JFrame frame;
+	private JFrame frame;
+	private static NavigationWindow window;
 
 	/**
 	 * Launch the application.
@@ -43,8 +48,8 @@ public class NavigationWindow {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					NavigationWindow window = new NavigationWindow();
-					NavigationWindow.frame.setVisible(true);
+					window = new NavigationWindow();
+					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -68,6 +73,10 @@ public class NavigationWindow {
 		frame.setBounds(100, 100, 1225, 765);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new BorderLayout(0, 0));
+		//FULL SCREEN
+		GraphicsEnvironment graphics = GraphicsEnvironment.getLocalGraphicsEnvironment();
+		GraphicsDevice device = graphics.getDefaultScreenDevice();
+		device.setFullScreenWindow(frame);
 		
 		JPanel topPanel = new JPanel();
 		topPanel.setBackground(Color.WHITE);
@@ -77,6 +86,14 @@ public class NavigationWindow {
 		lblTitle.setFont(new Font("Tahoma", Font.PLAIN, 28));
 		
 		JPanel logoPanel = new JPanel();
+		logoPanel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				window.frame.setVisible(false);
+				initializeAccueil();
+				window.frame.setVisible(true);
+			}
+		});
 		logoPanel.setBackground(Color.WHITE);
 		logoPanel.add(new JLabel(new ImageIcon(getClass().getClassLoader().getResource("img/logo_UTT_petit.png"))));
 		
@@ -196,5 +213,60 @@ public class NavigationWindow {
 				arrJPanel[num].setVisible(true);
 			}
 		});
+	}
+	
+	private void initializeAccueil() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		//FULL SCREEN
+		GraphicsEnvironment graphics = GraphicsEnvironment.getLocalGraphicsEnvironment();
+		GraphicsDevice device = graphics.getDefaultScreenDevice();
+		device.setFullScreenWindow(frame);
+				
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(Accueil.class.getResource("/img/Fichier 3.png")));
+		
+//		ImageIcon myImage = new ImageIcon(Accueil.class.getResource("/img/entrees-sorties.png"));
+//		Image img = myImage.getImage();
+//		Image newImg = img.getScaledInstance(lblNewLabel.getWidth(), lblNewLabel.getHeight(), Image.SCALE_SMOOTH);
+//		ImageIcon image = new ImageIcon(newImg);
+//		lblNewLabel.setIcon(image);
+		lblNewLabel.setBounds(36, 106, 107, 89);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(Accueil.class.getResource("/img/Fichier 6.png")));
+		lblNewLabel_1.setBounds(143, 146, 65, 59);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setIcon(new ImageIcon(Accueil.class.getResource("/img/Fichier 7.png")));
+		lblNewLabel_2.setBounds(218, 146, 73, 59);
+		frame.getContentPane().add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setIcon(new ImageIcon(Accueil.class.getResource("/img/Fichier 8.png")));
+		lblNewLabel_3.setBounds(273, 54, 65, 76);
+		frame.getContentPane().add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setIcon(new ImageIcon(Accueil.class.getResource("/img/Fichier 9.png")));
+		lblNewLabel_4.setBounds(301, 157, 107, 96);
+		frame.getContentPane().add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("");
+		lblNewLabel_1_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				window.frame.setVisible(false);
+				initialize();
+				window.frame.setVisible(true);
+			}
+		});
+		lblNewLabel_1_1.setIcon(new ImageIcon(Accueil.class.getResource("/img/logo_UTT_petit.png")));
+		lblNewLabel_1_1.setBounds(0, 0, 248, 96);
+		frame.getContentPane().add(lblNewLabel_1_1);
 	}
 }
