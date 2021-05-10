@@ -40,6 +40,7 @@ import java.awt.event.MouseEvent;
 public class NavigationWindow {
 
 	private static JFrame frame;
+
 	private static NavigationWindow window;
 
 	/**
@@ -229,5 +230,9 @@ public class NavigationWindow {
 	
 	public static NavigationWindow getWindow() {
 		return window;
+	}
+	
+	public static JFrame getFrame() {
+		return frame;
 	}
 }

@@ -23,9 +23,12 @@ import javax.swing.border.EmptyBorder;
 import fenetres.NavigationWindow;
 import java.awt.SystemColor;
 import javax.swing.JComboBox;
+import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.UIManager;
 import java.awt.FlowLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PageAccueil extends JPanel {
 
@@ -113,29 +116,85 @@ public class PageAccueil extends JPanel {
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 100, 100));
 		
+		//INIT JBUTTON - NAVBAR
+		JButton[] arrBtn = initButtons();
+		
+		panel.add(arrBtn[0]);
+		panel.add(arrBtn[1]);
+		panel.add(arrBtn[2]);
+		panel.add(arrBtn[3]);
+		panel.add(arrBtn[4]);
+				
+		//INIT JPANEL - SOUS-FENETRES
+		JPanel[] arrJPanel = initSousFenetres();
+				
+		//INIT ACTION LISTENER JBUTTON - NAVBAR
+		for (int k=0;k<arrJPanel.length;k++) {
+			addActList(arrJPanel, arrBtn, k);
+		}
+		
+		
+	}
+	
+	private JButton[] initButtons() {
+		
 		JButton btnSemestre = new JButton("");
 		btnSemestre.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 9.png")));
 		btnSemestre.setPreferredSize(new Dimension(300,200));
-		panel.add(btnSemestre);
+		btnSemestre.setBackground(new Color(0, 110, 197));
+//		btnSemestre.setBorder(BorderFactory.createLineBorder(new Color(0, 110, 197), 10));
+		
 		
 		JButton btnEnseignants = new JButton("");
 		btnEnseignants.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 8.png")));
 		btnEnseignants.setPreferredSize(new Dimension(300,200));
-		panel.add(btnEnseignants);
+		btnEnseignants.setBackground(new Color(0xff0e64a1));
+		
 		
 		JButton btnUE = new JButton("");
 		btnUE.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 7.png")));
 		btnUE.setPreferredSize(new Dimension(300,200));
-		panel.add(btnUE);
+		btnUE.setBackground(new Color(100, 149, 237));
+		
 		
 		JButton btnRepartition = new JButton("");
 		btnRepartition.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 6.png")));
 		btnRepartition.setPreferredSize(new Dimension(300,200));
-		panel.add(btnRepartition);
+		btnRepartition.setBackground(new Color(106, 90, 205));
+		
 		
 		JButton btnES = new JButton("");
 		btnES.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 3.png")));
 		btnES.setPreferredSize(new Dimension(300,200));
-		panel.add(btnES);
+		
+		btnES.setBackground(new Color(153, 50, 204));
+		
+		
+		JButton[] arrBtn = {btnSemestre, btnEnseignants, btnUE, btnRepartition, btnES};
+		return arrBtn;
+	}
+	
+	private JPanel[] initSousFenetres() {
+		//Init. JPanel
+		SemestreEnCours frameSemEnCours = new SemestreEnCours();
+		Enseignants frameEnseign = new Enseignants();
+		UE frameUE = new UE();
+		RepartitionEtudiants frameRepartEtu = new RepartitionEtudiants();
+		EntreeSorties frameES = new EntreeSorties();
+		
+		JPanel[] arrJPanel = {frameSemEnCours, frameEnseign, frameUE, frameRepartEtu, frameES};
+		return arrJPanel;
+	}
+	
+	private void addActList(JPanel[] arrJPanel, JButton[] btnNav, int num) {
+		btnNav[num].addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				NavigationWindow.getFrame().getContentPane().removeAll();
+				NavigationWindow.getWindow().initializeNavigator();
+				NavigationWindow.getFrame().getContentPane().add(arrJPanel[num], BorderLayout.CENTER);
+				arrJPanel[num].setVisible(true);
+			}
+		});
 	}
 }
