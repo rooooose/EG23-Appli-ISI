@@ -78,7 +78,7 @@ public class PageAccueil extends JPanel {
 		JComboBox comboBox = new JComboBox();
 		comboBox.setForeground(Color.BLACK);
 		comboBox.setBackground(Color.WHITE);
-		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		comboBox.setFont(new Font("Raleway Bold", Font.PLAIN, 12));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"ISI", "RT", "MTE", "GI", "A2I", "GM"}));
 		comboBox.setSelectedIndex(0);
 		comboBox.setPreferredSize(new Dimension(100,30));
@@ -139,31 +139,132 @@ public class PageAccueil extends JPanel {
 	private JButton[] initButtons() {
 		
 		JButton btnSemestre = new JButton("");
+		btnSemestre.setForeground(Color.WHITE);
+		btnSemestre.setFont(new Font("Raleway Medium", Font.PLAIN, 20));
+		btnSemestre.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnSemestre.setIcon(null);
+				btnSemestre.setText("Gestion du semestre");
+				btnSemestre.setBackground(new Color(15, 97, 153));
+				btnSemestre.setBorder(BorderFactory.createLineBorder(new Color(15, 97, 153), 5));
+				
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btnSemestre.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 9.png")));
+				btnSemestre.setText(null);
+				btnSemestre.setBackground(new Color(0xff094067));
+				btnSemestre.setBorder(null);
+				btnSemestre.setBorder(BorderFactory.createLineBorder(new Color(0xff094067), 5));
+			}
+		});
 		btnSemestre.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 9.png")));
 		btnSemestre.setPreferredSize(new Dimension(300,200));
-		btnSemestre.setBackground(new Color(0, 110, 197));
-//		btnSemestre.setBorder(BorderFactory.createLineBorder(new Color(0, 110, 197), 10));
+		btnSemestre.setBackground(new Color(0xff094067));
+		btnSemestre.setBorder(BorderFactory.createLineBorder(new Color(0xff094067), 5));
+
 		
 		
 		JButton btnEnseignants = new JButton("");
+		btnEnseignants.setForeground(Color.WHITE);
+		btnEnseignants.setFont(new Font("Raleway Medium", Font.PLAIN, 20));
+		btnEnseignants.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnEnseignants.setIcon(null);
+				btnEnseignants.setText("Gestion des enseignants");
+				btnEnseignants.setBackground(new Color(16, 120, 188));
+				btnEnseignants.setBorder(BorderFactory.createLineBorder(new Color(16, 120, 188), 5));
+				
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btnEnseignants.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 8.png")));
+				btnEnseignants.setText(null);
+				btnEnseignants.setBackground(new Color(0xff0e64a1));
+				btnEnseignants.setBorder(null);
+				btnEnseignants.setBorder(BorderFactory.createLineBorder(new Color(0xff0e64a1), 5));
+			}
+		});
 		btnEnseignants.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 8.png")));
 		btnEnseignants.setPreferredSize(new Dimension(300,200));
 		btnEnseignants.setBackground(new Color(0xff0e64a1));
 		
 		
 		JButton btnUE = new JButton("");
+		btnUE.setForeground(Color.WHITE);
+		btnUE.setFont(new Font("Raleway Medium", Font.PLAIN, 20));
+		btnUE.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnUE.setIcon(null);
+				btnUE.setText("Gestion des UE");
+				btnUE.setBackground(new Color(126, 170, 247));
+				btnUE.setBorder(BorderFactory.createLineBorder(new Color(126, 170, 247), 5));
+				
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btnUE.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 7.png")));
+				btnUE.setText(null);
+				btnUE.setBackground(new Color(100, 149, 237));
+				btnUE.setBorder(null);
+				btnUE.setBorder(BorderFactory.createLineBorder(new Color(100, 149, 237), 5));
+			}
+		});
 		btnUE.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 7.png")));
 		btnUE.setPreferredSize(new Dimension(300,200));
 		btnUE.setBackground(new Color(100, 149, 237));
 		
 		
 		JButton btnRepartition = new JButton("");
+		btnRepartition.setForeground(Color.WHITE);
+		btnRepartition.setFont(new Font("Raleway Medium", Font.PLAIN, 20));
+		btnRepartition.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnRepartition.setIcon(null);
+				btnRepartition.setText("<html><center>"+"Répartition des étudiants"+"<br>"+"dans le parcours"+"</center></html>");
+				btnRepartition.setBackground(new Color(138, 123, 229));
+				btnRepartition.setBorder(BorderFactory.createLineBorder(new Color(138, 123, 229), 5));
+				
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btnRepartition.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 6.png")));
+				btnRepartition.setText(null);
+				btnRepartition.setBackground(new Color(106, 90, 205));
+				btnRepartition.setBorder(null);
+				btnRepartition.setBorder(BorderFactory.createLineBorder(new Color(106, 90, 205), 5));
+			}
+		});
 		btnRepartition.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 6.png")));
 		btnRepartition.setPreferredSize(new Dimension(300,200));
 		btnRepartition.setBackground(new Color(106, 90, 205));
 		
 		
 		JButton btnES = new JButton("");
+		btnES.setForeground(Color.WHITE);
+		btnES.setFont(new Font("Raleway Medium", Font.PLAIN, 20));
+		btnES.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnES.setIcon(null);
+				btnES.setText("Gestion des enseignants");
+				btnES.setBackground(new Color(183, 91, 229));
+				btnES.setBorder(BorderFactory.createLineBorder(new Color(183, 91, 229), 5));
+				
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btnES.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 3.png")));
+				btnES.setText(null);
+				btnES.setBackground(new Color(153, 50, 204));
+				btnES.setBorder(null);
+				btnES.setBorder(BorderFactory.createLineBorder(new Color(153, 50, 204), 5));
+			}
+		});
 		btnES.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 3.png")));
 		btnES.setPreferredSize(new Dimension(300,200));
 		
