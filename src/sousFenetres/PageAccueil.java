@@ -225,7 +225,7 @@ public class PageAccueil extends JPanel {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				btnRepartition.setIcon(null);
-				btnRepartition.setText("<html><center>"+"R�partition des �tudiants"+"<br>"+"dans le parcours"+"</center></html>");
+				btnRepartition.setText("<html><center>"+"Répartition des étudiants"+"<br>"+"dans le parcours"+"</center></html>");
 				btnRepartition.setBackground(new Color(138, 123, 229));
 				btnRepartition.setBorder(BorderFactory.createLineBorder(new Color(138, 123, 229), 5));
 				
@@ -290,10 +290,14 @@ public class PageAccueil extends JPanel {
 	private void addActList(JPanel[] arrJPanel, JButton[] btnNav, int num) {
 		btnNav[num].addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String[] arrTitles = {"Gestion du semestre encours", "Gestion des enseignants", "Gestion des UE", 
+						"Répartition des étudiants dans le parcours", "Statistiques des flux entrants et sortants"};
+				NavigationWindow.setTitle(arrTitles[num]);
 				
 				NavigationWindow.getFrame().getContentPane().removeAll();
 				NavigationWindow.getWindow().initializeNavigator();
 				NavigationWindow.getFrame().getContentPane().add(arrJPanel[num], BorderLayout.CENTER);
+				
 				arrJPanel[num].setVisible(true);
 			}
 		});

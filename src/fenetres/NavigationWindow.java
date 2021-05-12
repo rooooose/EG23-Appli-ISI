@@ -34,6 +34,8 @@ public class NavigationWindow {
 	private static JFrame frame;
 
 	private static NavigationWindow window;
+	
+	private static JLabel lblTitle = new JLabel("Titre de la sous-fenêtre");
 
 	/**
 	 * Launch the application.
@@ -82,7 +84,6 @@ public class NavigationWindow {
 		topPanel.setBackground(Color.WHITE);
 		frame.getContentPane().add(topPanel, BorderLayout.NORTH);
 		
-		JLabel lblTitle = new JLabel("Titre de la sous-fenêtre");
 		lblTitle.setFont(new Font("Tahoma", Font.PLAIN, 28));
 		
 		JPanel logoPanel = new JPanel();
@@ -206,6 +207,10 @@ public class NavigationWindow {
 	private void addActList(JPanel[] arrJPanel, JButton[] btnNav, int num) {
 		btnNav[num].addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String[] arrTitles = {"Gestion du semestre encours", "Gestion des enseignants", "Gestion des UE", 
+						"Répartition des étudiants dans le parcours", "Statistiques des flux entrants et sortants"};
+				NavigationWindow.setTitle(arrTitles[num]);
+				
 				hideSousFenetres(arrJPanel);
 				frame.getContentPane().add(arrJPanel[num], BorderLayout.CENTER);
 				arrJPanel[num].setVisible(true);
@@ -226,5 +231,9 @@ public class NavigationWindow {
 	
 	public static JFrame getFrame() {
 		return frame;
+	}
+	
+	public static void setTitle(String title) {
+		lblTitle.setText(title);
 	}
 }
