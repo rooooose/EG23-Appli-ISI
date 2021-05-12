@@ -1,41 +1,33 @@
 package fenetres;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
 import java.awt.BorderLayout;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
-import java.awt.Image;
-import java.awt.CardLayout;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 import sousFenetres.Enseignants;
 import sousFenetres.EntreeSorties;
+import sousFenetres.PageAccueil;
 import sousFenetres.RepartitionEtudiants;
 import sousFenetres.SemestreEnCours;
 import sousFenetres.UE;
-import sousFenetres.PageAccueil;
-
-import java.awt.SystemColor;
-import java.beans.PropertyVetoException;
-import java.awt.Color;
-import javax.swing.JButton;
-import java.awt.FlowLayout;
-import javax.swing.SwingConstants;
-import java.awt.Dimension;
-import javax.swing.JInternalFrame;
-import java.awt.Toolkit;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 public class NavigationWindow {
 
