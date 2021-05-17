@@ -123,6 +123,14 @@ public class NavigationWindow {
 		frame.getContentPane().add(leftPanel, BorderLayout.WEST);
 		leftPanel.setPreferredSize(new Dimension(38, 480));
 		
+		JPanel bottomPanel = new JPanel();
+		bottomPanel.setBackground(Color.WHITE);
+		frame.getContentPane().add(bottomPanel, BorderLayout.SOUTH);
+		
+		JPanel rightPanel = new JPanel();
+		rightPanel.setBackground(Color.WHITE);
+		frame.getContentPane().add(rightPanel, BorderLayout.EAST);
+		
 		//INIT JBUTTON - NAVBAR
 		JButton[] arrBtnNav = initButtons();
 		
@@ -150,7 +158,7 @@ public class NavigationWindow {
 		gl_leftPanel.setVerticalGroup(
 			gl_leftPanel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_leftPanel.createSequentialGroup()
-					.addGap(5)
+					.addGap(0)
 					.addComponent(arrBtnNav[0], GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(arrBtnNav[1], GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)
