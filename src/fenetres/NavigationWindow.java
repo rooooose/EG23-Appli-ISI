@@ -67,7 +67,7 @@ public class NavigationWindow {
 	 */
 	private void initializeFrame() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(NavigationWindow.class.getResource("/img/icons/icon-50px.png")));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(NavigationWindow.class.getResource("/icons/icon-50px.png")));
 		frame.setBounds(100, 100, 1225, 765);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new BorderLayout(0, 0));
