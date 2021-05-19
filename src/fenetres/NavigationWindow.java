@@ -83,8 +83,8 @@ public class NavigationWindow {
 		JPanel topPanel = new JPanel();
 		topPanel.setBackground(Color.WHITE);
 		frame.getContentPane().add(topPanel, BorderLayout.NORTH);
-		
-		lblTitle.setFont(new Font("Tahoma", Font.PLAIN, 28));
+
+		lblTitle.setFont(new Font("Raleway Medium", Font.PLAIN, 28));
 		
 		JPanel logoPanel = new JPanel();
 		logoPanel.addMouseListener(new MouseAdapter() {
