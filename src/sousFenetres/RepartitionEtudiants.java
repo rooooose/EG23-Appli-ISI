@@ -1,9 +1,13 @@
 package sousFenetres;
 
+import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.EventQueue;
-import java.util.Arrays;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.net.URL;
 import java.util.Hashtable;
 
 import javax.swing.ImageIcon;
@@ -13,18 +17,7 @@ import javax.swing.JSlider;
 import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.Dimension;
-import java.awt.Cursor;
-import java.awt.BorderLayout;
-import java.awt.Font;
-import javax.swing.BoxLayout;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import java.awt.GridLayout;
-import java.awt.FlowLayout;
-import javax.swing.JButton;
+
 import net.miginfocom.swing.MigLayout;
 
 public class RepartitionEtudiants extends JPanel {
@@ -60,12 +53,15 @@ public class RepartitionEtudiants extends JPanel {
 		
 		JPanel panelTop = new JPanel();
 		FlowLayout flowLayout = (FlowLayout) panelTop.getLayout();
-		flowLayout.setHgap(50);
+		flowLayout.setVgap(25);
+		flowLayout.setAlignOnBaseline(true);
+		flowLayout.setHgap(100);
 		flowLayout.setAlignment(FlowLayout.LEFT);
 		panelTop.setBackground(contentPane.getBackground());
 		contentPane.add(panelTop, BorderLayout.NORTH);
 		
 		JPanel panelCenter = new JPanel();
+		FlowLayout flowLayout_1 = (FlowLayout) panelCenter.getLayout();
 		panelCenter.setBackground(contentPane.getBackground());
 		contentPane.add(panelCenter, BorderLayout.CENTER);
 		
@@ -76,12 +72,14 @@ public class RepartitionEtudiants extends JPanel {
 		
 		//TITLE LABEL
 		JLabel lblTitle = new JLabel("Semestre");
-		lblTitle.setFont(new Font("Raleway", Font.PLAIN, 22));
+		lblTitle.setFont(new Font("Raleway Bold", Font.PLAIN, 22));
+		lblTitle.setForeground(Color.WHITE);
 		panelTop.add(lblTitle);
 		
 		///IMAGE 1///
 		JLabel lblImg1 = new JLabel();
-		lblImg1.setIcon(new ImageIcon(RepartitionEtudiants.class.getResource("/img-camembert/blue/cam1.png")));
+		URL urlObj1 = RepartitionEtudiants.class.getResource("/img-camembert/blue/cam1.png");
+		lblImg1.setIcon(new ImageIcon(urlObj1));
 		lblImg1.setForeground(Color.WHITE);
 		lblImg1.setHorizontalAlignment(SwingConstants.CENTER);
 		panelCenter.add(lblImg1);
@@ -95,6 +93,7 @@ public class RepartitionEtudiants extends JPanel {
 		
 		///SLIDER///
 		JSlider slider = new JSlider();
+		slider.setValue(19);
 		slider.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		slider.setBackground(null);
 		slider.setToolTipText("");
@@ -134,11 +133,13 @@ public class RepartitionEtudiants extends JPanel {
 		JLabel lbl;
 		while (annee<22) {
 			lbl = new JLabel("A"+String.valueOf(annee));
+			lbl.setFont(new Font("Raleway Bold", Font.PLAIN, 16));
 			lbl.setForeground(Color.WHITE);
 			labels.put(k, lbl);
 			k++;
 			lbl = new JLabel("P"+String.valueOf(annee));
-			lbl.setForeground(Color.GRAY.brighter());
+			lbl.setFont(new Font("Raleway Medium", Font.PLAIN, 15));
+			lbl.setForeground(Color.GRAY.brighter().brighter().brighter());
 			labels.put(k, lbl);
 			k++;
 			annee++;
@@ -150,9 +151,9 @@ public class RepartitionEtudiants extends JPanel {
 		String arrTitles[] = new String[20];
 		int annee = 12; int k = 0;
 		while (annee<22) {
-			arrTitles[k] = "Automne "+String.valueOf(annee);
+			arrTitles[k] = "Automne 20"+String.valueOf(annee);
 			k++;
-			arrTitles[k] = "Printemps "+String.valueOf(annee);
+			arrTitles[k] = "Printemps 20"+String.valueOf(annee);
 			k++;
 			annee++;
 		}
