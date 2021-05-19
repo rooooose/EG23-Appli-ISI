@@ -76,7 +76,7 @@ public class RepartitionEtudiants extends JPanel {
 		
 		//TITLE LABEL
 		JLabel lblTitle = new JLabel("Semestre");
-		lblTitle.setFont(new Font("MV Boli", Font.BOLD, 22));
+		lblTitle.setFont(new Font("Raleway", Font.PLAIN, 22));
 		panelTop.add(lblTitle);
 		
 		///IMAGE 1///

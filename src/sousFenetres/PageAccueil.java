@@ -152,14 +152,14 @@ public class PageAccueil extends JPanel {
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				btnSemestre.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 9.png")));
+				btnSemestre.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 3.png")));
 				btnSemestre.setText(null);
 				btnSemestre.setBackground(new Color(0xff094067));
 				btnSemestre.setBorder(null);
 				btnSemestre.setBorder(BorderFactory.createLineBorder(new Color(0xff094067), 5));
 			}
 		});
-		btnSemestre.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 9.png")));
+		btnSemestre.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 3.png")));
 		btnSemestre.setPreferredSize(new Dimension(300,200));
 		btnSemestre.setBackground(new Color(0xff094067));
 		btnSemestre.setBorder(BorderFactory.createLineBorder(new Color(0xff094067), 5));
@@ -180,14 +180,14 @@ public class PageAccueil extends JPanel {
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				btnEnseignants.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 8.png")));
+				btnEnseignants.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 4.png")));
 				btnEnseignants.setText(null);
 				btnEnseignants.setBackground(new Color(0xff0e64a1));
 				btnEnseignants.setBorder(null);
 				btnEnseignants.setBorder(BorderFactory.createLineBorder(new Color(0xff0e64a1), 5));
 			}
 		});
-		btnEnseignants.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 8.png")));
+		btnEnseignants.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 4.png")));
 		btnEnseignants.setPreferredSize(new Dimension(300,200));
 		btnEnseignants.setBackground(new Color(0xff0e64a1));
 		
@@ -206,14 +206,14 @@ public class PageAccueil extends JPanel {
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				btnUE.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 7.png")));
+				btnUE.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 5.png")));
 				btnUE.setText(null);
 				btnUE.setBackground(new Color(100, 149, 237));
 				btnUE.setBorder(null);
 				btnUE.setBorder(BorderFactory.createLineBorder(new Color(100, 149, 237), 5));
 			}
 		});
-		btnUE.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 7.png")));
+		btnUE.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 5.png")));
 		btnUE.setPreferredSize(new Dimension(300,200));
 		btnUE.setBackground(new Color(100, 149, 237));
 		
@@ -225,21 +225,21 @@ public class PageAccueil extends JPanel {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				btnRepartition.setIcon(null);
-				btnRepartition.setText("<html><center>"+"Répartition des étudiants"+"<br>"+"dans le parcours"+"</center></html>");
+				btnRepartition.setText("<html><center>"+"R\u00E9partition des \u00E9tudiants"+"<br>"+"dans le parcours"+"</center></html>");
 				btnRepartition.setBackground(new Color(138, 123, 229));
 				btnRepartition.setBorder(BorderFactory.createLineBorder(new Color(138, 123, 229), 5));
 				
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				btnRepartition.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 6.png")));
+				btnRepartition.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 1.png")));
 				btnRepartition.setText(null);
 				btnRepartition.setBackground(new Color(106, 90, 205));
 				btnRepartition.setBorder(null);
 				btnRepartition.setBorder(BorderFactory.createLineBorder(new Color(106, 90, 205), 5));
 			}
 		});
-		btnRepartition.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 6.png")));
+		btnRepartition.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 1.png")));
 		btnRepartition.setPreferredSize(new Dimension(300,200));
 		btnRepartition.setBackground(new Color(106, 90, 205));
 		
@@ -258,14 +258,14 @@ public class PageAccueil extends JPanel {
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				btnES.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 3.png")));
+				btnES.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 2.png")));
 				btnES.setText(null);
 				btnES.setBackground(new Color(153, 50, 204));
 				btnES.setBorder(null);
 				btnES.setBorder(BorderFactory.createLineBorder(new Color(153, 50, 204), 5));
 			}
 		});
-		btnES.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 3.png")));
+		btnES.setIcon(new ImageIcon(PageAccueil.class.getResource("/img/Fichier 2.png")));
 		btnES.setPreferredSize(new Dimension(300,200));
 		
 		btnES.setBackground(new Color(153, 50, 204));
@@ -291,7 +291,7 @@ public class PageAccueil extends JPanel {
 		btnNav[num].addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String[] arrTitles = {"Gestion du semestre encours", "Gestion des enseignants", "Gestion des UE", 
-						"Répartition des étudiants dans le parcours", "Statistiques des flux entrants et sortants"};
+						"R\u00E9partition des \u00E9tudiants dans le parcours", "Statistiques des flux entrants et sortants"};
 				NavigationWindow.setTitle(arrTitles[num]);
 				
 				NavigationWindow.getFrame().getContentPane().removeAll();

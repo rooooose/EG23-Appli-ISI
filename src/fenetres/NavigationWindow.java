@@ -216,7 +216,7 @@ public class NavigationWindow {
 		btnNav[num].addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String[] arrTitles = {"Gestion du semestre encours", "Gestion des enseignants", "Gestion des UE", 
-						"Répartition des étudiants dans le parcours", "Statistiques des flux entrants et sortants"};
+						"R\u00E9partition des \u00E9tudiants dans le parcours", "Statistiques des flux entrants et sortants"};
 				NavigationWindow.setTitle(arrTitles[num]);
 				
 				hideSousFenetres(arrJPanel);
