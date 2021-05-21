@@ -14,10 +14,17 @@ import net.miginfocom.swing.MigLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import javax.swing.SwingConstants;
+import javax.swing.JSeparator;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JTextField;
+import javax.swing.BoxLayout;
 
 public class SemestreEnCours extends JPanel {
 
 	private JPanel contentPane;
+	private JTextField textField;
+	private JPanel panel;
 
 	/**
 	 * Launch the application.
@@ -43,15 +50,17 @@ public class SemestreEnCours extends JPanel {
 		setLayout(new CardLayout(0, 0));
 		
 		JPanel contentPane = new JPanel();
-		contentPane.setBackground(new Color(0xff094067));
+		contentPane.setBackground(Color.WHITE);
 		add(contentPane);
-		contentPane.setLayout(new BorderLayout(0, 0));
-		//contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.X_AXIS));
 		
-		JLabel lblNewLabel = new JLabel("GESTION DU SEMESTRE EN COURS");
-		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		contentPane.add(lblNewLabel);
+		textField = new JTextField();
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		panel = new JPanel();
+		contentPane.add(panel);
+		panel.setLayout(new BorderLayout(0, 0));
 	}
 
 }
