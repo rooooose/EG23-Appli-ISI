@@ -12,6 +12,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -23,11 +25,12 @@ import javax.swing.JPanel;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 import sousFenetres.Enseignants;
-import sousFenetres.EntreeSorties;
+import sousFenetres.EntreesSorties;
 import sousFenetres.PageAccueil;
 import sousFenetres.RepartitionEtudiants;
 import sousFenetres.SemestreEnCours;
 import sousFenetres.UE;
+import javax.swing.Icon;
 
 public class NavigationWindow {
 
@@ -36,6 +39,7 @@ public class NavigationWindow {
 	private static NavigationWindow window;
 	
 	private static JLabel lblTitle = new JLabel("Titre de la sous-fenêtre");
+	private static JLabel lblIcon = new JLabel();
 
 	/**
 	 * Launch the application.
@@ -46,6 +50,7 @@ public class NavigationWindow {
 				try {
 					window = new NavigationWindow();
 					NavigationWindow.frame.setVisible(true);
+					//System.out.println("Working Directory = " + System.getProperty("user.dir"));
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -67,8 +72,8 @@ public class NavigationWindow {
 	 */
 	private void initializeFrame() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(NavigationWindow.class.getResource("/icons/icon-50px.png")));
-		frame.setBounds(100, 100, 1225, 765);
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(NavigationWindow.class.getResource("/icons/utt/icon-50px.png")));
+		frame.setBounds(100, 100, 1420, 765);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new BorderLayout(0, 0));
 		//FULL SCREEN
@@ -83,8 +88,6 @@ public class NavigationWindow {
 		JPanel topPanel = new JPanel();
 		topPanel.setBackground(Color.WHITE);
 		frame.getContentPane().add(topPanel, BorderLayout.NORTH);
-
-		lblTitle.setFont(new Font("Raleway Medium", Font.PLAIN, 28));
 		
 		JPanel logoPanel = new JPanel();
 		logoPanel.addMouseListener(new MouseAdapter() {
@@ -97,6 +100,15 @@ public class NavigationWindow {
 		logoPanel.setBackground(Color.WHITE);
 		logoPanel.add(new JLabel(new ImageIcon(getClass().getClassLoader().getResource("img/logo_UTT_petit.png"))));
 		
+		JPanel headerPanel = new JPanel();
+		headerPanel.setBackground(Color.WHITE);
+		topPanel.add(headerPanel, BorderLayout.CENTER);
+
+		JPanel titrePanel = new JPanel();
+		titrePanel.setBackground(Color.WHITE);
+		
+		JPanel linePanel = new JPanel();
+		linePanel.setBackground(Color.BLACK);
 		GroupLayout gl_topPanel = new GroupLayout(topPanel);
 		gl_topPanel.setHorizontalGroup(
 			gl_topPanel.createParallelGroup(Alignment.LEADING)
@@ -104,18 +116,80 @@ public class NavigationWindow {
 					.addContainerGap()
 					.addComponent(logoPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(lblTitle, GroupLayout.DEFAULT_SIZE, 1014, Short.MAX_VALUE)
-					.addContainerGap())
+					.addComponent(headerPanel, GroupLayout.DEFAULT_SIZE, 975, Short.MAX_VALUE)
+					.addGap(10))
 		);
 		gl_topPanel.setVerticalGroup(
 			gl_topPanel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_topPanel.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(gl_topPanel.createParallelGroup(Alignment.TRAILING)
-						.addComponent(logoPanel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
-						.addComponent(lblTitle, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE))
+					.addGap(10)
+					.addGroup(gl_topPanel.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(logoPanel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(headerPanel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE))
 					.addContainerGap())
 		);
+		lblTitle.setBounds(10, 24, 337, 34);
+		
+		lblTitle.setFont(new Font("Raleway Medium", Font.PLAIN, 28));
+		
+		JLabel lblBranche = new JLabel("Informatique et Système d'Information");
+		lblBranche.setFont(new Font("Raleway Medium", Font.PLAIN, 18));
+		GroupLayout gl_titrePanel = new GroupLayout(titrePanel);
+		gl_titrePanel.setHorizontalGroup(
+			gl_titrePanel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_titrePanel.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblTitle, GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblBranche, GroupLayout.PREFERRED_SIZE, 493, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
+		);
+		gl_titrePanel.setVerticalGroup(
+			gl_titrePanel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_titrePanel.createSequentialGroup()
+					.addGap(11)
+					.addGroup(gl_titrePanel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblBranche)
+						.addComponent(lblTitle))
+					.addContainerGap())
+		);
+		titrePanel.setLayout(gl_titrePanel);
+		
+		JPanel iconPage = new JPanel();
+		iconPage.setBackground(Color.WHITE);
+		iconPage.setLayout(null);
+		
+		JLabel lblIcon = new JLabel();
+		lblIcon.setBounds(5, -8, 75, 75);
+		iconPage.add(lblIcon);
+		
+		GroupLayout gl_headerPanel = new GroupLayout(headerPanel);
+		gl_headerPanel.setHorizontalGroup(
+			gl_headerPanel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_headerPanel.createSequentialGroup()
+					.addGap(10)
+					.addGroup(gl_headerPanel.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_headerPanel.createSequentialGroup()
+							.addComponent(linePanel, GroupLayout.PREFERRED_SIZE, 1136, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap())
+						.addGroup(gl_headerPanel.createSequentialGroup()
+							.addComponent(iconPage, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
+							.addGap(10)
+							.addComponent(titrePanel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addGap(10))))
+		);
+		gl_headerPanel.setVerticalGroup(
+			gl_headerPanel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_headerPanel.createSequentialGroup()
+					.addGap(10)
+					.addGroup(gl_headerPanel.createParallelGroup(Alignment.LEADING)
+						.addComponent(iconPage, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
+						.addComponent(titrePanel, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(linePanel, GroupLayout.PREFERRED_SIZE, 5, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
+		);
+		headerPanel.setLayout(gl_headerPanel);
 		topPanel.setLayout(gl_topPanel);
 		
 		JPanel leftPanel = new JPanel();
@@ -199,7 +273,7 @@ public class NavigationWindow {
 		Enseignants frameEnseign = new Enseignants();
 		UE frameUE = new UE();
 		RepartitionEtudiants frameRepartEtu = new RepartitionEtudiants();
-		EntreeSorties frameES = new EntreeSorties();
+		EntreesSorties frameES = new EntreesSorties();
 		
 		JPanel[] arrJPanel = {frameSemEnCours, frameEnseign, frameUE, frameRepartEtu, frameES};
 		return arrJPanel;
@@ -217,7 +291,8 @@ public class NavigationWindow {
 			public void actionPerformed(ActionEvent e) {
 				String[] arrTitles = {"Gestion du semestre encours", "Gestion des enseignants", "Gestion des UE", 
 						"R\u00E9partition des \u00E9tudiants dans le parcours", "Statistiques des flux entrants et sortants"};
-				NavigationWindow.setTitle(arrTitles[num]);
+				String[] arrFileNames = {"SemestreEnCours", "Enseignants", "UE", "RepartitionEtudiants", "EntreesSorties"};
+				NavigationWindow.setTitle(arrTitles[num], arrFileNames[num]);
 				
 				hideSousFenetres(arrJPanel);
 				frame.getContentPane().add(arrJPanel[num], BorderLayout.CENTER);
@@ -241,7 +316,15 @@ public class NavigationWindow {
 		return frame;
 	}
 	
-	public static void setTitle(String title) {
+	//ECHEC SUR ECHEC POUR TROUVER UN MOYEN D'ACTUALISER L'ICONE
+	public static void setTitle(String title, String fileName) {
 		lblTitle.setText(title);
+		/*try {
+			URL urlIcon = new URL(System.getProperty("user.dir")+"/res/icons/menu/"+fileName+".png");
+			lblIcon.setIcon(new ImageIcon(urlIcon));
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}*/
+		//lblIcon.setIcon(new ImageIcon(NavigationWindow.class.getResource("/icons/utt/icon-100px.png")));
 	}
 }

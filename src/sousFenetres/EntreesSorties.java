@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-public class EntreeSorties extends JPanel {
+public class EntreesSorties extends JPanel {
 
 	private JPanel contentPane;
 
@@ -21,7 +21,7 @@ public class EntreeSorties extends JPanel {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					EntreeSorties frame = new EntreeSorties();
+					EntreesSorties frame = new EntreesSorties();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,7 +33,7 @@ public class EntreeSorties extends JPanel {
 	/**
 	 * Create the frame.
 	 */
-	public EntreeSorties() {
+	public EntreesSorties() {
 		setLayout(new CardLayout(0, 0));
 		
 		JPanel contentPane = new JPanel();
