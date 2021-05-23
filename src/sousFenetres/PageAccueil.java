@@ -20,6 +20,7 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 
+import elements.ColorPalette;
 import fenetres.NavigationWindow;
 import java.awt.SystemColor;
 import javax.swing.JComboBox;
@@ -57,7 +58,7 @@ public class PageAccueil extends JPanel {
 		setLayout(new CardLayout(0, 0));
 		
 		JPanel contentPane = new JPanel();
-		contentPane.setBackground(UIManager.getColor("Button.background"));
+		contentPane.setBackground(ColorPalette.BKD_DEFAULT.getColor());
 		add(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
@@ -146,23 +147,23 @@ public class PageAccueil extends JPanel {
 			public void mouseEntered(MouseEvent e) {
 				btnSemestre.setIcon(null);
 				btnSemestre.setText("Gestion du semestre");
-				btnSemestre.setBackground(new Color(15, 97, 153));
-				btnSemestre.setBorder(BorderFactory.createLineBorder(new Color(15, 97, 153), 5));
+				btnSemestre.setBackground(ColorPalette.BKD_NAVBAR0.getColor());
+				btnSemestre.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR0_LIGHT.getColor(), 5));
 				
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
 				btnSemestre.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/SemestreEnCours.png")));
 				btnSemestre.setText(null);
-				btnSemestre.setBackground(new Color(0xff094067));
+				btnSemestre.setBackground(ColorPalette.BKD_NAVBAR0.getColor());
 				btnSemestre.setBorder(null);
-				btnSemestre.setBorder(BorderFactory.createLineBorder(new Color(0xff094067), 5));
+				btnSemestre.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR0.getColor(), 5));
 			}
 		});
 		btnSemestre.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/SemestreEnCours.png")));
 		btnSemestre.setPreferredSize(new Dimension(300,200));
-		btnSemestre.setBackground(new Color(0xff094067));
-		btnSemestre.setBorder(BorderFactory.createLineBorder(new Color(0xff094067), 5));
+		btnSemestre.setBackground(ColorPalette.BKD_NAVBAR0.getColor());
+		btnSemestre.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR0.getColor(), 5));
 
 		
 		
@@ -174,22 +175,22 @@ public class PageAccueil extends JPanel {
 			public void mouseEntered(MouseEvent e) {
 				btnEnseignants.setIcon(null);
 				btnEnseignants.setText("Gestion des enseignants");
-				btnEnseignants.setBackground(new Color(16, 120, 188));
-				btnEnseignants.setBorder(BorderFactory.createLineBorder(new Color(16, 120, 188), 5));
+				btnEnseignants.setBackground(ColorPalette.BKD_NAVBAR1.getColor());
+				btnEnseignants.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR1_LIGHT.getColor(), 5));
 				
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
 				btnEnseignants.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/Enseignants.png")));
 				btnEnseignants.setText(null);
-				btnEnseignants.setBackground(new Color(0xff0e64a1));
+				btnEnseignants.setBackground(ColorPalette.BKD_NAVBAR1.getColor());
 				btnEnseignants.setBorder(null);
-				btnEnseignants.setBorder(BorderFactory.createLineBorder(new Color(0xff0e64a1), 5));
+				btnEnseignants.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR1.getColor(), 5));
 			}
 		});
 		btnEnseignants.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/Enseignants.png")));
 		btnEnseignants.setPreferredSize(new Dimension(300,200));
-		btnEnseignants.setBackground(new Color(0xff0e64a1));
+		btnEnseignants.setBackground(ColorPalette.BKD_NAVBAR1.getColor());
 		
 		
 		JButton btnUE = new JButton("");
@@ -200,22 +201,22 @@ public class PageAccueil extends JPanel {
 			public void mouseEntered(MouseEvent e) {
 				btnUE.setIcon(null);
 				btnUE.setText("Gestion des UE");
-				btnUE.setBackground(new Color(126, 170, 247));
-				btnUE.setBorder(BorderFactory.createLineBorder(new Color(126, 170, 247), 5));
+				btnUE.setBackground(ColorPalette.BKD_NAVBAR2.getColor());
+				btnUE.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR2_LIGHT.getColor(), 5));
 				
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
 				btnUE.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/UE.png")));
 				btnUE.setText(null);
-				btnUE.setBackground(new Color(100, 149, 237));
+				btnUE.setBackground(ColorPalette.BKD_NAVBAR2.getColor());
 				btnUE.setBorder(null);
-				btnUE.setBorder(BorderFactory.createLineBorder(new Color(100, 149, 237), 5));
+				btnUE.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR2.getColor(), 5));
 			}
 		});
 		btnUE.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/UE.png")));
 		btnUE.setPreferredSize(new Dimension(300,200));
-		btnUE.setBackground(new Color(100, 149, 237));
+		btnUE.setBackground(ColorPalette.BKD_NAVBAR2.getColor());
 		
 		
 		JButton btnRepartition = new JButton("");
@@ -226,22 +227,22 @@ public class PageAccueil extends JPanel {
 			public void mouseEntered(MouseEvent e) {
 				btnRepartition.setIcon(null);
 				btnRepartition.setText("<html><center>"+"R\u00E9partition des \u00E9tudiants"+"<br>"+"dans le parcours"+"</center></html>");
-				btnRepartition.setBackground(new Color(138, 123, 229));
-				btnRepartition.setBorder(BorderFactory.createLineBorder(new Color(138, 123, 229), 5));
+				btnRepartition.setBackground(ColorPalette.BKD_NAVBAR3.getColor());
+				btnRepartition.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR3_LIGHT.getColor(), 5));
 				
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
 				btnRepartition.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/RepartitionEtudiants.png")));
 				btnRepartition.setText(null);
-				btnRepartition.setBackground(new Color(106, 90, 205));
+				btnRepartition.setBackground(ColorPalette.BKD_NAVBAR3.getColor());
 				btnRepartition.setBorder(null);
-				btnRepartition.setBorder(BorderFactory.createLineBorder(new Color(106, 90, 205), 5));
+				btnRepartition.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR3.getColor(), 5));
 			}
 		});
 		btnRepartition.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/RepartitionEtudiants.png")));
 		btnRepartition.setPreferredSize(new Dimension(300,200));
-		btnRepartition.setBackground(new Color(106, 90, 205));
+		btnRepartition.setBackground(ColorPalette.BKD_NAVBAR3.getColor());
 		
 		
 		JButton btnES = new JButton("");
@@ -252,23 +253,23 @@ public class PageAccueil extends JPanel {
 			public void mouseEntered(MouseEvent e) {
 				btnES.setIcon(null);
 				btnES.setText("Gestion des enseignants");
-				btnES.setBackground(new Color(183, 91, 229));
-				btnES.setBorder(BorderFactory.createLineBorder(new Color(183, 91, 229), 5));
+				btnES.setBackground(ColorPalette.BKD_NAVBAR4.getColor());
+				btnES.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR4_LIGHT.getColor(), 5));
 				
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
 				btnES.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/EntreesSorties.png")));
 				btnES.setText(null);
-				btnES.setBackground(new Color(153, 50, 204));
+				btnES.setBackground(ColorPalette.BKD_NAVBAR4.getColor());
 				btnES.setBorder(null);
-				btnES.setBorder(BorderFactory.createLineBorder(new Color(153, 50, 204), 5));
+				btnES.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR4.getColor(), 5));
 			}
 		});
 		btnES.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/EntreesSorties.png")));
 		btnES.setPreferredSize(new Dimension(300,200));
 		
-		btnES.setBackground(new Color(153, 50, 204));
+		btnES.setBackground(ColorPalette.BKD_NAVBAR4.getColor());
 		
 		
 		JButton[] arrBtn = {btnSemestre, btnEnseignants, btnUE, btnRepartition, btnES};

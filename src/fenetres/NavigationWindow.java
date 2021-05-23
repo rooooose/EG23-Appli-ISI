@@ -33,6 +33,8 @@ import sousFenetres.UE;
 import javax.swing.Icon;
 import javax.swing.SwingConstants;
 
+import elements.ColorPalette;
+
 public class NavigationWindow {
 
 	private static JFrame frame;
@@ -260,19 +262,19 @@ public class NavigationWindow {
 	
 	private JButton[] initButtons() {
 		JButton btnNav1 = new JButton("");
-		btnNav1.setBackground(new Color(0xff094067));
+		btnNav1.setBackground(ColorPalette.BKD_NAVBAR0.getColor());
 		
 		JButton btnNav2 = new JButton("");
-		btnNav2.setBackground(new Color(0xff0e64a1));
+		btnNav2.setBackground(ColorPalette.BKD_NAVBAR1.getColor());
 		
 		JButton btnNav3 = new JButton("");
-		btnNav3.setBackground(new Color(100, 149, 237));
+		btnNav3.setBackground(ColorPalette.BKD_NAVBAR2.getColor());
 		
 		JButton btnNav4 = new JButton("");
-		btnNav4.setBackground(new Color(106, 90, 205));
+		btnNav4.setBackground(ColorPalette.BKD_NAVBAR3.getColor());
 		
 		JButton btnNav5 = new JButton("");
-		btnNav5.setBackground(new Color(153, 50, 204));
+		btnNav5.setBackground(ColorPalette.BKD_NAVBAR4.getColor());
 		
 		JButton[] arrBtnNav = {btnNav1, btnNav2, btnNav3, btnNav4, btnNav5};
 		return arrBtnNav;

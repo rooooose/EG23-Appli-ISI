@@ -8,6 +8,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+
+import elements.ColorPalette;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.Color;
@@ -39,7 +42,7 @@ public class UE extends JPanel {
 		setLayout(new CardLayout(0, 0));
 		
 		JPanel contentPane = new JPanel();
-		contentPane.setBackground(new Color(100, 149, 237));
+		contentPane.setBackground(ColorPalette.BKD_NAVBAR2.getColor());
 		add(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
 		

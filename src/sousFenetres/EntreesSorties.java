@@ -10,6 +10,8 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import elements.ColorPalette;
+
 public class EntreesSorties extends JPanel {
 
 	private JPanel contentPane;
@@ -37,7 +39,7 @@ public class EntreesSorties extends JPanel {
 		setLayout(new CardLayout(0, 0));
 		
 		JPanel contentPane = new JPanel();
-		contentPane.setBackground(new Color(153, 50, 204));
+		contentPane.setBackground(ColorPalette.BKD_NAVBAR4.getColor());
 		add(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
 		

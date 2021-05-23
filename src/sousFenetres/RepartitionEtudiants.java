@@ -18,6 +18,7 @@ import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import elements.ColorPalette;
 import net.miginfocom.swing.MigLayout;
 
 public class RepartitionEtudiants extends JPanel {
@@ -47,7 +48,7 @@ public class RepartitionEtudiants extends JPanel {
 		setLayout(new CardLayout(0, 0));
 		
 		JPanel contentPane = new JPanel();
-		contentPane.setBackground(new Color(106, 90, 205).brighter());
+		contentPane.setBackground(ColorPalette.BKD_REPART.getColor());
 		add(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
