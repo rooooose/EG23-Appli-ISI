@@ -142,7 +142,7 @@ public class NavigationWindow {
 			lblTitle.setBounds(10, 24, 337, 34);
 			lblTitle.setFont(new Font("Raleway Medium", Font.PLAIN, 28));
 		
-			JLabel lblBranche = new JLabel("Informatique et Système d'Information");
+			JLabel lblBranche = new JLabel("Informatique et Syst\u00E9mes d'Information");
 			lblBranche.setHorizontalAlignment(SwingConstants.TRAILING);
 			lblBranche.setFont(new Font("Raleway Medium", Font.PLAIN, 18));
 			GroupLayout gl_titrePanel = new GroupLayout(titrePanel);

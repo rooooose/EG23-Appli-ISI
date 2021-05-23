@@ -147,7 +147,7 @@ public class PageAccueil extends JPanel {
 			public void mouseEntered(MouseEvent e) {
 				btnSemestre.setIcon(null);
 				btnSemestre.setText("Gestion du semestre");
-				btnSemestre.setBackground(ColorPalette.BKD_NAVBAR0.getColor());
+				btnSemestre.setBackground(ColorPalette.BKD_NAVBAR0_LIGHT.getColor());
 				btnSemestre.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR0_LIGHT.getColor(), 5));
 				
 			}
@@ -175,7 +175,7 @@ public class PageAccueil extends JPanel {
 			public void mouseEntered(MouseEvent e) {
 				btnEnseignants.setIcon(null);
 				btnEnseignants.setText("Gestion des enseignants");
-				btnEnseignants.setBackground(ColorPalette.BKD_NAVBAR1.getColor());
+				btnEnseignants.setBackground(ColorPalette.BKD_NAVBAR1_LIGHT.getColor());
 				btnEnseignants.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR1_LIGHT.getColor(), 5));
 				
 			}
@@ -201,7 +201,7 @@ public class PageAccueil extends JPanel {
 			public void mouseEntered(MouseEvent e) {
 				btnUE.setIcon(null);
 				btnUE.setText("Gestion des UE");
-				btnUE.setBackground(ColorPalette.BKD_NAVBAR2.getColor());
+				btnUE.setBackground(ColorPalette.BKD_NAVBAR2_LIGHT.getColor());
 				btnUE.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR2_LIGHT.getColor(), 5));
 				
 			}
@@ -227,7 +227,7 @@ public class PageAccueil extends JPanel {
 			public void mouseEntered(MouseEvent e) {
 				btnRepartition.setIcon(null);
 				btnRepartition.setText("<html><center>"+"R\u00E9partition des \u00E9tudiants"+"<br>"+"dans le parcours"+"</center></html>");
-				btnRepartition.setBackground(ColorPalette.BKD_NAVBAR3.getColor());
+				btnRepartition.setBackground(ColorPalette.BKD_NAVBAR3_LIGHT.getColor());
 				btnRepartition.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR3_LIGHT.getColor(), 5));
 				
 			}
@@ -253,7 +253,7 @@ public class PageAccueil extends JPanel {
 			public void mouseEntered(MouseEvent e) {
 				btnES.setIcon(null);
 				btnES.setText("Gestion des enseignants");
-				btnES.setBackground(ColorPalette.BKD_NAVBAR4.getColor());
+				btnES.setBackground(ColorPalette.BKD_NAVBAR4_LIGHT.getColor());
 				btnES.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR4_LIGHT.getColor(), 5));
 				
 			}
