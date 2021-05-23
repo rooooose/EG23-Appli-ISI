@@ -31,6 +31,7 @@ import sousFenetres.RepartitionEtudiants;
 import sousFenetres.SemestreEnCours;
 import sousFenetres.UE;
 import javax.swing.Icon;
+import javax.swing.SwingConstants;
 
 public class NavigationWindow {
 
@@ -39,7 +40,7 @@ public class NavigationWindow {
 	private static NavigationWindow window;
 	
 	private static JLabel lblTitle = new JLabel("Titre de la sous-fenêtre");
-	private static JLabel lblIcon = new JLabel();
+	private static JLabel lblIcon = new JLabel("");
 
 	/**
 	 * Launch the application.
@@ -85,9 +86,13 @@ public class NavigationWindow {
 	public void initializeNavigator() {
 		if (frame.getContentPane() != null) frame.getContentPane().removeAll();
 		
+		///------//---TOP PANEL---//------///
+		
 		JPanel topPanel = new JPanel();
 		topPanel.setBackground(Color.WHITE);
 		frame.getContentPane().add(topPanel, BorderLayout.NORTH);
+		
+		///---LOGO PANEL---///
 		
 		JPanel logoPanel = new JPanel();
 		logoPanel.addMouseListener(new MouseAdapter() {
@@ -100,6 +105,8 @@ public class NavigationWindow {
 		logoPanel.setBackground(Color.WHITE);
 		logoPanel.add(new JLabel(new ImageIcon(getClass().getClassLoader().getResource("img/logo_UTT_petit.png"))));
 		
+		///---HEADER PANEL---///
+		
 		JPanel headerPanel = new JPanel();
 		headerPanel.setBackground(Color.WHITE);
 		topPanel.add(headerPanel, BorderLayout.CENTER);
@@ -107,103 +114,97 @@ public class NavigationWindow {
 		JPanel titrePanel = new JPanel();
 		titrePanel.setBackground(Color.WHITE);
 		
-		JPanel linePanel = new JPanel();
-		linePanel.setBackground(Color.BLACK);
-		GroupLayout gl_topPanel = new GroupLayout(topPanel);
-		gl_topPanel.setHorizontalGroup(
-			gl_topPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_topPanel.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(logoPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(headerPanel, GroupLayout.DEFAULT_SIZE, 975, Short.MAX_VALUE)
-					.addGap(10))
-		);
-		gl_topPanel.setVerticalGroup(
-			gl_topPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_topPanel.createSequentialGroup()
-					.addGap(10)
-					.addGroup(gl_topPanel.createParallelGroup(Alignment.TRAILING, false)
-						.addComponent(logoPanel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(headerPanel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE))
-					.addContainerGap())
-		);
-		lblTitle.setBounds(10, 24, 337, 34);
+			JPanel linePanel = new JPanel();
+			linePanel.setBackground(Color.BLACK);
+			GroupLayout gl_topPanel = new GroupLayout(topPanel);
+			gl_topPanel.setHorizontalGroup(
+				gl_topPanel.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_topPanel.createSequentialGroup()
+						.addContainerGap()
+						.addComponent(logoPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addComponent(headerPanel, GroupLayout.PREFERRED_SIZE, 1175, GroupLayout.PREFERRED_SIZE)
+						.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+			);
+			gl_topPanel.setVerticalGroup(
+				gl_topPanel.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_topPanel.createSequentialGroup()
+						.addGap(10)
+						.addComponent(logoPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addGap(18))
+					.addGroup(gl_topPanel.createSequentialGroup()
+						.addComponent(headerPanel, 0, 0, Short.MAX_VALUE)
+						.addGap(28))
+			);
+			
+			lblTitle.setBounds(10, 24, 337, 34);
+			lblTitle.setFont(new Font("Raleway Medium", Font.PLAIN, 28));
 		
-		lblTitle.setFont(new Font("Raleway Medium", Font.PLAIN, 28));
-		
-		JLabel lblBranche = new JLabel("Informatique et Système d'Information");
-		lblBranche.setFont(new Font("Raleway Medium", Font.PLAIN, 18));
-		GroupLayout gl_titrePanel = new GroupLayout(titrePanel);
-		gl_titrePanel.setHorizontalGroup(
-			gl_titrePanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_titrePanel.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(lblTitle, GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(lblBranche, GroupLayout.PREFERRED_SIZE, 493, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap())
-		);
-		gl_titrePanel.setVerticalGroup(
-			gl_titrePanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_titrePanel.createSequentialGroup()
-					.addGap(11)
-					.addGroup(gl_titrePanel.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblBranche)
-						.addComponent(lblTitle))
-					.addContainerGap())
-		);
-		titrePanel.setLayout(gl_titrePanel);
+			JLabel lblBranche = new JLabel("Informatique et Système d'Information");
+			lblBranche.setHorizontalAlignment(SwingConstants.TRAILING);
+			lblBranche.setFont(new Font("Raleway Medium", Font.PLAIN, 18));
+			GroupLayout gl_titrePanel = new GroupLayout(titrePanel);
+			gl_titrePanel.setHorizontalGroup(
+				gl_titrePanel.createParallelGroup(Alignment.LEADING)
+					.addGroup(Alignment.TRAILING, gl_titrePanel.createSequentialGroup()
+						.addContainerGap()
+						.addComponent(lblTitle, GroupLayout.PREFERRED_SIZE, 605, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+						.addComponent(lblBranche, GroupLayout.PREFERRED_SIZE, 392, GroupLayout.PREFERRED_SIZE)
+						.addContainerGap())
+			);
+			gl_titrePanel.setVerticalGroup(
+				gl_titrePanel.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_titrePanel.createSequentialGroup()
+						.addGap(11)
+						.addGroup(gl_titrePanel.createParallelGroup(Alignment.BASELINE)
+							.addComponent(lblBranche)
+							.addComponent(lblTitle))
+						.addContainerGap())
+			);
+			titrePanel.setLayout(gl_titrePanel);
 		
 		JPanel iconPage = new JPanel();
 		iconPage.setBackground(Color.WHITE);
 		iconPage.setLayout(null);
 		
-		JLabel lblIcon = new JLabel();
-		lblIcon.setBounds(5, -8, 75, 75);
+		lblIcon.setHorizontalAlignment(SwingConstants.CENTER);
+		lblIcon.setBounds(0, 0, 88, 66);
 		iconPage.add(lblIcon);
 		
 		GroupLayout gl_headerPanel = new GroupLayout(headerPanel);
 		gl_headerPanel.setHorizontalGroup(
 			gl_headerPanel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_headerPanel.createSequentialGroup()
-					.addGap(10)
-					.addGroup(gl_headerPanel.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_headerPanel.createSequentialGroup()
-							.addComponent(linePanel, GroupLayout.PREFERRED_SIZE, 1136, GroupLayout.PREFERRED_SIZE)
-							.addContainerGap())
-						.addGroup(gl_headerPanel.createSequentialGroup()
-							.addComponent(iconPage, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
-							.addGap(10)
-							.addComponent(titrePanel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addGap(10))))
+					.addContainerGap()
+					.addComponent(iconPage, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_headerPanel.createParallelGroup(Alignment.LEADING, false)
+						.addComponent(titrePanel, 0, 0, Short.MAX_VALUE)
+						.addComponent(linePanel, GroupLayout.DEFAULT_SIZE, 1064, Short.MAX_VALUE))
+					.addContainerGap())
 		);
 		gl_headerPanel.setVerticalGroup(
 			gl_headerPanel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_headerPanel.createSequentialGroup()
 					.addGap(10)
 					.addGroup(gl_headerPanel.createParallelGroup(Alignment.LEADING)
-						.addComponent(iconPage, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
-						.addComponent(titrePanel, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(linePanel, GroupLayout.PREFERRED_SIZE, 5, GroupLayout.PREFERRED_SIZE)
+						.addComponent(iconPage, GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+						.addGroup(gl_headerPanel.createSequentialGroup()
+							.addComponent(titrePanel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(linePanel, GroupLayout.PREFERRED_SIZE, 5, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap())
 		);
 		headerPanel.setLayout(gl_headerPanel);
 		topPanel.setLayout(gl_topPanel);
 		
+		///------//---LEFT PANEL---//------///
+		
 		JPanel leftPanel = new JPanel();
 		leftPanel.setBackground(Color.WHITE);
 		frame.getContentPane().add(leftPanel, BorderLayout.WEST);
 		leftPanel.setPreferredSize(new Dimension(38, 480));
-		
-		JPanel bottomPanel = new JPanel();
-		bottomPanel.setBackground(Color.WHITE);
-		frame.getContentPane().add(bottomPanel, BorderLayout.SOUTH);
-		
-		JPanel rightPanel = new JPanel();
-		rightPanel.setBackground(Color.WHITE);
-		frame.getContentPane().add(rightPanel, BorderLayout.EAST);
 		
 		//INIT JBUTTON - NAVBAR
 		JButton[] arrBtnNav = initButtons();
@@ -245,6 +246,16 @@ public class NavigationWindow {
 					.addGap(66))
 		);
 		leftPanel.setLayout(gl_leftPanel);
+		
+		///------//---BORDER PANELS---//------///
+		
+		JPanel bottomPanel = new JPanel();
+		bottomPanel.setBackground(Color.WHITE);
+		frame.getContentPane().add(bottomPanel, BorderLayout.SOUTH);
+		
+		JPanel rightPanel = new JPanel();
+		rightPanel.setBackground(Color.WHITE);
+		frame.getContentPane().add(rightPanel, BorderLayout.EAST);
 	}
 	
 	private JButton[] initButtons() {
@@ -316,15 +327,8 @@ public class NavigationWindow {
 		return frame;
 	}
 	
-	//ECHEC SUR ECHEC POUR TROUVER UN MOYEN D'ACTUALISER L'ICONE
 	public static void setTitle(String title, String fileName) {
 		lblTitle.setText(title);
-		/*try {
-			URL urlIcon = new URL(System.getProperty("user.dir")+"/res/icons/menu/"+fileName+".png");
-			lblIcon.setIcon(new ImageIcon(urlIcon));
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}*/
-		//lblIcon.setIcon(new ImageIcon(NavigationWindow.class.getResource("/icons/utt/icon-100px.png")));
+		lblIcon.setIcon(new ImageIcon(NavigationWindow.class.getResource("/icons/menu/"+fileName+".png")));
 	}
 }
