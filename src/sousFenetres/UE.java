@@ -43,6 +43,9 @@ import java.awt.SystemColor;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.border.SoftBevelBorder;
 
 public class UE extends JPanel {
 
@@ -96,8 +99,6 @@ public class UE extends JPanel {
 		cbBxCategory.setModel(new DefaultComboBoxModel(new String[] {"Catégorie", "CS", "TM", "ME", "HT", "CT"}));
 		((JLabel) cbBxCategory.getRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
 		
-		JCheckBox chckbxTest = new JCheckBox("Test Switch");
-		
 		JLabel lblSearch = new JLabel("");
 		lblSearch.addMouseListener(new MouseAdapter() {
 			@Override
@@ -115,31 +116,26 @@ public class UE extends JPanel {
 		gl_panelRequest.setHorizontalGroup(
 			gl_panelRequest.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panelRequest.createSequentialGroup()
-					.addContainerGap()
+					.addGap(11)
 					.addComponent(searchBar, GroupLayout.PREFERRED_SIZE, 285, GroupLayout.PREFERRED_SIZE)
-					.addGap(16)
+					.addGap(15)
 					.addComponent(lblSearch, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-					.addGap(107)
+					.addGap(108)
 					.addComponent(cbBxCategory, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 454, Short.MAX_VALUE)
-					.addComponent(chckbxTest)
-					.addContainerGap())
+					.addContainerGap(536, Short.MAX_VALUE))
 		);
 		gl_panelRequest.setVerticalGroup(
 			gl_panelRequest.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_panelRequest.createSequentialGroup()
+				.addGroup(Alignment.LEADING, gl_panelRequest.createSequentialGroup()
+					.addGap(9)
 					.addGroup(gl_panelRequest.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panelRequest.createSequentialGroup()
-							.addGap(7)
-							.addGroup(gl_panelRequest.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_panelRequest.createParallelGroup(Alignment.BASELINE)
-									.addComponent(cbBxCategory, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-									.addComponent(chckbxTest))
-								.addComponent(searchBar, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)))
-						.addGroup(gl_panelRequest.createSequentialGroup()
-							.addGap(13)
-							.addComponent(lblSearch)))
-					.addContainerGap())
+						.addComponent(cbBxCategory, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+						.addComponent(searchBar, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
+					.addGap(8))
+				.addGroup(Alignment.LEADING, gl_panelRequest.createSequentialGroup()
+					.addGap(13)
+					.addComponent(lblSearch)
+					.addContainerGap(13, Short.MAX_VALUE))
 		);
 		panelRequest.setLayout(gl_panelRequest);
 		
@@ -185,67 +181,66 @@ public class UE extends JPanel {
 		splitPane.setLeftComponent(scrollPane);
 		scrollPane.setViewportView(panelResult);
 		
+		
 		final int itemWidth = 340;
-		final int itemHeight = 80;
+		final int itemHeight = 70;
 		
-		JPanel panel_0 = new JPanel();
-		panel_0.setPreferredSize(new Dimension(itemWidth, itemHeight));
-		panel_0.setBackground(new Color(178, 34, 34));
-		panel_0.setLayout(null);
-		panelResult.add(panel_0);
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setPreferredSize(new Dimension(itemWidth, itemHeight));
-		panel_1.setBackground(new Color(255, 255, 0));
-		panel_1.setLayout(null);
-		panelResult.add(panel_1);
-		
-		JPanel panel_2 = new JPanel();
-		panel_2.setPreferredSize(new Dimension(itemWidth, itemHeight));
-		panel_2.setBackground(new Color(0, 0, 255));
-		panel_2.setLayout(null);
-		panelResult.add(panel_2);
-		
-		JPanel panel_3 = new JPanel();
-		panel_3.setPreferredSize(new Dimension(itemWidth, itemHeight));
-		panel_3.setBackground(Color.MAGENTA);
-		panel_3.setLayout(null);
-		panelResult.add(panel_3);
-		
-		JPanel panel_4 = new JPanel();
-		panel_4.setPreferredSize(new Dimension(itemWidth, itemHeight));
-		panel_4.setBackground(new Color(50, 205, 50));
-		panel_4.setLayout(null);
-		panelResult.add(panel_4);
-		
-		JPanel panel_5 = new JPanel();
-		panel_5.setPreferredSize(new Dimension(itemWidth, itemHeight));
-		panel_5.setBackground(new Color(0, 191, 255));
-		panel_5.setLayout(null);
-		panelResult.add(panel_5);
-		
-		JPanel panel_6 = new JPanel();
-		panel_6.setPreferredSize(new Dimension(itemWidth, itemHeight));
-		panel_6.setBackground(new Color(138, 43, 226));
-		panel_6.setLayout(null);
-		panelResult.add(panel_6);
+		List<JPanel> UEItems = new ArrayList<JPanel>();
+		for (int i=0;i<5;i++) {
+			String[] arrCategory = {"CS", "TM", "HT", "TM", "TM", "CS"};
+			String[] arrUETitle = {"NF16 - Bases de données", "LO07 - Technologies du Web", "<html>PH15 - Essor des technologies"+"<br>"+" et crise de l'idée de progrès</html>",
+					"GL02 - Génie Logiciel", "<html>LO02 - Programmation"+"<br>"+" Orientée Objet</html>", "<html>EG23 - Interface Homme-Machine"+"<br>"+" et ergonomie</html>"};
+
+			UEItems.add(i, new JPanel());
+			UEItems.get(i).setPreferredSize(new Dimension(itemWidth, itemHeight));
+			UEItems.get(i).setBackground(new Color(255, 255, 255));
+			UEItems.get(i).setLayout(null);
+			UEItems.get(i).setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+			panelResult.add(UEItems.get(i));
+			
+			JPanel tagBorder = new JPanel();
+			tagBorder.setLayout(null);
+			tagBorder.setBackground(new Color(60, 60, 60));
+			tagBorder.setBounds(10, 12, 64, 47);
+			UEItems.get(i).add(tagBorder);
+			
+			JPanel tagBkd = new JPanel();
+			tagBkd.setLayout(null);
+			tagBkd.setBackground(SystemColor.scrollbar);
+			tagBkd.setBounds(3, 3, 58, 41);
+			tagBorder.add(tagBkd);
+			
+			JLabel lblCategory = new JLabel(arrCategory[i]);
+			lblCategory.setHorizontalAlignment(SwingConstants.CENTER);
+			lblCategory.setForeground(new Color(60, 60, 60));
+			lblCategory.setFont(new Font("Raleway Medium", Font.PLAIN, 22));
+			lblCategory.setBounds(10, 6, 37, 31);
+			tagBkd.add(lblCategory);
+			
+			JLabel lblUE = new JLabel(arrUETitle[i]);
+			lblUE.setForeground(new Color(60, 60, 60));
+			lblUE.setFont(new Font("Raleway Medium", Font.PLAIN, 16));
+			lblUE.setBounds(93, 12, 245, 47);
+			UEItems.get(i).add(lblUE);
+			
+			if (i == 0) {
+				UEItems.get(i).addMouseListener(new MouseAdapter() {
+					@Override
+					public void mouseClicked(MouseEvent e) {
+						if (Math.round(splitPane.getDividerLocation()*0.1) == Math.round(splitPane.getMaximumDividerLocation()*0.1)) {
+							splitPane.setDividerLocation(0.32);
+						} else {
+							splitPane.setDividerLocation(1.0);
+						}
+					}
+				});
+			}
+		}
 		
 		UEProfile panelProfile = new UEProfile();
 		panelProfile.setMinimumSize(new Dimension(0, 0));
 		panelProfile.setPreferredSize(new Dimension(0, 0));
 		panelProfile.setBackground(new Color(255, 255, 240));
 		splitPane.setRightComponent(panelProfile);
-		
-		//////////////////////////////////////////////////////////
-		
-		chckbxTest.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (chckbxTest.isSelected()) {
-					splitPane.setDividerLocation(0.4);
-				} else {
-					splitPane.setDividerLocation(1.0);
-				}
-			}
-		});
 	}
 }

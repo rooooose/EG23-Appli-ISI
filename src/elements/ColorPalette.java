@@ -31,6 +31,8 @@ public enum ColorPalette {
 	
 	//TITLE
 	TLE_BRANCHE("0x918f90"),
+	TLE_DEFAULT(new Color(60, 60, 60)),
+	TLE_GRAY_LIGHT(new Color(200, 200, 200)),
 	TLE_SEMESTRE(),
 	TLE_ENSEIGN(),
 	TLE_UE(),

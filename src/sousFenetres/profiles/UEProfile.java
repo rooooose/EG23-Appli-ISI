@@ -77,39 +77,54 @@ public class UEProfile extends JPanel {
 		gbc_panelTop.gridy = 0;
 		contentPane.add(panelTop, gbc_panelTop);
 		
-		JLabel lblCategory = new JLabel("CS");
-		lblCategory.setFont(new Font("Tahoma", Font.PLAIN, 32));
-		lblCategory.setHorizontalAlignment(SwingConstants.CENTER);
-		
-		JLabel lblUE = new JLabel("NF16 Bases de données");
-		lblUE.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		JLabel lblUE = new JLabel("NF16 - Bases de données");
+		lblUE.setForeground(ColorPalette.TLE_DEFAULT.getColor());
+		lblUE.setFont(new Font("Raleway", Font.PLAIN, 28));
 		
 		JLabel lblProf = new JLabel("Responsable : Sophie LORIETTE");
-		lblProf.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblProf.setForeground(ColorPalette.BKD_NAVBAR2.getColor());
+		lblProf.setFont(new Font("Raleway Medium", Font.PLAIN, 18));
+		
+		JPanel tagBorder = new JPanel();
+		tagBorder.setBackground(ColorPalette.TLE_DEFAULT.getColor());
 		GroupLayout gl_panelTop = new GroupLayout(panelTop);
 		gl_panelTop.setHorizontalGroup(
 			gl_panelTop.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panelTop.createSequentialGroup()
-					.addGap(29)
-					.addComponent(lblCategory, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-					.addGap(52)
+					.addGap(25)
+					.addComponent(tagBorder, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
 					.addGroup(gl_panelTop.createParallelGroup(Alignment.TRAILING, false)
 						.addComponent(lblProf, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addComponent(lblUE, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 471, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(138, Short.MAX_VALUE))
+					.addContainerGap(126, Short.MAX_VALUE))
 		);
 		gl_panelTop.setVerticalGroup(
 			gl_panelTop.createParallelGroup(Alignment.LEADING)
 				.addGroup(Alignment.TRAILING, gl_panelTop.createSequentialGroup()
-					.addContainerGap(26, Short.MAX_VALUE)
+					.addContainerGap(20, Short.MAX_VALUE)
 					.addGroup(gl_panelTop.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panelTop.createSequentialGroup()
 							.addComponent(lblUE)
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(lblProf))
-						.addComponent(lblCategory))
-					.addGap(5))
+						.addComponent(tagBorder, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE))
+					.addGap(14))
 		);
+		tagBorder.setLayout(null);
+		
+		JPanel tagBkd = new JPanel();
+		tagBkd.setBackground(ColorPalette.TLE_GRAY_LIGHT.getColor());
+		tagBkd.setBounds(3, 3, 89, 58);
+		tagBorder.add(tagBkd);
+		tagBkd.setLayout(null);
+		
+		JLabel lblCategory = new JLabel("CS");
+		lblCategory.setBounds(18, 9, 53, 38);
+		lblCategory.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCategory.setForeground(new Color(60, 60, 60));
+		lblCategory.setFont(new Font("Raleway", Font.PLAIN, 32));
+		tagBkd.add(lblCategory);
 		panelTop.setLayout(gl_panelTop);
 		
 		JPanel panelCenter = new JPanel();
@@ -154,7 +169,7 @@ public class UEProfile extends JPanel {
 		btnEvResults.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnEvEffectifs.setBackground(new Color(240, 240, 240));
-				btnEvEffectifs.setForeground(Color.BLACK);
+				btnEvEffectifs.setForeground(ColorPalette.TLE_DEFAULT.getColor());
 				btnEvResults.setBackground(ColorPalette.BKD_NAVBAR2_LIGHT.getColor());
 				btnEvResults.setForeground(Color.WHITE);
 				
@@ -167,7 +182,7 @@ public class UEProfile extends JPanel {
 		btnEvEffectifs.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnEvResults.setBackground(new Color(240, 240, 240));
-				btnEvResults.setForeground(Color.BLACK);
+				btnEvResults.setForeground(ColorPalette.TLE_DEFAULT.getColor());
 				btnEvEffectifs.setBackground(ColorPalette.BKD_NAVBAR2_LIGHT.getColor());
 				btnEvEffectifs.setForeground(Color.WHITE);
 				
