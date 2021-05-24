@@ -59,7 +59,7 @@ public class UEProfile extends JPanel {
 		setLayout(new CardLayout(0, 0));
 		
 		JPanel contentPane = new JPanel();
-		contentPane.setBackground(ColorPalette.BKD_DEFAULT.getColor());
+		contentPane.setBackground(ColorPalette.BKD_BLUE_VERY_LIGHT.getColor());
 		add(contentPane);
 		GridBagLayout gbl_contentPane = new GridBagLayout();
 		gbl_contentPane.columnWidths = new int[] {735};
@@ -69,7 +69,7 @@ public class UEProfile extends JPanel {
 		contentPane.setLayout(gbl_contentPane);
 		
 		JPanel panelTop = new JPanel();
-		panelTop.setBackground(SystemColor.menu);
+		panelTop.setBackground(ColorPalette.BKD_BLUE_VERY_LIGHT.getColor());
 		GridBagConstraints gbc_panelTop = new GridBagConstraints();
 		gbc_panelTop.fill = GridBagConstraints.HORIZONTAL;
 		gbc_panelTop.insets = new Insets(0, 0, 5, 0);
@@ -113,6 +113,7 @@ public class UEProfile extends JPanel {
 		panelTop.setLayout(gl_panelTop);
 		
 		JPanel panelCenter = new JPanel();
+		panelCenter.setBackground(ColorPalette.BKD_BLUE_VERY_LIGHT.getColor());
 		FlowLayout flowLayout = (FlowLayout) panelCenter.getLayout();
 		flowLayout.setHgap(10);
 		flowLayout.setAlignOnBaseline(true);
@@ -125,26 +126,12 @@ public class UEProfile extends JPanel {
 		contentPane.add(panelCenter, gbc_panelCenter);
 		
 		JButton btnEvResults = new JButton("Evolution des résultats");
-		btnEvResults.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				panelBottom.removeAll();
-				panelBottom.add(graphEvResultats);
-				panelBottom.repaint();
-				panelBottom.validate();
-			}
-		});
+		btnEvResults.setBackground(ColorPalette.BKD_NAVBAR2_LIGHT.getColor());
+		btnEvResults.setForeground(Color.WHITE);
 		btnEvResults.setFont(new Font("Raleway Medium", Font.PLAIN, 18));
 		panelCenter.add(btnEvResults);
 		
 		JButton btnEvEffectifs = new JButton("Evolution des effectifs");
-		btnEvEffectifs.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				panelBottom.removeAll();
-				panelBottom.add(graphEvEffectifs);
-				panelBottom.repaint();
-				panelBottom.validate();
-			}
-		});
 		btnEvEffectifs.setFont(new Font("Raleway Medium", Font.PLAIN, 18));
 		panelCenter.add(btnEvEffectifs);
 		
@@ -162,10 +149,33 @@ public class UEProfile extends JPanel {
 		gbc_panelBottom.gridy = 2;
 		contentPane.add(panelBottom, gbc_panelBottom);
 		
-//		JLabel lblNewLabel = new JLabel("UE PROFILE");
-//		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-//		lblNewLabel.setForeground(Color.LIGHT_GRAY);
-//		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
-//		panelBottom.add(lblNewLabel);
+		////////////
+		
+		btnEvResults.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnEvEffectifs.setBackground(new Color(240, 240, 240));
+				btnEvEffectifs.setForeground(Color.BLACK);
+				btnEvResults.setBackground(ColorPalette.BKD_NAVBAR2_LIGHT.getColor());
+				btnEvResults.setForeground(Color.WHITE);
+				
+				panelBottom.removeAll();
+				panelBottom.add(graphEvResultats);
+				panelBottom.repaint();
+				panelBottom.validate();
+			}
+		});
+		btnEvEffectifs.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnEvResults.setBackground(new Color(240, 240, 240));
+				btnEvResults.setForeground(Color.BLACK);
+				btnEvEffectifs.setBackground(ColorPalette.BKD_NAVBAR2_LIGHT.getColor());
+				btnEvEffectifs.setForeground(Color.WHITE);
+				
+				panelBottom.removeAll();
+				panelBottom.add(graphEvEffectifs);
+				panelBottom.repaint();
+				panelBottom.validate();
+			}
+		});
 	}
 }

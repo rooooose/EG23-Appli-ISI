@@ -27,7 +27,10 @@ public enum ColorPalette {
 	BKD_REPART(new Color(106, 90, 205).brighter()),
 	BKD_ES(),
 	
+	BKD_BLUE_VERY_LIGHT(new Color(240, 255, 255)),
+	
 	//TITLE
+	TLE_BRANCHE("0x918f90"),
 	TLE_SEMESTRE(),
 	TLE_ENSEIGN(),
 	TLE_UE(),

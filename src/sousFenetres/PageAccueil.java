@@ -153,14 +153,14 @@ public class PageAccueil extends JPanel {
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				btnSemestre.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/SemestreEnCours.png")));
+				btnSemestre.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/black/SemestreEnCours.png")));
 				btnSemestre.setText(null);
 				btnSemestre.setBackground(ColorPalette.BKD_NAVBAR0.getColor());
 				btnSemestre.setBorder(null);
 				btnSemestre.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR0.getColor(), 5));
 			}
 		});
-		btnSemestre.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/SemestreEnCours.png")));
+		btnSemestre.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/black/SemestreEnCours.png")));
 		btnSemestre.setPreferredSize(new Dimension(300,200));
 		btnSemestre.setBackground(ColorPalette.BKD_NAVBAR0.getColor());
 		btnSemestre.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR0.getColor(), 5));
@@ -181,14 +181,14 @@ public class PageAccueil extends JPanel {
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				btnEnseignants.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/Enseignants.png")));
+				btnEnseignants.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/black/Enseignants.png")));
 				btnEnseignants.setText(null);
 				btnEnseignants.setBackground(ColorPalette.BKD_NAVBAR1.getColor());
 				btnEnseignants.setBorder(null);
 				btnEnseignants.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR1.getColor(), 5));
 			}
 		});
-		btnEnseignants.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/Enseignants.png")));
+		btnEnseignants.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/black/Enseignants.png")));
 		btnEnseignants.setPreferredSize(new Dimension(300,200));
 		btnEnseignants.setBackground(ColorPalette.BKD_NAVBAR1.getColor());
 		
@@ -207,14 +207,14 @@ public class PageAccueil extends JPanel {
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				btnUE.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/UE.png")));
+				btnUE.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/black/UE.png")));
 				btnUE.setText(null);
 				btnUE.setBackground(ColorPalette.BKD_NAVBAR2.getColor());
 				btnUE.setBorder(null);
 				btnUE.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR2.getColor(), 5));
 			}
 		});
-		btnUE.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/UE.png")));
+		btnUE.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/black/UE.png")));
 		btnUE.setPreferredSize(new Dimension(300,200));
 		btnUE.setBackground(ColorPalette.BKD_NAVBAR2.getColor());
 		
@@ -233,14 +233,14 @@ public class PageAccueil extends JPanel {
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				btnRepartition.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/RepartitionEtudiants.png")));
+				btnRepartition.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/black/RepartitionEtudiants.png")));
 				btnRepartition.setText(null);
 				btnRepartition.setBackground(ColorPalette.BKD_NAVBAR3.getColor());
 				btnRepartition.setBorder(null);
 				btnRepartition.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR3.getColor(), 5));
 			}
 		});
-		btnRepartition.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/RepartitionEtudiants.png")));
+		btnRepartition.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/black/RepartitionEtudiants.png")));
 		btnRepartition.setPreferredSize(new Dimension(300,200));
 		btnRepartition.setBackground(ColorPalette.BKD_NAVBAR3.getColor());
 		
@@ -259,14 +259,14 @@ public class PageAccueil extends JPanel {
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				btnES.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/EntreesSorties.png")));
+				btnES.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/black/EntreesSorties.png")));
 				btnES.setText(null);
 				btnES.setBackground(ColorPalette.BKD_NAVBAR4.getColor());
 				btnES.setBorder(null);
 				btnES.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR4.getColor(), 5));
 			}
 		});
-		btnES.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/EntreesSorties.png")));
+		btnES.setIcon(new ImageIcon(PageAccueil.class.getResource("/icons/menu/black/EntreesSorties.png")));
 		btnES.setPreferredSize(new Dimension(300,200));
 		
 		btnES.setBackground(ColorPalette.BKD_NAVBAR4.getColor());
@@ -301,6 +301,9 @@ public class PageAccueil extends JPanel {
 				NavigationWindow.getFrame().getContentPane().add(arrJPanel[num], BorderLayout.CENTER);
 				
 				arrJPanel[num].setVisible(true);
+				
+				NavigationWindow.getTitle().setForeground(btnNav[num].getBackground());
+				NavigationWindow.getLinePanel().setBackground(btnNav[num].getBackground());
 			}
 		});
 	}

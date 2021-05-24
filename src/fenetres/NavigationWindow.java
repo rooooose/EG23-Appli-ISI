@@ -34,6 +34,7 @@ import javax.swing.Icon;
 import javax.swing.SwingConstants;
 
 import elements.ColorPalette;
+import java.awt.SystemColor;
 
 public class NavigationWindow {
 
@@ -43,6 +44,7 @@ public class NavigationWindow {
 	
 	private static JLabel lblTitle = new JLabel("Titre de la sous-fenêtre");
 	private static JLabel lblIcon = new JLabel("");
+	private static JPanel linePanel;
 
 	/**
 	 * Launch the application.
@@ -116,8 +118,7 @@ public class NavigationWindow {
 		JPanel titrePanel = new JPanel();
 		titrePanel.setBackground(Color.WHITE);
 		
-			JPanel linePanel = new JPanel();
-			linePanel.setBackground(Color.BLACK);
+			linePanel = new JPanel();
 			GroupLayout gl_topPanel = new GroupLayout(topPanel);
 			gl_topPanel.setHorizontalGroup(
 				gl_topPanel.createParallelGroup(Alignment.LEADING)
@@ -138,11 +139,13 @@ public class NavigationWindow {
 						.addComponent(headerPanel, 0, 0, Short.MAX_VALUE)
 						.addGap(28))
 			);
+			lblTitle.setForeground(ColorPalette.TLE_BRANCHE.getColor());
 			
 			lblTitle.setBounds(10, 24, 337, 34);
 			lblTitle.setFont(new Font("Raleway Medium", Font.PLAIN, 28));
 		
-			JLabel lblBranche = new JLabel("Informatique et Syst\u00E9mes d'Information");
+			JLabel lblBranche = new JLabel("Informatique et Systèmes d'Information");
+			lblBranche.setForeground(ColorPalette.TLE_BRANCHE.getColor());
 			lblBranche.setHorizontalAlignment(SwingConstants.TRAILING);
 			lblBranche.setFont(new Font("Raleway Medium", Font.PLAIN, 18));
 			GroupLayout gl_titrePanel = new GroupLayout(titrePanel);
@@ -310,6 +313,9 @@ public class NavigationWindow {
 				hideSousFenetres(arrJPanel);
 				frame.getContentPane().add(arrJPanel[num], BorderLayout.CENTER);
 				arrJPanel[num].setVisible(true);
+				
+				NavigationWindow.lblTitle.setForeground(btnNav[num].getBackground());
+				NavigationWindow.linePanel.setBackground(btnNav[num].getBackground());
 			}
 		});
 	}
@@ -327,6 +333,14 @@ public class NavigationWindow {
 	
 	public static JFrame getFrame() {
 		return frame;
+	}
+	
+	public static JLabel getTitle() {
+		return lblTitle;
+	}
+	
+	public static JPanel getLinePanel() {
+		return linePanel;
 	}
 	
 	public static void setTitle(String title, String fileName) {

@@ -39,6 +39,10 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.border.BevelBorder;
 import javax.swing.JList;
 import javax.swing.border.TitledBorder;
+import java.awt.SystemColor;
+import javax.swing.ImageIcon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class UE extends JPanel {
 
@@ -68,7 +72,7 @@ public class UE extends JPanel {
 		setLayout(new CardLayout(0, 0));
 		
 		JPanel contentPane = new JPanel();
-		contentPane.setBackground(ColorPalette.BKD_NAVBAR2.getColor());
+		contentPane.setBackground(Color.WHITE);
 		add(contentPane);
 		
 		//////////////////////////////////////////
@@ -77,13 +81,15 @@ public class UE extends JPanel {
 		panelRequest.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		
 		searchBar = new JTextField();
-		searchBar.setFont(new Font("Raleway Medium", Font.PLAIN, 18));
+		searchBar.setForeground(ColorPalette.TLE_BRANCHE.getColor());
+		searchBar.setHorizontalAlignment(SwingConstants.CENTER);
+		searchBar.setCaretColor(ColorPalette.BKD_NAVBAR2_LIGHT.getColor());
+		searchBar.setFont(new Font("Raleway Medium", Font.BOLD, 18));
 		searchBar.setColumns(10);
 		
-		JButton btnSearch = new JButton("GO");
-		btnSearch.setFont(new Font("Raleway Medium", Font.PLAIN, 18));
-		
 		JComboBox cbBxCategory = new JComboBox();
+		cbBxCategory.setForeground(Color.WHITE);
+		cbBxCategory.setBackground(ColorPalette.BKD_NAVBAR2_LIGHT.getColor());
 		cbBxCategory.setName("");
 		cbBxCategory.setToolTipText("Catégorie");
 		cbBxCategory.setFont(new Font("Raleway Medium", Font.PLAIN, 18));
@@ -92,30 +98,47 @@ public class UE extends JPanel {
 		
 		JCheckBox chckbxTest = new JCheckBox("Test Switch");
 		
+		JLabel lblSearch = new JLabel("");
+		lblSearch.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				lblSearch.setIcon(new ImageIcon(UE.class.getResource("/icons/menu/white/search.png")));
+			}
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				lblSearch.setIcon(new ImageIcon(UE.class.getResource("/icons/menu/search.png")));
+			}
+		});
+		lblSearch.setIcon(new ImageIcon(UE.class.getResource("/icons/menu/search.png")));
+		
 		GroupLayout gl_panelRequest = new GroupLayout(panelRequest);
 		gl_panelRequest.setHorizontalGroup(
 			gl_panelRequest.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panelRequest.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(searchBar, GroupLayout.PREFERRED_SIZE, 285, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnSearch)
-					.addGap(103)
+					.addGap(16)
+					.addComponent(lblSearch, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+					.addGap(107)
 					.addComponent(cbBxCategory, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE)
-					.addGap(428)
-					.addComponent(chckbxTest, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(16, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED, 454, Short.MAX_VALUE)
+					.addComponent(chckbxTest)
+					.addContainerGap())
 		);
 		gl_panelRequest.setVerticalGroup(
 			gl_panelRequest.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panelRequest.createSequentialGroup()
-					.addGap(7)
 					.addGroup(gl_panelRequest.createParallelGroup(Alignment.LEADING)
-						.addComponent(btnSearch, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-						.addGroup(gl_panelRequest.createParallelGroup(Alignment.BASELINE)
-							.addComponent(cbBxCategory, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-							.addComponent(chckbxTest))
-						.addComponent(searchBar, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
+						.addGroup(gl_panelRequest.createSequentialGroup()
+							.addGap(7)
+							.addGroup(gl_panelRequest.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_panelRequest.createParallelGroup(Alignment.BASELINE)
+									.addComponent(cbBxCategory, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+									.addComponent(chckbxTest))
+								.addComponent(searchBar, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)))
+						.addGroup(gl_panelRequest.createSequentialGroup()
+							.addGap(13)
+							.addComponent(lblSearch)))
 					.addContainerGap())
 		);
 		panelRequest.setLayout(gl_panelRequest);
@@ -149,12 +172,14 @@ public class UE extends JPanel {
 		contentPane.setLayout(gl_contentPane);
 		
 		JPanel panelResult = new JPanel();
+		panelResult.setBackground(ColorPalette.BKD_BLUE_VERY_LIGHT.getColor());
 		panelResult.setBounds(2, 2, 392, 612);
 		panelResult.setPreferredSize(new Dimension(12, 12));
 		FlowLayout fl_panelResult = new FlowLayout(FlowLayout.CENTER, 10, 10);
 		panelResult.setLayout(fl_panelResult);
 		
 		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBackground(new Color(224, 255, 255));
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		splitPane.setLeftComponent(scrollPane);
