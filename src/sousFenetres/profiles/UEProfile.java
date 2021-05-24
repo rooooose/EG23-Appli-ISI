@@ -61,12 +61,17 @@ public class UEProfile extends JPanel {
 		JPanel contentPane = new JPanel();
 		contentPane.setBackground(ColorPalette.BKD_BLUE_VERY_LIGHT.getColor());
 		add(contentPane);
-		GridBagLayout gbl_contentPane = new GridBagLayout();
-		gbl_contentPane.columnWidths = new int[] {735};
-		gbl_contentPane.rowHeights = new int[] {120, 40, 200};
-		gbl_contentPane.columnWeights = new double[]{1.0};
-		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 1.0};
-		contentPane.setLayout(gbl_contentPane);
+		contentPane.setLayout(new CardLayout(60, 0));
+		
+		JPanel panelBoard = new JPanel();
+		panelBoard.setBackground(ColorPalette.BKD_BLUE_VERY_LIGHT.getColor());
+		contentPane.add(panelBoard, "name_460935948811300");
+		GridBagLayout gbl_panelBoard = new GridBagLayout();
+		gbl_panelBoard.columnWidths = new int[] {735};
+		gbl_panelBoard.rowHeights = new int[] {120, 40, 200};
+		gbl_panelBoard.columnWeights = new double[]{1.0};
+		gbl_panelBoard.rowWeights = new double[]{0.0, 0.0, 1.0};
+		panelBoard.setLayout(gbl_panelBoard);
 		
 		JPanel panelTop = new JPanel();
 		panelTop.setBackground(ColorPalette.BKD_BLUE_VERY_LIGHT.getColor());
@@ -75,7 +80,7 @@ public class UEProfile extends JPanel {
 		gbc_panelTop.insets = new Insets(0, 0, 5, 0);
 		gbc_panelTop.gridx = 0;
 		gbc_panelTop.gridy = 0;
-		contentPane.add(panelTop, gbc_panelTop);
+		panelBoard.add(panelTop, gbc_panelTop);
 		
 		JLabel lblUE = new JLabel("NF16 - Bases de données");
 		lblUE.setForeground(ColorPalette.TLE_DEFAULT.getColor());
@@ -138,7 +143,7 @@ public class UEProfile extends JPanel {
 		gbc_panelCenter.insets = new Insets(0, 0, 5, 0);
 		gbc_panelCenter.gridx = 0;
 		gbc_panelCenter.gridy = 1;
-		contentPane.add(panelCenter, gbc_panelCenter);
+		panelBoard.add(panelCenter, gbc_panelCenter);
 		
 		JButton btnEvResults = new JButton("Evolution des résultats");
 		btnEvResults.setBackground(ColorPalette.BKD_NAVBAR2_LIGHT.getColor());
@@ -156,13 +161,19 @@ public class UEProfile extends JPanel {
 		
 		panelBottom = new JPanel();
 		panelBottom.setLayout(new CardLayout(0, 0));
+		CardLayout cardLayout_0 = (CardLayout) graphEvResultats.getLayout();
+		cardLayout_0.setVgap(5);
+		cardLayout_0.setHgap(15);
+		CardLayout cardLayout_1 = (CardLayout) graphEvEffectifs.getLayout();
+		cardLayout_1.setVgap(5);
+		cardLayout_1.setHgap(15);
 		panelBottom.add(graphEvResultats, "name_443806163018900");
 		GridBagConstraints gbc_panelBottom = new GridBagConstraints();
 		gbc_panelBottom.insets = new Insets(0, 0, 5, 0);
 		gbc_panelBottom.fill = GridBagConstraints.BOTH;
 		gbc_panelBottom.gridx = 0;
 		gbc_panelBottom.gridy = 2;
-		contentPane.add(panelBottom, gbc_panelBottom);
+		panelBoard.add(panelBottom, gbc_panelBottom);
 		
 		////////////
 		

@@ -79,7 +79,7 @@ public class RepartitionEtudiants extends JPanel {
 		
 		///IMAGE 1///
 		JLabel lblImg1 = new JLabel();
-		URL urlObj1 = RepartitionEtudiants.class.getResource("/img-camembert/blue/cam1.png");
+		URL urlObj1 = RepartitionEtudiants.class.getResource("/imgCamembert/blue/cam1.png");
 		lblImg1.setIcon(new ImageIcon(urlObj1));
 		lblImg1.setForeground(Color.WHITE);
 		lblImg1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -87,7 +87,7 @@ public class RepartitionEtudiants extends JPanel {
 		
 		///IMAGE 2///
 		JLabel lblImg2 = new JLabel();
-		lblImg2.setIcon(new ImageIcon(RepartitionEtudiants.class.getResource("/img-camembert/green/cam1.png")));
+		lblImg2.setIcon(new ImageIcon(RepartitionEtudiants.class.getResource("/imgCamembert/green/cam1.png")));
 		lblImg2.setForeground(Color.WHITE);
 		lblImg2.setHorizontalAlignment(SwingConstants.CENTER);
 		panelCenter.add(lblImg2);
@@ -104,11 +104,11 @@ public class RepartitionEtudiants extends JPanel {
 				JSlider source = (JSlider) e.getSource();
 			    if (!source.getValueIsAdjusting()) {
 			    	int tick = source.getValue();
-			    	if (RepartitionEtudiants.class.getResource("/img-camembert/blue/cam"+tick+".png") != null && 
-			    			RepartitionEtudiants.class.getResource("/img-camembert/green/cam"+tick+".png") != null) {
+			    	if (RepartitionEtudiants.class.getResource("/imgCamembert/blue/cam"+tick+".png") != null && 
+			    			RepartitionEtudiants.class.getResource("/imgCamembert/green/cam"+tick+".png") != null) {
 				    	//System.out.println(tick);
-			    		lblImg1.setIcon(new ImageIcon(RepartitionEtudiants.class.getResource("/img-camembert/blue/cam"+tick+".png")));
-			    		lblImg2.setIcon(new ImageIcon(RepartitionEtudiants.class.getResource("/img-camembert/green/cam"+tick+".png")));
+			    		lblImg1.setIcon(new ImageIcon(RepartitionEtudiants.class.getResource("/imgCamembert/blue/cam"+tick+".png")));
+			    		lblImg2.setIcon(new ImageIcon(RepartitionEtudiants.class.getResource("/imgCamembert/green/cam"+tick+".png")));
 			    		//System.out.println(Arrays.toString(arrTitles));
 			    		lblTitle.setText(arrTitles[tick]);
 					}

@@ -8,6 +8,7 @@ import java.awt.EventQueue;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 
 import elements.ColorPalette;
@@ -36,10 +37,12 @@ public class GraphEvEffectifs extends JPanel {
 	 * Create the frame.
 	 */
 	public GraphEvEffectifs() {
+		setBackground(ColorPalette.BKD_BLUE_VERY_LIGHT.getColor());
 		setLayout(new CardLayout(0, 0));
 		
 		JPanel contentPane = new JPanel();
-		contentPane.setBackground(ColorPalette.BKD_DEFAULT.getColor());
+		contentPane.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		contentPane.setBackground(ColorPalette.BKD_GRAY_VERY_LIGHT.getColor());
 		add(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
 		

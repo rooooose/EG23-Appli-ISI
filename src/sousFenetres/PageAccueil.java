@@ -67,12 +67,6 @@ public class PageAccueil extends JPanel {
 		contentPane.add(topPanel, BorderLayout.NORTH);
 		
 		JPanel logoPanel = new JPanel();
-		logoPanel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				NavigationWindow.getWindow().initializeNavigator();
-			}
-		});
 		logoPanel.setBackground(Color.WHITE);
 		logoPanel.add(new JLabel(new ImageIcon(getClass().getClassLoader().getResource("img/logo_UTT_petit.png"))));
 		
