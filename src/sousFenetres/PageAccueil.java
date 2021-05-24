@@ -252,7 +252,7 @@ public class PageAccueil extends JPanel {
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				btnES.setIcon(null);
-				btnES.setText("Gestion des enseignants");
+				btnES.setText("<html><center>Statistiques des flux"+"<br>"+" entrants et sortants</center></html>");
 				btnES.setBackground(ColorPalette.BKD_NAVBAR4_LIGHT.getColor());
 				btnES.setBorder(BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR4_LIGHT.getColor(), 5));
 				

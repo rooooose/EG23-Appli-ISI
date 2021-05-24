@@ -38,6 +38,7 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.border.BevelBorder;
 import javax.swing.JList;
+import javax.swing.border.TitledBorder;
 
 public class UE extends JPanel {
 
@@ -73,6 +74,7 @@ public class UE extends JPanel {
 		//////////////////////////////////////////
 
 		JPanel panelRequest = new JPanel();
+		panelRequest.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		
 		searchBar = new JTextField();
 		searchBar.setFont(new Font("Raleway Medium", Font.PLAIN, 18));
@@ -102,12 +104,12 @@ public class UE extends JPanel {
 					.addComponent(cbBxCategory, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE)
 					.addGap(428)
 					.addComponent(chckbxTest, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
-					.addGap(20))
+					.addContainerGap(16, Short.MAX_VALUE))
 		);
 		gl_panelRequest.setVerticalGroup(
 			gl_panelRequest.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panelRequest.createSequentialGroup()
-					.addGap(11)
+					.addGap(7)
 					.addGroup(gl_panelRequest.createParallelGroup(Alignment.LEADING)
 						.addComponent(btnSearch, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
 						.addGroup(gl_panelRequest.createParallelGroup(Alignment.BASELINE)
