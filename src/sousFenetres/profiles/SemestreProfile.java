@@ -12,6 +12,15 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
+import javax.swing.BorderFactory;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.border.Border;
+
 public class SemestreProfile extends JPanel {
 	private JPanel table1;
 	private JPanel table2;
@@ -21,6 +30,7 @@ public class SemestreProfile extends JPanel {
 	private JLabel lblNewLabel_3;
 	private JLabel lblNewLabel_4;
 	private JLabel lblNewLabel_5;
+	private JLabel lblNewLabel_6;
 	
 //	private JPanel contentPane;
 
@@ -45,6 +55,8 @@ public class SemestreProfile extends JPanel {
 	 */
 	public SemestreProfile() {
 		
+		setLayout(new CardLayout(0, 0));
+		
 		JPanel contentPane = new JPanel();
 		add(contentPane);
 		contentPane.setLayout(new CardLayout(60, 0));
@@ -65,6 +77,47 @@ public class SemestreProfile extends JPanel {
 		gbc_panelTop.gridx = 0;
 		gbc_panelTop.gridy = 0;
 		panelBoard.add(panelTop, gbc_panelTop);
+		
+		lblNewLabel_6 = new JLabel("");
+		lblNewLabel_6.setIcon(new ImageIcon(SemestreProfile.class.getResource("/icons/menu/white/photo_default_x100.png")));
+		
+		JLabel lblNewLabel_7 = new JLabel("Vincent Florent");
+		lblNewLabel_7.setForeground(Color.GRAY);
+		lblNewLabel_7.setFont(new Font("Raleway", Font.PLAIN, 28));
+		
+		JLabel lblNewLabel_8 = new JLabel("ISI4");
+		Border border = BorderFactory.createCompoundBorder(
+		        BorderFactory.createLineBorder(Color.CYAN), 
+		        BorderFactory.createEmptyBorder(5, 8, 5, 8));
+		lblNewLabel_8.setBorder(border);
+		
+		lblNewLabel_8.setFont(new Font("Raleway", Font.PLAIN, 15));
+		GroupLayout gl_panelTop = new GroupLayout(panelTop);
+		gl_panelTop.setHorizontalGroup(
+			gl_panelTop.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panelTop.createSequentialGroup()
+					.addComponent(lblNewLabel_6, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addGroup(gl_panelTop.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblNewLabel_7, GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+						.addComponent(lblNewLabel_8))
+					.addContainerGap())
+		);
+		gl_panelTop.setVerticalGroup(
+			gl_panelTop.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panelTop.createSequentialGroup()
+					.addGroup(gl_panelTop.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panelTop.createSequentialGroup()
+							.addGap(21)
+							.addComponent(lblNewLabel_6))
+						.addGroup(gl_panelTop.createSequentialGroup()
+							.addGap(38)
+							.addComponent(lblNewLabel_7)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(lblNewLabel_8)))
+					.addContainerGap(102, Short.MAX_VALUE))
+		);
+		panelTop.setLayout(gl_panelTop);
 		
 		JPanel panelBottom = new JPanel();
 		GridBagConstraints gbc_panelBottom = new GridBagConstraints();
@@ -150,5 +203,4 @@ public class SemestreProfile extends JPanel {
 
 
 	}
-
 }
