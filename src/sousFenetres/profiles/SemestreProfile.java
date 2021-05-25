@@ -6,6 +6,8 @@ import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import javax.swing.ToolTipManager;
+import javax.swing.UIManager;
 
 import java.awt.CardLayout;
 import java.awt.GridBagLayout;
@@ -20,18 +22,37 @@ import java.awt.Font;
 import java.awt.Color;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.Border;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.FlowLayout;
+import javax.swing.BoxLayout;
 
 public class SemestreProfile extends JPanel {
 	private JPanel table1;
 	private JPanel table2;
-	private JLabel lblNewLabel;
-	private JLabel lblNewLabel_1;
-	private JLabel lblNewLabel_2;
-	private JLabel lblNewLabel_3;
-	private JLabel lblNewLabel_4;
-	private JLabel lblNewLabel_5;
 	private JLabel lblNewLabel_6;
 	private JLabel lblNewLabel_9;
+	private JLabel lblNewLabel_10;
+	private JLabel lblNewLabel_11;
+	private JPanel headerPanel;
+	private JPanel contentPanel;
+	private JLabel lblNewLabel;
+	private JLabel lblNewLabel_2;
+	private JLabel lblNewLabel_4;
+	private JLabel lblNewLabel_1;
+	private JLabel lblNewLabel_3;
+	private JLabel lblNewLabel_5;
+	private JPanel headerPanel_1;
+	private JLabel lblNewLabel_12;
+	private JLabel lblNewLabel_13;
+	private JLabel lblNewLabel_14;
+	private JPanel contentPanel_1;
+	private JLabel lblNewLabel_15;
+	private JLabel lblNewLabel_16;
+	private JLabel lblNewLabel_17;
+	private JLabel lblNewLabel_18;
+	private JLabel lblNewLabel_19;
+	private JLabel lblNewLabel_20;
 	
 //	private JPanel contentPane;
 
@@ -107,7 +128,7 @@ public class SemestreProfile extends JPanel {
 						.addComponent(lblNewLabel_8))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(lblNewLabel_9, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap())
+					.addContainerGap(250,250))
 		);
 		gl_panelTop.setVerticalGroup(
 			gl_panelTop.createParallelGroup(Alignment.LEADING)
@@ -136,79 +157,175 @@ public class SemestreProfile extends JPanel {
 		panelBoard.add(panelBottom, gbc_panelBottom);
 		GridBagLayout gbl_panelBottom = new GridBagLayout();
 		gbl_panelBottom.columnWidths = new int[]{0};
-		gbl_panelBottom.rowHeights = new int[]{0, 0};
+		gbl_panelBottom.rowHeights = new int[]{0, 0, 0, 0};
 		gbl_panelBottom.columnWeights = new double[]{1.0};
-		gbl_panelBottom.rowWeights = new double[]{1.0, 1.0};
+		gbl_panelBottom.rowWeights = new double[]{1.0, 1.0, 1.0, 1.0};
 		panelBottom.setLayout(gbl_panelBottom);
 		
 		table1 = new JPanel();
+		
 		GridBagConstraints gbc_table1 = new GridBagConstraints();
 		gbc_table1.insets = new Insets(0, 0, 5, 0);
 		gbc_table1.fill = GridBagConstraints.BOTH;
 		gbc_table1.gridx = 0;
 		gbc_table1.gridy = 0;
 		panelBottom.add(table1, gbc_table1);
-		GridBagLayout gbl_table1 = new GridBagLayout();
-		gbl_table1.columnWidths = new int[]{45, 0};
-		gbl_table1.rowHeights = new int[]{13, 0, 0, 0};
-		gbl_table1.columnWeights = new double[]{0.0, Double.MIN_VALUE};
-		gbl_table1.rowWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
-		table1.setLayout(gbl_table1);
+		
+
+		ToolTipManager.sharedInstance().setInitialDelay(0);
+		UIManager.put("ToolTip.background", Color.WHITE);
+	    UIManager.put("ToolTip.foreground", new Color(178, 34, 34));
+	    UIManager.put("ToolTip.foreground", new Color(0, 128, 0));
+		table1.setLayout(new BoxLayout(table1, BoxLayout.Y_AXIS));
+		
+		headerPanel = new JPanel();
+		headerPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 200, 0));
+		table1.add(headerPanel);
+		Border borderBlack = BorderFactory.createLineBorder(Color.BLACK);
+		headerPanel.setBorder(borderBlack);
 		
 		lblNewLabel = new JLabel("CS/TM");
-		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel.anchor = GridBagConstraints.NORTHWEST;
-		gbc_lblNewLabel.gridx = 0;
-		gbc_lblNewLabel.gridy = 0;
-		table1.add(lblNewLabel, gbc_lblNewLabel);
-		
-		lblNewLabel_1 = new JLabel("4/12");
-		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
-		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel_1.gridx = 0;
-		gbc_lblNewLabel_1.gridy = 1;
-		table1.add(lblNewLabel_1, gbc_lblNewLabel_1);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("Raleway", Font.PLAIN, 15));
+		headerPanel.add(lblNewLabel);
 		
 		lblNewLabel_2 = new JLabel("ME");
-		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
-		gbc_lblNewLabel_2.insets = new Insets(0, 0, 5, 0);
-		gbc_lblNewLabel_2.gridx = 1;
-		gbc_lblNewLabel_2.gridy = 0;
-		table1.add(lblNewLabel_2, gbc_lblNewLabel_2);
-		
-		lblNewLabel_3 = new JLabel("7/6");
-		GridBagConstraints gbc_lblNewLabel_3 = new GridBagConstraints();
-		gbc_lblNewLabel_3.insets = new Insets(0, 0, 5, 0);
-		gbc_lblNewLabel_3.gridx = 1;
-		gbc_lblNewLabel_3.gridy = 1;
-		table1.add(lblNewLabel_3, gbc_lblNewLabel_3);
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setFont(new Font("Raleway", Font.PLAIN, 15));
+		headerPanel.add(lblNewLabel_2);
 		
 		lblNewLabel_4 = new JLabel("CT");
-		GridBagConstraints gbc_lblNewLabel_4 = new GridBagConstraints();
-		gbc_lblNewLabel_4.insets = new Insets(0, 0, 0, 5);
-		gbc_lblNewLabel_4.gridx = 2;
-		gbc_lblNewLabel_4.gridy = 0;
-		table1.add(lblNewLabel_4, gbc_lblNewLabel_4);
+		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_4.setFont(new Font("Raleway", Font.PLAIN, 15));
+		headerPanel.add(lblNewLabel_4);
+		
+		contentPanel = new JPanel();
+		contentPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 200, 0));
+		table1.add(contentPanel);
+		contentPanel.setBorder(borderBlack);
+		
+		lblNewLabel_1 = new JLabel("4/12");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setToolTipText("-1CS");
+		lblNewLabel_1.setForeground(new Color(178, 34, 34));
+		lblNewLabel_1.setFont(new Font("Raleway", Font.PLAIN, 15));
+		contentPanel.add(lblNewLabel_1);
+		
+		lblNewLabel_3 = new JLabel("7/6");
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setToolTipText("+1CS");
+		lblNewLabel_3.setForeground(new Color(0, 128, 0));
+		lblNewLabel_3.setFont(new Font("Raleway", Font.PLAIN, 15));
+		contentPanel.add(lblNewLabel_3);
 		
 		lblNewLabel_5 = new JLabel("2/6");
-		GridBagConstraints gbc_lblNewLabel_5 = new GridBagConstraints();
-		gbc_lblNewLabel_5.gridx = 2;
-		gbc_lblNewLabel_5.gridy = 1;
-		table1.add(lblNewLabel_5, gbc_lblNewLabel_5);
+		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_5.setToolTipText("+0CS");
+		lblNewLabel_5.setFont(new Font("Raleway", Font.PLAIN, 15));
+		contentPanel.add(lblNewLabel_5);
+		
 		
 		table2 = new JPanel();
 		GridBagConstraints gbc_table2 = new GridBagConstraints();
+		gbc_table2.insets = new Insets(0, 0, 5, 0);
 		gbc_table2.fill = GridBagConstraints.BOTH;
 		gbc_table2.gridx = 0;
 		gbc_table2.gridy = 1;
 		panelBottom.add(table2, gbc_table2);
-		GridBagLayout gbl_table2 = new GridBagLayout();
-		gbl_table2.columnWidths = new int[]{0};
-		gbl_table2.rowHeights = new int[]{0};
-		gbl_table2.columnWeights = new double[]{Double.MIN_VALUE};
-		gbl_table2.rowWeights = new double[]{Double.MIN_VALUE};
-		table2.setLayout(gbl_table2);
+		table2.setLayout(new BoxLayout(table2, BoxLayout.Y_AXIS));
+		
+		headerPanel_1 = new JPanel();
+		table2.add(headerPanel_1);
+		headerPanel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 200, 0));
+		
+		lblNewLabel_12 = new JLabel("CS");
+		lblNewLabel_12.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_12.setFont(new Font("Raleway", Font.PLAIN, 15));
+		headerPanel_1.add(lblNewLabel_12);
+		
+		lblNewLabel_13 = new JLabel("TM");
+		lblNewLabel_13.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_13.setFont(new Font("Raleway", Font.PLAIN, 15));
+		headerPanel_1.add(lblNewLabel_13);
+		
+		lblNewLabel_14 = new JLabel("ME");
+		lblNewLabel_14.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_14.setFont(new Font("Raleway", Font.PLAIN, 15));
+		headerPanel_1.add(lblNewLabel_14);
+		
+		lblNewLabel_20 = new JLabel("CT");
+		lblNewLabel_20.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_20.setFont(new Font("Raleway", Font.PLAIN, 15));
+		headerPanel_1.add(lblNewLabel_20);
+		
+		contentPanel_1 = new JPanel();
+		table2.add(contentPanel_1);
+		contentPanel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 200, 0));
+		
+		lblNewLabel_15 = new JLabel("GL02 A");
+		lblNewLabel_15.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_15.setForeground(new Color(178, 34, 34));
+		lblNewLabel_15.setFont(new Font("Raleway", Font.PLAIN, 15));
+		contentPanel_1.add(lblNewLabel_15);
+		
+		lblNewLabel_16 = new JLabel("GE21 B");
+		lblNewLabel_16.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_16.setForeground(new Color(0, 128, 0));
+		lblNewLabel_16.setFont(new Font("Raleway", Font.PLAIN, 15));
+		contentPanel_1.add(lblNewLabel_16);
+		
+		lblNewLabel_17 = new JLabel("Validé");
+		lblNewLabel_17.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_17.setFont(new Font("Raleway", Font.PLAIN, 15));
+		contentPanel_1.add(lblNewLabel_17);
+		
+		lblNewLabel_18 = new JLabel("IF02A A");
+		lblNewLabel_18.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_18.setFont(new Font("Raleway", Font.PLAIN, 15));
+		contentPanel_1.add(lblNewLabel_18);
+		
+		lblNewLabel_19 = new JLabel("LO02 C");
+		lblNewLabel_19.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_19.setFont(new Font("Raleway", Font.PLAIN, 15));
+		contentPanel_1.add(lblNewLabel_19);
+		
+//		lblNewLabel = new JLabel("CS/TM");
+//		lblNewLabel.setFont(new Font("Raleway", Font.PLAIN, 15));
+//		
+//
+//		ToolTipManager.sharedInstance().setInitialDelay(0);
+//		UIManager.put("ToolTip.background", Color.WHITE);
+//		
+//		lblNewLabel_1 = new JLabel("4/12");
+//		lblNewLabel_1.setFont(new Font("Raleway", Font.PLAIN, 15));
+//		lblNewLabel_1.setToolTipText("-1CS");
+//	    UIManager.put("ToolTip.foreground", new Color(178, 34, 34));
+//
+//		lblNewLabel_1.setForeground(new Color(178, 34, 34));
+//		
+//		lblNewLabel_2 = new JLabel("ME");
+//		lblNewLabel_2.setFont(new Font("Raleway", Font.PLAIN, 15));
+//		
+//		lblNewLabel_3 = new JLabel("7/6");
+//		lblNewLabel_3.setFont(new Font("Raleway", Font.PLAIN, 15));
+//		lblNewLabel_3.setToolTipText("+1CS");
+//	    UIManager.put("ToolTip.foreground", new Color(0, 128, 0));
+//
+//		lblNewLabel_3.setForeground(new Color(0, 128, 0));
+//		
+//		lblNewLabel_4 = new JLabel("CT");
+//		lblNewLabel_4.setFont(new Font("Raleway", Font.PLAIN, 15));
+//		
+//		lblNewLabel_5 = new JLabel("2/6");
+//		lblNewLabel_5.setFont(new Font("Raleway", Font.PLAIN, 15));
+//		lblNewLabel_5.setToolTipText("+0CS");
+//		table1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+//		table1.add(lblNewLabel);
+//		table1.add(lblNewLabel_2);
+//		table1.add(lblNewLabel_4);
+//		table1.add(lblNewLabel_1);
+//		table1.add(lblNewLabel_3);
+//		table1.add(lblNewLabel_5);
 
 
 	}
