@@ -20,6 +20,11 @@ import javax.swing.event.ChangeListener;
 
 import elements.ColorPalette;
 import net.miginfocom.swing.MigLayout;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.border.BevelBorder;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.Dimension;
 
 public class RepartitionEtudiants extends JPanel {
 
@@ -48,52 +53,92 @@ public class RepartitionEtudiants extends JPanel {
 		setLayout(new CardLayout(0, 0));
 		
 		JPanel contentPane = new JPanel();
-		contentPane.setBackground(ColorPalette.BKD_REPART.getColor());
+		contentPane.setBackground(Color.WHITE);
 		add(contentPane);
-		contentPane.setLayout(new BorderLayout(0, 0));
 		
-		JPanel panelTop = new JPanel();
-		FlowLayout flowLayout = (FlowLayout) panelTop.getLayout();
-		flowLayout.setVgap(25);
-		flowLayout.setAlignOnBaseline(true);
-		flowLayout.setHgap(100);
-		flowLayout.setAlignment(FlowLayout.LEFT);
-		panelTop.setBackground(contentPane.getBackground());
-		contentPane.add(panelTop, BorderLayout.NORTH);
+		JPanel panelBoard = new JPanel();
+		panelBoard.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		panelBoard.setBackground(ColorPalette.BKD_PURPLE_VERY_LIGHT.getColor());
+		panelBoard.setLayout(new CardLayout(60, 20));
+		
+		JPanel panelGraph = new JPanel();
+		panelGraph.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		panelGraph.setBackground(ColorPalette.BKD_GRAY_VERY_LIGHT.getColor());
+		panelBoard.add(panelGraph, "name_557470725796400");
+		panelGraph.setLayout(new BorderLayout(0, 0));
 		
 		JPanel panelCenter = new JPanel();
-		FlowLayout flowLayout_1 = (FlowLayout) panelCenter.getLayout();
-		panelCenter.setBackground(contentPane.getBackground());
-		contentPane.add(panelCenter, BorderLayout.CENTER);
+		panelCenter.setBackground(Color.WHITE);
+		panelGraph.add(panelCenter, BorderLayout.NORTH);
 		
 		JPanel panelBottom = new JPanel();
-		panelBottom.setBackground(contentPane.getBackground());
-		contentPane.add(panelBottom, BorderLayout.SOUTH);
-		panelBottom.setLayout(new MigLayout("", "[200px,left][800px,grow,fill][200px,right]", "[44px]"));
+		panelBottom.setBackground(Color.WHITE);
+		panelGraph.add(panelBottom, BorderLayout.SOUTH);
+		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		gl_contentPane.setHorizontalGroup(
+			gl_contentPane.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(134)
+					.addComponent(panelBoard, GroupLayout.DEFAULT_SIZE, 1128, Short.MAX_VALUE)
+					.addGap(108))
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+					.addGap(22)
+					.addComponent(panelBoard, GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
+					.addGap(36))
+		);
+		contentPane.setLayout(gl_contentPane);
 		
 		//TITLE LABEL
 		JLabel lblTitle = new JLabel("Semestre");
-		lblTitle.setFont(new Font("Raleway Bold", Font.PLAIN, 22));
-		lblTitle.setForeground(Color.WHITE);
-		panelTop.add(lblTitle);
+		lblTitle.setFont(new Font("Raleway", Font.PLAIN, 28));
+		lblTitle.setForeground(ColorPalette.TLE_DEFAULT.getColor());
 		
 		///IMAGE 1///
 		JLabel lblImg1 = new JLabel();
 		URL urlObj1 = RepartitionEtudiants.class.getResource("/imgCamembert/blue/cam1.png");
-		lblImg1.setIcon(new ImageIcon(urlObj1));
+		lblImg1.setIcon(new ImageIcon(RepartitionEtudiants.class.getResource("/imgCamembert/blue/cam0.png")));
 		lblImg1.setForeground(Color.WHITE);
 		lblImg1.setHorizontalAlignment(SwingConstants.CENTER);
-		panelCenter.add(lblImg1);
 		
 		///IMAGE 2///
 		JLabel lblImg2 = new JLabel();
-		lblImg2.setIcon(new ImageIcon(RepartitionEtudiants.class.getResource("/imgCamembert/green/cam1.png")));
+		lblImg2.setIcon(new ImageIcon(RepartitionEtudiants.class.getResource("/imgCamembert/green/cam0.png")));
 		lblImg2.setForeground(Color.WHITE);
 		lblImg2.setHorizontalAlignment(SwingConstants.CENTER);
-		panelCenter.add(lblImg2);
+		GroupLayout gl_panelCenter = new GroupLayout(panelCenter);
+		gl_panelCenter.setHorizontalGroup(
+			gl_panelCenter.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panelCenter.createSequentialGroup()
+					.addGroup(gl_panelCenter.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panelCenter.createSequentialGroup()
+							.addGap(33)
+							.addComponent(lblImg1)
+							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addComponent(lblImg2))
+						.addGroup(gl_panelCenter.createSequentialGroup()
+							.addGap(32)
+							.addComponent(lblTitle, GroupLayout.PREFERRED_SIZE, 240, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap())
+		);
+		gl_panelCenter.setVerticalGroup(
+			gl_panelCenter.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panelCenter.createSequentialGroup()
+					.addGap(35)
+					.addComponent(lblTitle)
+					.addGap(24)
+					.addGroup(gl_panelCenter.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblImg2)
+						.addComponent(lblImg1))
+					.addContainerGap(52, Short.MAX_VALUE))
+		);
+		panelCenter.setLayout(gl_panelCenter);
 		
 		///SLIDER///
 		JSlider slider = new JSlider();
+		slider.setPreferredSize(new Dimension(850, 100));
 		slider.setValue(19);
 		slider.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		slider.setBackground(null);
@@ -135,12 +180,12 @@ public class RepartitionEtudiants extends JPanel {
 		while (annee<22) {
 			lbl = new JLabel("A"+String.valueOf(annee));
 			lbl.setFont(new Font("Raleway Bold", Font.PLAIN, 16));
-			lbl.setForeground(Color.WHITE);
+			lbl.setForeground(Color.BLACK);
 			labels.put(k, lbl);
 			k++;
 			lbl = new JLabel("P"+String.valueOf(annee));
 			lbl.setFont(new Font("Raleway Medium", Font.PLAIN, 15));
-			lbl.setForeground(Color.GRAY.brighter().brighter().brighter());
+			lbl.setForeground(Color.BLACK.brighter().brighter().brighter());
 			labels.put(k, lbl);
 			k++;
 			annee++;
