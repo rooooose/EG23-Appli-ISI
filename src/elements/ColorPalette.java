@@ -28,6 +28,7 @@ public enum ColorPalette {
 	BKD_ES(),
 	
 	BKD_BLUE_VERY_LIGHT(new Color(240, 255, 255)),
+	BKD_PURPLE_VERY_LIGHT(new Color(255, 240, 255)),
 	
 	//TITLE
 	TLE_BRANCHE("0x918f90"),
