@@ -31,6 +31,7 @@ public class SemestreProfile extends JPanel {
 	private JLabel lblNewLabel_4;
 	private JLabel lblNewLabel_5;
 	private JLabel lblNewLabel_6;
+	private JLabel lblNewLabel_9;
 	
 //	private JPanel contentPane;
 
@@ -65,9 +66,9 @@ public class SemestreProfile extends JPanel {
 		contentPane.add(panelBoard, "name_10584365765800");
 		GridBagLayout gbl_panelBoard = new GridBagLayout();
 		gbl_panelBoard.columnWidths = new int[]{0, 0};
-		gbl_panelBoard.rowHeights = new int[]{0, 0, 0};
+		gbl_panelBoard.rowHeights = new int[]{0, 0, 0, 0};
 		gbl_panelBoard.columnWeights = new double[]{1.0, Double.MIN_VALUE};
-		gbl_panelBoard.rowWeights = new double[]{1.0, 1.0, Double.MIN_VALUE};
+		gbl_panelBoard.rowWeights = new double[]{1.0, 1.0, 0.0, Double.MIN_VALUE};
 		panelBoard.setLayout(gbl_panelBoard);
 		
 		JPanel panelTop = new JPanel();
@@ -92,6 +93,9 @@ public class SemestreProfile extends JPanel {
 		lblNewLabel_8.setBorder(border);
 		
 		lblNewLabel_8.setFont(new Font("Raleway", Font.PLAIN, 15));
+		
+		lblNewLabel_9 = new JLabel("");
+		lblNewLabel_9.setIcon(new ImageIcon(SemestreProfile.class.getResource("/icons/critique.png")));
 		GroupLayout gl_panelTop = new GroupLayout(panelTop);
 		gl_panelTop.setHorizontalGroup(
 			gl_panelTop.createParallelGroup(Alignment.LEADING)
@@ -101,6 +105,8 @@ public class SemestreProfile extends JPanel {
 					.addGroup(gl_panelTop.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblNewLabel_7, GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
 						.addComponent(lblNewLabel_8))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblNewLabel_9, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
 		gl_panelTop.setVerticalGroup(
@@ -112,15 +118,18 @@ public class SemestreProfile extends JPanel {
 							.addComponent(lblNewLabel_6))
 						.addGroup(gl_panelTop.createSequentialGroup()
 							.addGap(38)
-							.addComponent(lblNewLabel_7)
+							.addGroup(gl_panelTop.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblNewLabel_7)
+								.addComponent(lblNewLabel_9))
 							.addPreferredGap(ComponentPlacement.UNRELATED)
 							.addComponent(lblNewLabel_8)))
-					.addContainerGap(102, Short.MAX_VALUE))
+					.addContainerGap(39, Short.MAX_VALUE))
 		);
 		panelTop.setLayout(gl_panelTop);
 		
 		JPanel panelBottom = new JPanel();
 		GridBagConstraints gbc_panelBottom = new GridBagConstraints();
+		gbc_panelBottom.insets = new Insets(0, 0, 5, 0);
 		gbc_panelBottom.fill = GridBagConstraints.BOTH;
 		gbc_panelBottom.gridx = 0;
 		gbc_panelBottom.gridy = 1;
