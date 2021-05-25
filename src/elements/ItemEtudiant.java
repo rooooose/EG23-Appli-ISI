@@ -54,7 +54,7 @@ private static List<ItemEtudiant> arrItemEtudiant = new ArrayList<ItemEtudiant>(
 	
 	private static void initItems() {
 		String[] arrLevel = {"ISI3", "ISI4", "ISI1", "ISI2"};
-		String[] arrName = {"Vincent FLorent", "Jean Lassale", "C\u00E9dric Villani", "Rose Tixier", "Martin Luther King", "Rosa Parks", "Youri Gagarine"};
+		String[] arrName = {"Vincent Florent", "Jean Lassale", "C\u00E9dric Villani", "Rose Tixier", "Martin Luther King", "Rosa Parks", "Youri Gagarine"};
 		
 		for (int i=0;i<arrName.length;i++) {
 			int rand = (int) Math.round(Math.random()*3);
@@ -127,7 +127,6 @@ private static List<ItemEtudiant> arrItemEtudiant = new ArrayList<ItemEtudiant>(
 					public void mouseClicked(MouseEvent e) {
 						if (Math.round(splitPane.getDividerLocation()*0.1) == Math.round(splitPane.getMaximumDividerLocation()*0.1)) {
 							splitPane.setDividerLocation(0.32);
-//							scrollPane.setPreferredSize(new Dimension(5, 5));
 						} else {
 							splitPane.setDividerLocation(1.0);
 						}
