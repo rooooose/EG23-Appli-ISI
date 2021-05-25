@@ -143,18 +143,18 @@ public class UE extends JPanel {
 		
 		//////////////////////////////////////////
 		
-		JSplitPane splitPane = new JSplitPane();
-		splitPane.setEnabled(false);
-		splitPane.setResizeWeight(1.0);
-		splitPane.setDividerLocation(1.0);
-		splitPane.setContinuousLayout(true);
+		JSplitPane splitPaneUE = new JSplitPane();
+		splitPaneUE.setEnabled(false);
+		splitPaneUE.setResizeWeight(1.0);
+		splitPaneUE.setDividerLocation(1.0);
+		splitPaneUE.setContinuousLayout(true);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(134)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addComponent(splitPane, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 1128, Short.MAX_VALUE)
+						.addComponent(splitPaneUE, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 1128, Short.MAX_VALUE)
 						.addComponent(panelRequest, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 1128, Short.MAX_VALUE))
 					.addGap(108))
 		);
@@ -164,7 +164,7 @@ public class UE extends JPanel {
 					.addGap(22)
 					.addComponent(panelRequest, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(splitPane, GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
+					.addComponent(splitPaneUE, GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
 					.addGap(36))
 		);
 		contentPane.setLayout(gl_contentPane);
@@ -180,7 +180,7 @@ public class UE extends JPanel {
 		scrollPane.setBackground(new Color(224, 255, 255));
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		splitPane.setLeftComponent(scrollPane);
+		splitPaneUE.setLeftComponent(scrollPane);
 		scrollPane.setViewportView(panelResult);
 		
 		
@@ -229,10 +229,10 @@ public class UE extends JPanel {
 				UEItems.get(i).addMouseListener(new MouseAdapter() {
 					@Override
 					public void mouseClicked(MouseEvent e) {
-						if (Math.round(splitPane.getDividerLocation()*0.1) == Math.round(splitPane.getMaximumDividerLocation()*0.1)) {
-							splitPane.setDividerLocation(0.32);
+						if (Math.round(splitPaneUE.getDividerLocation()*0.1) == Math.round(splitPaneUE.getMaximumDividerLocation()*0.1)) {
+							splitPaneUE.setDividerLocation(0.32);
 						} else {
-							splitPane.setDividerLocation(1.0);
+							splitPaneUE.setDividerLocation(1.0);
 						}
 					}
 				});
@@ -243,6 +243,6 @@ public class UE extends JPanel {
 		panelProfile.setMinimumSize(new Dimension(0, 0));
 		panelProfile.setPreferredSize(new Dimension(0, 0));
 		panelProfile.setBackground(new Color(255, 255, 240));
-		splitPane.setRightComponent(panelProfile);
+		splitPaneUE.setRightComponent(panelProfile);
 	}
 }

@@ -1,55 +1,40 @@
 package sousFenetres;
 
-import java.awt.BorderLayout;
 import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
-import javax.swing.JFrame;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
+import javax.swing.JTextField;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
-import javax.swing.border.EmptyBorder;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.SoftBevelBorder;
 
 import elements.ColorPalette;
 import elements.ItemEnseignant;
 import sousFenetres.profiles.EnseignantProfile;
-import sousFenetres.profiles.UEProfile;
-
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import java.awt.Color;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JSplitPane;
-import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.JLayeredPane;
-import java.awt.FlowLayout;
-import javax.swing.JTextField;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
-import java.awt.Font;
 import javax.swing.JCheckBox;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
-import java.awt.Cursor;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Dimension;
-import java.awt.GridLayout;
-import javax.swing.JScrollBar;
-import javax.swing.JScrollPane;
-import javax.swing.ScrollPaneConstants;
-import javax.swing.border.BevelBorder;
-import javax.swing.JList;
-import javax.swing.border.TitledBorder;
-import java.awt.SystemColor;
-import javax.swing.ImageIcon;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.border.SoftBevelBorder;
 
 public class Enseignants extends JPanel {
+	
+	private static JSplitPane splitPane = new JSplitPane();;
 
 	private JPanel contentPane;
 	private JTextField searchBar;
@@ -123,6 +108,8 @@ public class Enseignants extends JPanel {
 		cbBxStatut.setBackground(new Color(16, 120, 188));
 		((JLabel) cbBxStatut.getRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
 		
+		JCheckBox chckbxNewCheckBox = new JCheckBox("TEST");
+		
 		GroupLayout gl_panelRequest = new GroupLayout(panelRequest);
 		gl_panelRequest.setHorizontalGroup(
 			gl_panelRequest.createParallelGroup(Alignment.LEADING)
@@ -135,7 +122,9 @@ public class Enseignants extends JPanel {
 					.addComponent(cbBxUE, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE)
 					.addGap(18)
 					.addComponent(cbBxStatut, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(400, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED, 332, Short.MAX_VALUE)
+					.addComponent(chckbxNewCheckBox, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
 		);
 		gl_panelRequest.setVerticalGroup(
 			gl_panelRequest.createParallelGroup(Alignment.LEADING)
@@ -143,26 +132,27 @@ public class Enseignants extends JPanel {
 					.addGroup(gl_panelRequest.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panelRequest.createSequentialGroup()
 							.addContainerGap()
-							.addGroup(gl_panelRequest.createParallelGroup(Alignment.TRAILING)
-								.addComponent(cbBxStatut, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-								.addComponent(cbBxUE, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)))
+							.addGroup(gl_panelRequest.createParallelGroup(Alignment.LEADING)
+								.addComponent(cbBxStatut, GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+								.addComponent(cbBxUE, GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)))
 						.addGroup(gl_panelRequest.createSequentialGroup()
 							.addGap(13)
 							.addComponent(lblSearch))
 						.addGroup(gl_panelRequest.createSequentialGroup()
 							.addGap(11)
-							.addComponent(searchBar, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)))
+							.addComponent(searchBar, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_panelRequest.createSequentialGroup()
+							.addGap(19)
+							.addComponent(chckbxNewCheckBox)))
 					.addContainerGap())
 		);
 		panelRequest.setLayout(gl_panelRequest);
 		
 		//////////////////////////////////////////
 		
-		JSplitPane splitPane = new JSplitPane();
-		splitPane.setEnabled(false);
-		splitPane.setResizeWeight(0.32);
-		splitPane.setDividerLocation(1.0);
 		splitPane.setContinuousLayout(true);
+		splitPane.setEnabled(false);
+		splitPane.setResizeWeight(1.0);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
@@ -198,41 +188,72 @@ public class Enseignants extends JPanel {
 		splitPane.setLeftComponent(scrollPane);
 		scrollPane.setViewportView(panelResult);
 		
-//		
-//		final int itemWidth = 340;
-//		final int itemHeight = 90;
-//		
-//		JPanel panel_0 = new JPanel();
-//		panel_0.setPreferredSize(new Dimension(itemWidth, itemHeight));
-//		panel_0.setBackground(new Color(255, 255, 255));
-//		panel_0.setLayout(null);
-//		panel_0.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-//		panelResult.add(panel_0);
-//		
-//		JLabel lblPhoto0 = new JLabel("");
-//		lblPhoto0.setBounds(10, 6, 76, 76);
-//		lblPhoto0.setPreferredSize(new Dimension(77, 20));
-//		lblPhoto0.setIcon(new ImageIcon(Enseignants.class.getResource("/icons/menu/white/photo_default_x76.png")));
-//		panel_0.add(lblPhoto0);
-//		
-//		JLabel lblUE0 = new JLabel("Jean-Pierre Pernault");
-//		lblUE0.setForeground(new Color(60, 60, 60));
-//		lblUE0.setFont(new Font("Raleway Medium", Font.PLAIN, 18));
-//		lblUE0.setBounds(97, 18, 233, 30);
-//		panel_0.add(lblUE0);
-//		
-//		JLabel lblProf0 = new JLabel("Maître des conférences");
-//		lblProf0.setForeground(new Color(14, 100, 161));
-//		lblProf0.setFont(new Font("Raleway Medium", Font.PLAIN, 12));
-//		lblProf0.setBounds(97, 47, 233, 22);
-//		panel_0.add(lblProf0);
 		
-		ItemEnseignant.initPanelItems(panelResult);
+		final int itemWidth = 340;
+		final int itemHeight = 90;
+		
+		JPanel panel_0 = new JPanel();
+		panel_0.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (Math.round(Enseignants.getSplitPane().getDividerLocation()*0.1) == Math.round(Enseignants.getSplitPane().getMaximumDividerLocation()*0.1)) {
+					Enseignants.getSplitPane().setDividerLocation(0.32);
+				} else {
+					Enseignants.getSplitPane().setDividerLocation(1.0);
+				}
+			}
+		});
+		panel_0.setPreferredSize(new Dimension(itemWidth, itemHeight));
+		panel_0.setBackground(new Color(255, 255, 255));
+		panel_0.setLayout(null);
+		panel_0.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		panelResult.add(panel_0);
+		
+		JLabel lblPhoto0 = new JLabel("");
+		lblPhoto0.setBounds(10, 6, 76, 76);
+		lblPhoto0.setPreferredSize(new Dimension(77, 20));
+		lblPhoto0.setIcon(new ImageIcon(Enseignants.class.getResource("/icons/menu/white/photo_default_x76.png")));
+		panel_0.add(lblPhoto0);
+		
+		JLabel lblUE0 = new JLabel("Jean-Pierre Pernault");
+		lblUE0.setForeground(new Color(60, 60, 60));
+		lblUE0.setFont(new Font("Raleway Medium", Font.PLAIN, 18));
+		lblUE0.setBounds(97, 18, 233, 30);
+		panel_0.add(lblUE0);
+		
+		JLabel lblProf0 = new JLabel("Maître des conférences");
+		lblProf0.setForeground(new Color(14, 100, 161));
+		lblProf0.setFont(new Font("Raleway Medium", Font.PLAIN, 12));
+		lblProf0.setBounds(97, 47, 233, 22);
+		panel_0.add(lblProf0);
+		
+		chckbxNewCheckBox.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (chckbxNewCheckBox.isSelected()) { //Math.round(splitPane.getDividerLocation()*0.1) == Math.round(splitPane.getMaximumDividerLocation()*0.1)
+					System.out.println("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy");
+					splitPane.setDividerLocation(0.32);
+					splitPane.repaint();
+					splitPane.validate();
+				} else {
+					System.out.println("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz");
+					splitPane.setDividerLocation(1.0);
+					splitPane.repaint();
+					splitPane.validate();
+				}
+			}
+		});
 		
 		EnseignantProfile panelProfile = new EnseignantProfile();
 		panelProfile.setMinimumSize(new Dimension(0, 0));
 		panelProfile.setPreferredSize(new Dimension(0, 0));
 		panelProfile.setBackground(new Color(255, 255, 240));
 		splitPane.setRightComponent(panelProfile);
+		
+		ItemEnseignant.initPanelItems(panelResult);
+	}
+	
+	public static JSplitPane getSplitPane() {
+		return splitPane;
 	}
 }

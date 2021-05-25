@@ -3,6 +3,8 @@ package elements;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -47,7 +49,7 @@ public class ItemEnseignant {
 	
 	private static void initItems() {
 		String[] arrStatus = {"Contractuel", "Prag", "Professeur", "Maître des conférences"};
-		String[] arrName = {"Jean-Pierre Pernault", "Jean Lassale", "Cédric Villani", "Rose Tixier"};
+		String[] arrName = {"Jamy Gourmaud", "Jean Lassale", "Cédric Villani", "Rose Tixier"};
 		
 		for (int i=0;i<arrName.length;i++) {
 			int rand = (int) Math.round(Math.random()*3);
@@ -91,13 +93,13 @@ public class ItemEnseignant {
 			panelEnseignant.add(lblStatut);
 			
 //			if (i == 0) {
-//				UEItems.get(i).addMouseListener(new MouseAdapter() {
+//				panelEnseignant.addMouseListener(new MouseAdapter() {
 //					@Override
 //					public void mouseClicked(MouseEvent e) {
-//						if (Math.round(splitPane.getDividerLocation()*0.1) == Math.round(splitPane.getMaximumDividerLocation()*0.1)) {
-//							splitPane.setDividerLocation(0.32);
+//						if (Math.round(Enseignants.getSplitPane().getDividerLocation()*0.1) == Math.round(Enseignants.getSplitPane().getMaximumDividerLocation()*0.1)) {
+//							Enseignants.getSplitPane().setDividerLocation(0.32);
 //						} else {
-//							splitPane.setDividerLocation(1.0);
+//							Enseignants.getSplitPane().setDividerLocation(1.0);
 //						}
 //					}
 //				});
