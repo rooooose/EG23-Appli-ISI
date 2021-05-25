@@ -180,7 +180,7 @@ public class SemestreEnCours extends JPanel {
 		
 		JSplitPane splitPane = new JSplitPane();
 		splitPane.setEnabled(false);
-		splitPane.setResizeWeight(0.32);
+		splitPane.setResizeWeight(1.0);
 		splitPane.setDividerLocation(1.0);
 		splitPane.setContinuousLayout(true);
 		
@@ -209,7 +209,7 @@ public class SemestreEnCours extends JPanel {
 		panelResult = new JPanel();
 		panelResult.setBackground(ColorPalette.BKD_BLUE_VERY_LIGHT.getColor());
 //		panelResult.setBounds(2, 2, 392, 612);
-		panelResult.setPreferredSize(new Dimension(12, 12));
+		panelResult.setPreferredSize(new Dimension(5, 5));
 		FlowLayout fl_panelResult = new FlowLayout(FlowLayout.CENTER, 10, 10);
 		panelResult.setLayout(fl_panelResult);
 		
@@ -217,10 +217,11 @@ public class SemestreEnCours extends JPanel {
 		scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setPreferredSize(new Dimension(1, 1));
 		splitPane.setLeftComponent(scrollPane);
 		scrollPane.setViewportView(panelResult);
 		
-		ItemEtudiant.initPanelItems(panelResult);
+		ItemEtudiant.initPanelItems(panelResult, splitPane, scrollPane);
 		
 		SemestreProfile panelProfile = new SemestreProfile();
 		panelProfile.setMinimumSize(new Dimension(0, 0));

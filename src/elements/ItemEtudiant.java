@@ -5,6 +5,8 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.SystemColor;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +15,8 @@ import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.Border;
@@ -58,7 +62,7 @@ private static List<ItemEtudiant> arrItemEtudiant = new ArrayList<ItemEtudiant>(
 		}
 	}
 	
-	public static void initPanelItems(JPanel panelResult) {
+	public static void initPanelItems(JPanel panelResult, JSplitPane splitPane, JScrollPane scrollPane) {
 		if (arrItemEtudiant.isEmpty()) {
 			initItems();
 		}
@@ -104,7 +108,7 @@ private static List<ItemEtudiant> arrItemEtudiant = new ArrayList<ItemEtudiant>(
 //			tagBkd.setBackground(SystemColor.scrollbar);
 ////			tagBkd.setBounds(3, 3, 44, 24);
 //			tagBorder.add(tagBkd);
-			Border blackline = BorderFactory.createCompoundBorder(
+			Border border = BorderFactory.createCompoundBorder(
 			        BorderFactory.createLineBorder(Color.CYAN), 
 			        BorderFactory.createEmptyBorder(5, 8, 5, 8));
 			
@@ -112,22 +116,24 @@ private static List<ItemEtudiant> arrItemEtudiant = new ArrayList<ItemEtudiant>(
 			lblLevel.setHorizontalAlignment(SwingConstants.CENTER);
 			lblLevel.setForeground(new Color(60, 60, 60));
 			lblLevel.setFont(new Font("Raleway Medium", Font.PLAIN, 17));
-			lblLevel.setBorder(blackline);
+			lblLevel.setBorder(border);
 //			lblLevel.setBounds(5, -4, 37, 31);
 			panelEtudiant.add(lblLevel);
 			
-//			if (i == 0) {
-//				UEItems.get(i).addMouseListener(new MouseAdapter() {
-//					@Override
-//					public void mouseClicked(MouseEvent e) {
-//						if (Math.round(splitPane.getDividerLocation()*0.1) == Math.round(splitPane.getMaximumDividerLocation()*0.1)) {
-//							splitPane.setDividerLocation(0.32);
-//						} else {
-//							splitPane.setDividerLocation(1.0);
-//						}
-//					}
-//				});
-//			}
+			
+			if (i == 0) {
+				panelEtudiant.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mouseClicked(MouseEvent e) {
+						if (Math.round(splitPane.getDividerLocation()*0.1) == Math.round(splitPane.getMaximumDividerLocation()*0.1)) {
+							splitPane.setDividerLocation(0.32);
+//							scrollPane.setPreferredSize(new Dimension(5, 5));
+						} else {
+							splitPane.setDividerLocation(1.0);
+						}
+					}
+				});
+			}
 		}
 	}
 	
