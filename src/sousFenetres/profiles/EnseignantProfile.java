@@ -6,11 +6,18 @@ import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
+import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.SoftBevelBorder;
 
 import elements.ColorPalette;
+import elements.ItemEnseignant;
 import sousFenetres.Enseignants;
 import sousFenetres.graphs.GraphEvEffectifs;
 import sousFenetres.graphs.GraphEvResultats;
@@ -21,9 +28,14 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Dimension;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+
 import java.awt.FlowLayout;
 import java.awt.Insets;
 import java.awt.SystemColor;
+
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
@@ -72,7 +84,7 @@ public class EnseignantProfile extends JPanel {
 		contentPane.add(panelBoard);
 		GridBagLayout gbl_panelBoard = new GridBagLayout();
 		gbl_panelBoard.columnWidths = new int[] {735};
-		gbl_panelBoard.rowHeights = new int[] {150, 40, 200};
+		gbl_panelBoard.rowHeights = new int[] {150, 40, 200, 20};
 		gbl_panelBoard.columnWeights = new double[]{1.0};
 		gbl_panelBoard.rowWeights = new double[]{0.0, 0.0, 1.0};
 		panelBoard.setLayout(gbl_panelBoard);

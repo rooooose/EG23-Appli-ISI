@@ -142,7 +142,6 @@ public class RepartitionEtudiants extends JPanel {
 		slider.setValue(19);
 		slider.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		slider.setBackground(null);
-		slider.setToolTipText("");
 		slider.addChangeListener(new ChangeListener() {
     		String[] arrTitles = generateTitles();
 			public void stateChanged(ChangeEvent e) {
@@ -165,7 +164,6 @@ public class RepartitionEtudiants extends JPanel {
 		slider.setSnapToTicks(true);
 		slider.setPaintTicks(true);
 		slider.setMajorTickSpacing(1);
-		slider.setForeground(Color.WHITE);
 		//Slider Labels
 		Hashtable<Integer, JLabel> labels = generateSliderTags();
 		slider.setLabelTable(labels);

@@ -148,6 +148,7 @@ public class UE extends JPanel {
 		splitPaneUE.setResizeWeight(1.0);
 		splitPaneUE.setDividerLocation(1.0);
 		splitPaneUE.setContinuousLayout(true);
+		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
