@@ -164,12 +164,12 @@ public class Enseignants extends JPanel {
 					.addGap(108))
 		);
 		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
+			gl_contentPane.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(22)
 					.addComponent(panelRequest, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(splitPane, GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
+					.addComponent(splitPane, GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE)
 					.addGap(36))
 		);
 		contentPane.setLayout(gl_contentPane);
@@ -178,8 +178,6 @@ public class Enseignants extends JPanel {
 		panelResult.setBackground(ColorPalette.BKD_BLUE_VERY_LIGHT.getColor());
 		panelResult.setBounds(2, 2, 392, 612);
 		panelResult.setPreferredSize(new Dimension(12, 12));
-		FlowLayout fl_panelResult = new FlowLayout(FlowLayout.CENTER, 10, 10);
-		panelResult.setLayout(fl_panelResult);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBackground(new Color(224, 255, 255));
@@ -192,6 +190,9 @@ public class Enseignants extends JPanel {
 		final int itemWidth = 340;
 		final int itemHeight = 90;
 		
+		//final int deltaX = 10;
+		//final int deltaY = 10+itemHeight + 10;
+		
 		JPanel panel_0 = new JPanel();
 		panel_0.addMouseListener(new MouseAdapter() {
 			@Override
@@ -203,6 +204,7 @@ public class Enseignants extends JPanel {
 				}
 			}
 		});
+		panelResult.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		panel_0.setPreferredSize(new Dimension(itemWidth, itemHeight));
 		panel_0.setBackground(new Color(255, 255, 255));
 		panel_0.setLayout(null);
@@ -234,12 +236,12 @@ public class Enseignants extends JPanel {
 					System.out.println("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy");
 					splitPane.setDividerLocation(0.32);
 					splitPane.repaint();
-					splitPane.validate();
+					//splitPane.validate();
 				} else {
 					System.out.println("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz");
 					splitPane.setDividerLocation(1.0);
 					splitPane.repaint();
-					splitPane.validate();
+					//splitPane.validate();
 				}
 			}
 		});

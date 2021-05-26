@@ -12,6 +12,8 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 
 import elements.ColorPalette;
+import javax.swing.ImageIcon;
+import java.awt.FlowLayout;
 
 public class GraphHeuresSup extends JPanel {
 
@@ -42,14 +44,21 @@ public class GraphHeuresSup extends JPanel {
 		
 		JPanel contentPane = new JPanel();
 		contentPane.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		contentPane.setBackground(ColorPalette.BKD_GRAY_VERY_LIGHT.getColor());
+		contentPane.setBackground(Color.WHITE);
 		add(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
-		JLabel lblNewLabel = new JLabel("GRAPH HEURES SUPPLEMENTAIRES");
-		lblNewLabel.setForeground(Color.LIGHT_GRAY);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		contentPane.add(lblNewLabel);
+		JPanel panelGraph = new JPanel();
+		panelGraph.setBackground(Color.WHITE);
+		contentPane.add(panelGraph, BorderLayout.CENTER);
+		FlowLayout fl_panelGraph = new FlowLayout(FlowLayout.CENTER, 60, 0);
+		panelGraph.setLayout(fl_panelGraph);
+		
+		JLabel lblGraphBar = new JLabel("");
+		lblGraphBar.setIcon(new ImageIcon(GraphHeuresSup.class.getResource("/imgGraphOthers/GraphBar.png")));
+		lblGraphBar.setHorizontalAlignment(SwingConstants.CENTER);
+		lblGraphBar.setForeground(Color.LIGHT_GRAY);
+		panelGraph.add(lblGraphBar);
 	}
 
 }

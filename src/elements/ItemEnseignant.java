@@ -65,14 +65,20 @@ public class ItemEnseignant {
 		final int itemWidth = 340;
 		final int itemHeight = 90;
 		
+		//final int deltaX = 10;
+		//final int deltaY = 10+itemHeight + 10;
+		
+		//List<JPanel> listPanelEnseign = new ArrayList<JPanel>();
+		
 		for (int i=0;i<arrItemEnseignants.size();i++) {
 
 			JPanel panelEnseignant = new JPanel();
+			panelEnseignant.setBounds(10, 10, 340, 90);
 			panelEnseignant.setPreferredSize(new Dimension(itemWidth, itemHeight));
 			panelEnseignant.setBackground(new Color(255, 255, 255));
 			panelEnseignant.setLayout(null);
 			panelEnseignant.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-			panelResult.add(panelEnseignant);
+			//listPanelEnseign.add(panelEnseignant);
 			
 			JLabel lblPhoto = new JLabel("");
 			lblPhoto.setBounds(10, 6, 76, 76);
@@ -91,6 +97,8 @@ public class ItemEnseignant {
 			lblStatut.setFont(new Font("Raleway Medium", Font.PLAIN, 12));
 			lblStatut.setBounds(97, 47, 233, 22);
 			panelEnseignant.add(lblStatut);
+
+			panelResult.add(panelEnseignant);
 			
 //			if (i == 0) {
 //				panelEnseignant.addMouseListener(new MouseAdapter() {

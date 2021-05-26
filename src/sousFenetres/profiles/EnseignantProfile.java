@@ -11,6 +11,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import elements.ColorPalette;
+import sousFenetres.Enseignants;
 import sousFenetres.graphs.GraphEvEffectifs;
 import sousFenetres.graphs.GraphEvResultats;
 import sousFenetres.graphs.GraphHeuresSup;
@@ -29,6 +30,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class EnseignantProfile extends JPanel {
 
@@ -118,6 +121,34 @@ public class EnseignantProfile extends JPanel {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(ColorPalette.BKD_BLUE_VERY_LIGHT.getColor());
+		
+		JLabel lblEdit = new JLabel("");
+		lblEdit.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				lblEdit.setIcon(new ImageIcon(EnseignantProfile.class.getResource("/icons/menu/white/edit24.png")));
+			}
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				lblEdit.setIcon(new ImageIcon(EnseignantProfile.class.getResource("/icons/menu/black/edit24.png")));
+			}
+		});
+		lblEdit.setIcon(new ImageIcon(EnseignantProfile.class.getResource("/icons/menu/black/edit24.png")));
+		
+		JLabel lblClose = new JLabel("");
+		lblClose.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				lblClose.setIcon(new ImageIcon(EnseignantProfile.class.getResource("/icons/menu/white/close32.png")));
+			}
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				lblClose.setIcon(new ImageIcon(EnseignantProfile.class.getResource("/icons/menu/black/close32.png")));
+				Enseignants.getSplitPane().setDividerLocation(1.0);
+				//Enseignants.getSplitPane().repaint();
+			}
+		});
+		lblClose.setIcon(new ImageIcon(EnseignantProfile.class.getResource("/icons/menu/black/close32.png")));
 		GroupLayout gl_panelTop = new GroupLayout(panelTop);
 		gl_panelTop.setHorizontalGroup(
 			gl_panelTop.createParallelGroup(Alignment.TRAILING)
@@ -126,26 +157,41 @@ public class EnseignantProfile extends JPanel {
 					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
 					.addGap(18)
 					.addGroup(gl_panelTop.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblUE, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
-						.addComponent(lblProf, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
+						.addGroup(Alignment.TRAILING, gl_panelTop.createSequentialGroup()
+							.addComponent(lblUE, GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
+							.addGap(81))
+						.addComponent(lblProf, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
 						.addGroup(gl_panelTop.createSequentialGroup()
-							.addComponent(panelUE, GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
+							.addComponent(panelUE, GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
 							.addGap(7)))
-					.addContainerGap())
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblEdit)
+					.addGap(18)
+					.addComponent(lblClose)
+					.addGap(19))
 		);
 		gl_panelTop.setVerticalGroup(
 			gl_panelTop.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panelTop.createSequentialGroup()
 					.addContainerGap(26, Short.MAX_VALUE)
-					.addGroup(gl_panelTop.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(panel, GroupLayout.PREFERRED_SIZE, 109, GroupLayout.PREFERRED_SIZE)
-						.addGroup(gl_panelTop.createSequentialGroup()
-							.addComponent(lblUE)
-							.addGap(8)
-							.addComponent(lblProf)
-							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addComponent(panelUE, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap())
+					.addGroup(gl_panelTop.createParallelGroup(Alignment.LEADING)
+						.addGroup(Alignment.TRAILING, gl_panelTop.createSequentialGroup()
+							.addGroup(gl_panelTop.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(panel, GroupLayout.PREFERRED_SIZE, 109, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_panelTop.createSequentialGroup()
+									.addComponent(lblUE)
+									.addGap(8)
+									.addComponent(lblProf)
+									.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(panelUE, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)))
+							.addContainerGap())
+						.addGroup(Alignment.TRAILING, gl_panelTop.createSequentialGroup()
+							.addComponent(lblClose)
+							.addGap(83))))
+				.addGroup(Alignment.LEADING, gl_panelTop.createSequentialGroup()
+					.addGap(35)
+					.addComponent(lblEdit)
+					.addContainerGap(84, Short.MAX_VALUE))
 		);
 		
 		JLabel lblPhoto = new JLabel("");
