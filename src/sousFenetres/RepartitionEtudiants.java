@@ -58,7 +58,7 @@ public class RepartitionEtudiants extends JPanel {
 		
 		JPanel panelBoard = new JPanel();
 		panelBoard.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		panelBoard.setBackground(ColorPalette.BKD_PURPLE_VERY_LIGHT.getColor());
+		panelBoard.setBackground(ColorPalette.BKD_NAVBAR3_LIGHT.getColor());
 		panelBoard.setLayout(new CardLayout(60, 20));
 		
 		JPanel panelGraph = new JPanel();
