@@ -75,6 +75,7 @@ public class Enseignants extends JPanel {
 		layeredPanel.setLayout(null);
 		
 		JPanel backPanel = new JPanel();
+		backPanel.setBackground(Color.WHITE);
 		backPanel.setBounds(0, 0, 1370, 728);
 		layeredPanel.setLayer(backPanel, 0);
 		layeredPanel.add(backPanel);
