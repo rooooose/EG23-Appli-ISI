@@ -110,11 +110,14 @@ public class SemestreProfile extends JPanel {
 		
 		JLabel lblNewLabel_8 = new JLabel("ISI4");
 		Border border = BorderFactory.createCompoundBorder(
-		        BorderFactory.createLineBorder(Color.CYAN), 
+		        BorderFactory.createLineBorder(ColorPalette.BKD_NAVBAR0.getColor()), 
 		        BorderFactory.createEmptyBorder(5, 8, 5, 8));
 		lblNewLabel_8.setBorder(border);
 		
 		lblNewLabel_8.setFont(new Font("Raleway", Font.PLAIN, 15));
+		lblNewLabel_8.setForeground(ColorPalette.BKD_NAVBAR0.getColor());
+		lblNewLabel_8.setBackground(ColorPalette.BKD_BLUE_VERY_LIGHT.getColor());
+		lblNewLabel_8.setOpaque(true);
 		
 		lblNewLabel_9 = new JLabel("");
 		lblNewLabel_9.setIcon(new ImageIcon(SemestreProfile.class.getResource("/icons/critique.png")));
@@ -164,7 +167,7 @@ public class SemestreProfile extends JPanel {
 		table1.setLayout(new BoxLayout(table1, BoxLayout.Y_AXIS));
 		
 		headerPanel = new JPanel();
-		headerPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 200, 0));
+		headerPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 150, 0));
 		table1.add(headerPanel);
 		Border borderBlack = BorderFactory.createLineBorder(Color.BLACK);
 		headerPanel.setBorder(borderBlack);
@@ -187,7 +190,7 @@ public class SemestreProfile extends JPanel {
 		headerPanel.add(lblNewLabel_4);
 		
 		contentPanel = new JPanel();
-		contentPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 200, 0));
+		contentPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 150, 0));
 		table1.add(contentPanel);
 		contentPanel.setBorder(borderBlack);
 		contentPanel.setPreferredSize(new Dimension(350, -70));
@@ -196,7 +199,6 @@ public class SemestreProfile extends JPanel {
 		lblNewLabel_1 = new JLabel("4/12");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setToolTipText("-1CS");
-		UIManager.put("ToolTip.foreground", new Color(178, 34, 34));
 		lblNewLabel_1.setForeground(new Color(178, 34, 34));
 		lblNewLabel_1.setFont(new Font("Raleway", Font.PLAIN, 15));
 		contentPanel.add(lblNewLabel_1);
@@ -204,13 +206,14 @@ public class SemestreProfile extends JPanel {
 		lblNewLabel_3 = new JLabel("7/6");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setToolTipText("+1CS");
-		UIManager.put("ToolTip.foreground", new Color(0, 128, 0));
+		
 		lblNewLabel_3.setForeground(new Color(0, 128, 0));
 		lblNewLabel_3.setFont(new Font("Raleway", Font.PLAIN, 15));
 		contentPanel.add(lblNewLabel_3);
 		
 		lblNewLabel_5 = new JLabel("2/6");
 		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
+		UIManager.put("ToolTip.foreground", Color.BLACK);
 		lblNewLabel_5.setToolTipText("+0CS");
 		lblNewLabel_5.setFont(new Font("Raleway", Font.PLAIN, 15));
 		contentPanel.add(lblNewLabel_5);
@@ -257,21 +260,22 @@ public class SemestreProfile extends JPanel {
 		
 		lblNewLabel_15 = new JLabel("GL02 A");
 		lblNewLabel_15.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_15.setForeground(new Color(178, 34, 34));
-		lblNewLabel_15.setFont(new Font("Raleway", Font.PLAIN, 15));
+		lblNewLabel_15.setForeground(ColorPalette.BKD_NAVBAR1.getColor());
+		lblNewLabel_15.setFont(new Font("Raleway ExtraBold", Font.PLAIN, 15));
 		
 		lblNewLabel_16 = new JLabel("GE21 B");
 		lblNewLabel_16.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_16.setForeground(new Color(0, 128, 0));
-		lblNewLabel_16.setFont(new Font("Raleway", Font.PLAIN, 15));
+		lblNewLabel_16.setForeground(ColorPalette.BKD_NAVBAR0.getColor());
+		lblNewLabel_16.setFont(new Font("Raleway ExtraBold", Font.PLAIN, 15));
 		
 		lblNewLabel_17 = new JLabel("Validé");
 		lblNewLabel_17.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_17.setFont(new Font("Raleway", Font.PLAIN, 15));
 		
 		lblNewLabel_18 = new JLabel("IF02A A");
-		lblNewLabel_18.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_18.setFont(new Font("Raleway", Font.PLAIN, 15));
+		lblNewLabel_18.setForeground(ColorPalette.BKD_NAVBAR1.getColor());
+		lblNewLabel_18.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel_18.setFont(new Font("Raleway ExtraBold", Font.PLAIN, 15));
 		
 		lblNewLabel_19 = new JLabel("LO02 C");
 		lblNewLabel_19.setHorizontalAlignment(SwingConstants.CENTER);
@@ -280,18 +284,18 @@ public class SemestreProfile extends JPanel {
 		gl_contentPanel_1.setHorizontalGroup(
 			gl_contentPanel_1.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPanel_1.createSequentialGroup()
-					.addGap(144)
+					.addGap(117)
 					.addGroup(gl_contentPanel_1.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPanel_1.createSequentialGroup()
 							.addComponent(lblNewLabel_15, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
-							.addGap(170)
-							.addGap(24)
+							.addGap(32)
+							.addGap(163)
 							.addComponent(lblNewLabel_16, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 							.addComponent(lblNewLabel_17, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE))
 						.addComponent(lblNewLabel_19, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_18, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(100,150))
+						.addComponent(lblNewLabel_18, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, 150))
 		);
 		gl_contentPanel_1.setVerticalGroup(
 			gl_contentPanel_1.createParallelGroup(Alignment.LEADING)

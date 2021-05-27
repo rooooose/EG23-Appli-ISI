@@ -94,14 +94,21 @@ public class SemestreEnCours extends JPanel {
 		searchBar.setFont(new Font("Raleway Medium", Font.BOLD, 18));
 		searchBar.setColumns(10);
 		
-		JComboBox cbBxCategory = new JComboBox();
-		cbBxCategory.setForeground(Color.WHITE);
-		cbBxCategory.setBackground(ColorPalette.BKD_NAVBAR2_LIGHT.getColor());
-		cbBxCategory.setName("");
-		cbBxCategory.setToolTipText("Catégorie");
-		cbBxCategory.setFont(new Font("Raleway Medium", Font.PLAIN, 18));
-		cbBxCategory.setModel(new DefaultComboBoxModel(new String[] {"Catégorie", "CS", "TM", "ME", "HT", "CT"}));
-		((JLabel) cbBxCategory.getRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
+		JComboBox cbBxSemestre = new JComboBox();
+		cbBxSemestre.setForeground(Color.WHITE);
+		cbBxSemestre.setBackground(ColorPalette.BKD_NAVBAR0_LIGHT.getColor());
+		cbBxSemestre.setName("");
+		cbBxSemestre.setFont(new Font("Raleway Medium", Font.PLAIN, 18));
+		cbBxSemestre.setModel(new DefaultComboBoxModel(new String[] {"Semestre", "ISI1", "ISI2", "ISI3", "ISI4", "ISI5", "ISI6", "ISI7", "ISI8"}));
+		((JLabel) cbBxSemestre.getRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
+		
+		JComboBox cbBxStatut = new JComboBox();
+		cbBxStatut.setForeground(Color.WHITE);
+		cbBxStatut.setBackground(ColorPalette.BKD_NAVBAR0_LIGHT.getColor());
+		cbBxStatut.setName("");
+		cbBxStatut.setFont(new Font("Raleway Medium", Font.PLAIN, 18));
+		cbBxStatut.setModel(new DefaultComboBoxModel(new String[] {"Statut", "Excellence", "Normal", "Retard", "Retard critique"}));
+		((JLabel) cbBxStatut.getRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JLabel lblSearch = new JLabel("");
 		lblSearch.addMouseListener(new MouseAdapter() {
@@ -125,7 +132,9 @@ public class SemestreEnCours extends JPanel {
 			.addGap(15)
 			.addComponent(lblSearch, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
 			.addGap(108)
-			.addComponent(cbBxCategory, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE)
+			.addComponent(cbBxSemestre, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE)
+			.addGap(108)
+			.addComponent(cbBxStatut, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE)
 			.addContainerGap(536, Short.MAX_VALUE))
 		);
 		gl_panelRequest.setVerticalGroup(
@@ -133,7 +142,8 @@ public class SemestreEnCours extends JPanel {
 			.addGroup(Alignment.LEADING, gl_panelRequest.createSequentialGroup()
 			.addGap(9)
 			.addGroup(gl_panelRequest.createParallelGroup(Alignment.LEADING)
-			.addComponent(cbBxCategory, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+			.addComponent(cbBxSemestre, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+			.addComponent(cbBxStatut, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
 			.addComponent(searchBar, GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
 			.addGap(8))
 			.addGroup(Alignment.LEADING, gl_panelRequest.createSequentialGroup()
