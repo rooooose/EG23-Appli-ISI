@@ -259,7 +259,7 @@ public class SemestreProfile extends JPanel {
 //		contentPanel_1.setPreferredSize(new Dimension(350, -10));
 		
 		lblNewLabel_15 = new JLabel("GL02 A");
-		lblNewLabel_15.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_15.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel_15.setForeground(ColorPalette.BKD_NAVBAR1.getColor());
 		lblNewLabel_15.setFont(new Font("Raleway ExtraBold", Font.PLAIN, 15));
 		
@@ -268,7 +268,7 @@ public class SemestreProfile extends JPanel {
 		lblNewLabel_16.setForeground(ColorPalette.BKD_NAVBAR0.getColor());
 		lblNewLabel_16.setFont(new Font("Raleway ExtraBold", Font.PLAIN, 15));
 		
-		lblNewLabel_17 = new JLabel("Validé");
+		lblNewLabel_17 = new JLabel("Validï¿½");
 		lblNewLabel_17.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_17.setFont(new Font("Raleway", Font.PLAIN, 15));
 		
@@ -278,7 +278,7 @@ public class SemestreProfile extends JPanel {
 		lblNewLabel_18.setFont(new Font("Raleway ExtraBold", Font.PLAIN, 15));
 		
 		lblNewLabel_19 = new JLabel("LO02 C");
-		lblNewLabel_19.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_19.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel_19.setFont(new Font("Raleway", Font.PLAIN, 15));
 		GroupLayout gl_contentPanel_1 = new GroupLayout(contentPanel_1);
 		gl_contentPanel_1.setHorizontalGroup(
@@ -287,15 +287,15 @@ public class SemestreProfile extends JPanel {
 					.addGap(117)
 					.addGroup(gl_contentPanel_1.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPanel_1.createSequentialGroup()
-							.addComponent(lblNewLabel_15, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
-							.addGap(32)
-							.addGap(163)
-							.addComponent(lblNewLabel_16, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addComponent(lblNewLabel_17, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE))
-						.addComponent(lblNewLabel_19, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_18, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, 150))
+							.addComponent(lblNewLabel_15, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+							.addGap(177)
+							.addComponent(lblNewLabel_16, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED, 263, Short.MAX_VALUE)
+							.addComponent(lblNewLabel_17, GroupLayout.PREFERRED_SIZE, 69, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED))
+						.addComponent(lblNewLabel_18, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblNewLabel_19, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(55, GroupLayout.PREFERRED_SIZE))
 		);
 		gl_contentPanel_1.setVerticalGroup(
 			gl_contentPanel_1.createParallelGroup(Alignment.LEADING)
@@ -307,9 +307,9 @@ public class SemestreProfile extends JPanel {
 						.addGroup(gl_contentPanel_1.createSequentialGroup()
 							.addComponent(lblNewLabel_15)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(lblNewLabel_18)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(lblNewLabel_19)))
+							.addComponent(lblNewLabel_18)))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblNewLabel_19)
 					.addContainerGap())
 		);
 		contentPanel_1.setLayout(gl_contentPanel_1);
