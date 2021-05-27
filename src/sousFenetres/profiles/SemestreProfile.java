@@ -182,25 +182,25 @@ public class SemestreProfile extends JPanel {
 		
 		lblNewLabel = new JLabel("CS");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Raleway", Font.PLAIN, 15));
+		lblNewLabel.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
 		table1.add(lblNewLabel);
 		lblNewLabel.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 		
 		lblM = new JLabel("TM");
 		lblM.setHorizontalAlignment(SwingConstants.CENTER);
-		lblM.setFont(new Font("Raleway", Font.PLAIN, 15));
+		lblM.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
 		table1.add(lblM);
 		lblM.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 		
 		lblNewLabel_2 = new JLabel("ME");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setFont(new Font("Raleway", Font.PLAIN, 15));
+		lblNewLabel_2.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
 		table1.add(lblNewLabel_2);
 		lblNewLabel_2.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 		
 		lblNewLabel_4 = new JLabel("CT");
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4.setFont(new Font("Raleway", Font.PLAIN, 15));
+		lblNewLabel_4.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
 		table1.add(lblNewLabel_4);
 		lblNewLabel_4.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 		
@@ -241,31 +241,31 @@ public class SemestreProfile extends JPanel {
 		
 		lblNewLabel_12 = new JLabel("CS");
 		lblNewLabel_12.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_12.setFont(new Font("Raleway", Font.PLAIN, 15));
+		lblNewLabel_12.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
 		table2.add(lblNewLabel_12);
 		lblNewLabel_12.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 		
 		lblNewLabel_13 = new JLabel("TM");
 		lblNewLabel_13.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_13.setFont(new Font("Raleway", Font.PLAIN, 15));
+		lblNewLabel_13.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
 		table2.add(lblNewLabel_13);
 		lblNewLabel_13.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 		
 		lblNewLabel_14 = new JLabel("ME");
 		lblNewLabel_14.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_14.setFont(new Font("Raleway", Font.PLAIN, 15));
+		lblNewLabel_14.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
 		table2.add(lblNewLabel_14);
 		lblNewLabel_14.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 		
 		lblNewLabel_20 = new JLabel("CT");
 		lblNewLabel_20.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_20.setFont(new Font("Raleway", Font.PLAIN, 15));
+		lblNewLabel_20.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
 		table2.add(lblNewLabel_20);
 		lblNewLabel_20.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 		
 		lblNewLabel_22 = new JLabel("NPML");
 		lblNewLabel_22.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_22.setFont(new Font("Raleway", Font.PLAIN, 15));
+		lblNewLabel_22.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
 		table2.add(lblNewLabel_22);
 		lblNewLabel_22.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 		
