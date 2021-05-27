@@ -3,6 +3,7 @@ package sousFenetres.graphs;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 
 import javax.swing.JLabel;
@@ -55,7 +56,7 @@ public class GraphStatsGlob extends JPanel {
 		
 		JLabel lblGraphBar = new JLabel("");
 		lblGraphBar.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblGraphBar.setIcon(new ImageIcon(GraphStatsGlob.class.getResource("/imgGraphOthers/tableauES.PNG")));
+		lblGraphBar.setIcon(new ImageIcon(GraphStatsGlob.class.getResource("/imgGraphOthers/tableauES_small.PNG")));
 		lblGraphBar.setHorizontalAlignment(SwingConstants.CENTER);
 		lblGraphBar.setForeground(Color.LIGHT_GRAY);
 		panelGraph.add(lblGraphBar, "name_727069137798200");
