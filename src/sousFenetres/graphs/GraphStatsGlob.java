@@ -53,9 +53,9 @@ public class GraphStatsGlob extends JPanel {
 		contentPane.add(panelGraph, BorderLayout.CENTER);
 		panelGraph.setLayout(new CardLayout(0, 0));
 		
-		JLabel lblGraphBar = new JLabel("GRAPHIQUE STATISTIQUES GLOBALES");
+		JLabel lblGraphBar = new JLabel("");
 		lblGraphBar.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblGraphBar.setIcon(null);
+		lblGraphBar.setIcon(new ImageIcon(GraphStatsGlob.class.getResource("/imgGraphOthers/tableauES.PNG")));
 		lblGraphBar.setHorizontalAlignment(SwingConstants.CENTER);
 		lblGraphBar.setForeground(Color.LIGHT_GRAY);
 		panelGraph.add(lblGraphBar, "name_727069137798200");

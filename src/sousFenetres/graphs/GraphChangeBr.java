@@ -53,9 +53,9 @@ public class GraphChangeBr extends JPanel {
 		contentPane.add(panelGraph, BorderLayout.CENTER);
 		panelGraph.setLayout(new CardLayout(0, 0));
 		
-		JLabel lblGraphBar = new JLabel("GRAPHIQUE CHANGEMENTS DE BRANCHE");
+		JLabel lblGraphBar = new JLabel("");
 		lblGraphBar.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblGraphBar.setIcon(null);
+		lblGraphBar.setIcon(new ImageIcon(GraphChangeBr.class.getResource("/imgGraphOthers/GrapheChangementsBranche_small.png")));
 		lblGraphBar.setHorizontalAlignment(SwingConstants.CENTER);
 		lblGraphBar.setForeground(Color.LIGHT_GRAY);
 		panelGraph.add(lblGraphBar, "name_727069137798200");
