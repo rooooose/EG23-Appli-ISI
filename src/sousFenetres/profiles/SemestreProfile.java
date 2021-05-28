@@ -37,31 +37,34 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 
+// Profil d'un étudiant
+
 public class SemestreProfile extends JPanel {
+	
 	private JPanel table1;
 	private JPanel table2;
 	private JLabel lblNewLabel_6;
 	private JLabel lblNewLabel_9;
 	private JLabel lblNewLabel_10;
 	private JLabel lblNewLabel_11;
-	private JLabel lblNewLabel;
-	private JLabel lblNewLabel_2;
-	private JLabel lblNewLabel_4;
+	private JLabel lblHeader_1;
+	private JLabel lblHeader_3;
+	private JLabel lblHeader_4;
 	private JLabel lblNewLabel_1;
 	private JLabel lblNewLabel_3;
 	private JLabel lblNewLabel_5;
-	private JLabel lblM;
+	private JLabel lblHeader_2;
 	private JLabel lblNewLabel_21;
-	private JLabel lblNewLabel_12;
-	private JLabel lblNewLabel_13;
-	private JLabel lblNewLabel_14;
-	private JLabel lblNewLabel_20;
+	private JLabel lblHeader_5;
+	private JLabel lblHeader_6;
+	private JLabel lblHeader_7;
+	private JLabel lblHeader_8;
 	private JLabel lblNewLabel_15;
 	private JLabel lblNewLabel_16;
 	private JLabel lblNewLabel_17;
 	private JLabel lblNewLabel_18;
 	private JLabel lblNewLabel_19;
-	private JLabel lblNewLabel_22;
+	private JLabel lblHeader_9;
 	private JLabel lblNewLabel_23;
 	private JLabel lblNewLabel_24;
 	private JLabel lblNewLabel_25;
@@ -105,10 +108,11 @@ public class SemestreProfile extends JPanel {
 		panelBoard.setLayout(new BoxLayout(panelBoard, BoxLayout.Y_AXIS));
 		panelBoard.setBackground(ColorPalette.BKD_BLUE_VERY_LIGHT.getColor());
 		
+		// En-tête du profil
+		
 		JPanel panelTop = new JPanel();
 		panelBoard.add(panelTop);
 		panelTop.setBackground(ColorPalette.BKD_BLUE_VERY_LIGHT.getColor());
-		
 		
 		
 		lblNewLabel_6 = new JLabel("");
@@ -163,6 +167,10 @@ public class SemestreProfile extends JPanel {
 		panelTop.setLayout(gl_panelTop);
 		panelTop.setPreferredSize(new Dimension(350, 70));
 		
+		///////////////////////////////////
+		
+		// Contenu du profil, construction des 2 tableaux
+		
 		JPanel panelBottom = new JPanel();
 		panelBoard.add(panelBottom);
 		panelBottom.setLayout(new BoxLayout(panelBottom, BoxLayout.Y_AXIS));
@@ -180,29 +188,29 @@ public class SemestreProfile extends JPanel {
 		Border borderBlack = BorderFactory.createLineBorder(Color.BLACK);
 		UIManager.put("ToolTip.foreground", Color.BLACK);
 		
-		lblNewLabel = new JLabel("CS");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
-		table1.add(lblNewLabel);
-		lblNewLabel.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
+		lblHeader_1 = new JLabel("CS");
+		lblHeader_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblHeader_1.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
+		table1.add(lblHeader_1);
+		lblHeader_1.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 		
-		lblM = new JLabel("TM");
-		lblM.setHorizontalAlignment(SwingConstants.CENTER);
-		lblM.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
-		table1.add(lblM);
-		lblM.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
+		lblHeader_2 = new JLabel("TM");
+		lblHeader_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblHeader_2.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
+		table1.add(lblHeader_2);
+		lblHeader_2.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 		
-		lblNewLabel_2 = new JLabel("ME");
-		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
-		table1.add(lblNewLabel_2);
-		lblNewLabel_2.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
+		lblHeader_3 = new JLabel("ME");
+		lblHeader_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblHeader_3.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
+		table1.add(lblHeader_3);
+		lblHeader_3.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 		
-		lblNewLabel_4 = new JLabel("CT");
-		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
-		table1.add(lblNewLabel_4);
-		lblNewLabel_4.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
+		lblHeader_4 = new JLabel("CT");
+		lblHeader_4.setHorizontalAlignment(SwingConstants.CENTER);
+		lblHeader_4.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
+		table1.add(lblHeader_4);
+		lblHeader_4.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 		
 		lblNewLabel_1 = new JLabel("4/12");
 		lblNewLabel_1.setToolTipText("-1CS");
@@ -239,35 +247,35 @@ public class SemestreProfile extends JPanel {
 		table2.setLayout(new GridLayout(4,5));
 		table2.setBackground(ColorPalette.BKD_BLUE_VERY_LIGHT.getColor());
 		
-		lblNewLabel_12 = new JLabel("CS");
-		lblNewLabel_12.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_12.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
-		table2.add(lblNewLabel_12);
-		lblNewLabel_12.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
+		lblHeader_5 = new JLabel("CS");
+		lblHeader_5.setHorizontalAlignment(SwingConstants.CENTER);
+		lblHeader_5.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
+		table2.add(lblHeader_5);
+		lblHeader_5.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 		
-		lblNewLabel_13 = new JLabel("TM");
-		lblNewLabel_13.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_13.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
-		table2.add(lblNewLabel_13);
-		lblNewLabel_13.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
+		lblHeader_6 = new JLabel("TM");
+		lblHeader_6.setHorizontalAlignment(SwingConstants.CENTER);
+		lblHeader_6.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
+		table2.add(lblHeader_6);
+		lblHeader_6.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 		
-		lblNewLabel_14 = new JLabel("ME");
-		lblNewLabel_14.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_14.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
-		table2.add(lblNewLabel_14);
-		lblNewLabel_14.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
+		lblHeader_7 = new JLabel("ME");
+		lblHeader_7.setHorizontalAlignment(SwingConstants.CENTER);
+		lblHeader_7.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
+		table2.add(lblHeader_7);
+		lblHeader_7.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 		
-		lblNewLabel_20 = new JLabel("CT");
-		lblNewLabel_20.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_20.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
-		table2.add(lblNewLabel_20);
-		lblNewLabel_20.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
+		lblHeader_8 = new JLabel("CT");
+		lblHeader_8.setHorizontalAlignment(SwingConstants.CENTER);
+		lblHeader_8.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
+		table2.add(lblHeader_8);
+		lblHeader_8.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 		
-		lblNewLabel_22 = new JLabel("NPML");
-		lblNewLabel_22.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_22.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
-		table2.add(lblNewLabel_22);
-		lblNewLabel_22.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
+		lblHeader_9 = new JLabel("NPML");
+		lblHeader_9.setHorizontalAlignment(SwingConstants.CENTER);
+		lblHeader_9.setFont(new Font("Raleway SemiBold", Font.PLAIN, 15));
+		table2.add(lblHeader_9);
+		lblHeader_9.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 		
 		lblNewLabel_15 = new JLabel("GL02 A");
 		lblNewLabel_15.setHorizontalAlignment(SwingConstants.CENTER);

@@ -79,8 +79,6 @@ public class PageAccueil extends JPanel {
 		comboBox.setPreferredSize(new Dimension(100,30));
 		comboBox.setSize(comboBox.getPreferredSize());
 		((JLabel)comboBox.getRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
-//		comboBox.getEditor().getEditorComponent().setBackground(Color.YELLOW);
-	
 		
 		
 		GroupLayout gl_topPanel = new GroupLayout(topPanel);
@@ -123,7 +121,7 @@ public class PageAccueil extends JPanel {
 		//INIT JPANEL - SOUS-FENETRES
 		JPanel[] arrJPanel = initSousFenetres();
 				
-		//INIT ACTION LISTENER JBUTTON - NAVBAR
+		//INIT ACTION LISTENER DES BOUTONS
 		for (int k=0;k<arrJPanel.length;k++) {
 			addActList(arrJPanel, arrBtn, k);
 		}
@@ -131,6 +129,7 @@ public class PageAccueil extends JPanel {
 		
 	}
 	
+	// Fonction de création des boutons + Effet Hover pour chacun
 	private JButton[] initButtons() {
 		
 		JButton btnSemestre = new JButton("");
@@ -270,6 +269,7 @@ public class PageAccueil extends JPanel {
 		return arrBtn;
 	}
 	
+	// Initialisation des différentes pages de l'appli
 	private JPanel[] initSousFenetres() {
 		//Init. JPanel
 		SemestreEnCours frameSemEnCours = new SemestreEnCours();
@@ -282,9 +282,13 @@ public class PageAccueil extends JPanel {
 		return arrJPanel;
 	}
 	
+	// Fonction onClick permettant de passer aux différentes rubriques de l'appli
 	private void addActList(JPanel[] arrJPanel, JButton[] btnNav, int num) {
+		
 		btnNav[num].addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
+				
 				String[] arrTitles = {"Gestion du semestre encours", "Gestion des enseignants", "Gestion des UE", 
 						"R\u00E9partition des \u00E9tudiants dans le parcours", "Statistiques des flux entrants et sortants"};
 				String[] arrFileNames = {"SemestreEnCours", "Enseignants", "UE", "RepartitionEtudiants", "EntreesSorties"};

@@ -22,6 +22,7 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.Border;
 import javax.swing.border.SoftBevelBorder;
 
+// Représente un item de la liste d'étudiants lors de l'affichage du résultat de recherche
 public class ItemEtudiant {
 	
 private static List<ItemEtudiant> arrItemEtudiant = new ArrayList<ItemEtudiant>();
@@ -45,12 +46,11 @@ private static List<ItemEtudiant> arrItemEtudiant = new ArrayList<ItemEtudiant>(
 		String[] arrName = {"Vincent Florent", "Jean Lassale", "C\u00E9dric Villani", "Rose Tixier", "Martin Luther King", "Rosa Parks", "Youri Gagarine"};
 		
 		for (int i=0;i<arrName.length;i++) {
-//			int rand = (int) Math.round(Math.random()*3);
 			ItemEtudiant.addList(new ItemEtudiant(arrName[i], arrLevel[i], arrStatus[i]));
 		}
 	}
 	
-	public static void initPanelItems(JPanel panelResult, JSplitPane splitPane, JScrollPane scrollPane) {
+	public static void initPanelItems(JPanel panelResult, JSplitPane splitPane) {
 		if (arrItemEtudiant.isEmpty()) {
 			initItems();
 		}
@@ -58,6 +58,7 @@ private static List<ItemEtudiant> arrItemEtudiant = new ArrayList<ItemEtudiant>(
 		final int itemWidth = 410;
 		final int itemHeight = 90;
 		
+		// Elements graphiques pour chaque item
 		for (int i=0;i<arrItemEtudiant.size();i++) {
 
 			JPanel panelEtudiant = new JPanel();
@@ -68,15 +69,12 @@ private static List<ItemEtudiant> arrItemEtudiant = new ArrayList<ItemEtudiant>(
 			panelResult.add(panelEtudiant);
 			
 			JLabel lblPhoto = new JLabel("");
-//			lblPhoto.setBounds(10, 6, 76, 76);
-//			lblPhoto.setPreferredSize(new Dimension(77, 20));
 			lblPhoto.setIcon((arrItemEtudiant.get(i).getPhoto()));
 			panelEtudiant.add(lblPhoto);
 			
 			JLabel lblName = new JLabel(arrItemEtudiant.get(i).getName());
 			lblName.setForeground(new Color(60, 60, 60));
 			lblName.setFont(new Font("Raleway Medium", Font.PLAIN, 18));
-//			lblName.setBounds(97, 18, 233, 30);
 			panelEtudiant.add(lblName);
 			
 
@@ -91,13 +89,12 @@ private static List<ItemEtudiant> arrItemEtudiant = new ArrayList<ItemEtudiant>(
 			lblLevel.setBorder(border);
 			lblLevel.setBackground(ColorPalette.BKD_BLUE_VERY_LIGHT.getColor());
 			lblLevel.setOpaque(true);
-//			lblLevel.setBounds(5, -4, 37, 31);
 			panelEtudiant.add(lblLevel);
 			
 			JLabel lblStatut = new JLabel(arrItemEtudiant.get(i).getStatusImg());
 			panelEtudiant.add(lblStatut);
 			
-			
+			//Seule la fonction clic du 1er item de la liste a été implémentée
 			if (i == 0) {
 				panelEtudiant.addMouseListener(new MouseAdapter() {
 					@Override
@@ -122,22 +119,6 @@ private static List<ItemEtudiant> arrItemEtudiant = new ArrayList<ItemEtudiant>(
 		arrItemEtudiant.remove(item);
 	}
 	
-//	public void setArrival(String arrival) {
-//		this.arrival = arrival;
-//	}
-//	public void setName(String name) {
-//		this.name = name;
-//	}
-//	public void setStatus(String status) {
-//		this.status = status;
-//	}
-//	public void setPhoto(String path) {
-//		this.photo = new ImageIcon(ItemEtudiant.class.getResource(path));
-//	}
-//	
-//	public String getArrival() {
-//		return this.arrival;
-//	}
 	public String getName() {
 		return this.name;
 	}
@@ -151,12 +132,6 @@ private static List<ItemEtudiant> arrItemEtudiant = new ArrayList<ItemEtudiant>(
 	public ImageIcon getPhoto() {
 		return this.photo;
 	}
-//	
-//	public void addUE(String name) {
-//		this.arrUE.add(name);
-//	}
-//	public void removeUE(String name) {
-//		this.arrUE.remove(name);
-//	}
+
 
 }

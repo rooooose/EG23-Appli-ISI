@@ -82,7 +82,7 @@ public class SemestreEnCours extends JPanel {
 		contentPane.setBackground(Color.WHITE);
 		add(contentPane);
 		
-		//////////////////////////////////////////
+		//Barre de recherche//
 		
 		JPanel panelRequest = new JPanel();
 		panelRequest.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
@@ -155,38 +155,7 @@ public class SemestreEnCours extends JPanel {
 		
 		//////////////////////////////////////////
 		
-//		requestPanel = new JPanel();
-//		
-//		textField = new JTextField();
-//		textField.setColumns(10);
-//		GroupLayout gl_requestPanel = new GroupLayout(requestPanel);
-//		gl_requestPanel.setHorizontalGroup(
-//			gl_requestPanel.createParallelGroup(Alignment.LEADING)
-//				.addGroup(gl_requestPanel.createSequentialGroup()
-//					.addContainerGap()
-//					.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-//					.addContainerGap(167, Short.MAX_VALUE))
-//		);
-//		gl_requestPanel.setVerticalGroup(
-//			gl_requestPanel.createParallelGroup(Alignment.LEADING)
-//				.addGroup(Alignment.TRAILING, gl_requestPanel.createSequentialGroup()
-//					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-//					.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-//		);
-//		requestPanel.setLayout(gl_requestPanel);
-		
-//		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-//		gl_contentPane.setHorizontalGroup(
-//			gl_contentPane.createParallelGroup(Alignment.LEADING)
-//				.addComponent(panelRequest, GroupLayout.PREFERRED_SIZE, 450, GroupLayout.PREFERRED_SIZE)
-//		);
-//		gl_contentPane.setVerticalGroup(
-//			gl_contentPane.createParallelGroup(Alignment.LEADING)
-//				.addGroup(gl_contentPane.createSequentialGroup()
-//					.addGap(270)
-//					.addComponent(panelRequest, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-//		);
-//		contentPane.setLayout(gl_contentPane);
+		// Espace d'affichage des résultats de recherche //
 		
 		JSplitPane splitPane = new JSplitPane();
 		splitPane.setEnabled(false);
@@ -218,7 +187,6 @@ public class SemestreEnCours extends JPanel {
 		
 		panelResult = new JPanel();
 		panelResult.setBackground(ColorPalette.BKD_BLUE_VERY_LIGHT.getColor());
-//		panelResult.setBounds(2, 2, 392, 612);
 		panelResult.setPreferredSize(new Dimension(5, 5));
 		FlowLayout fl_panelResult = new FlowLayout(FlowLayout.CENTER, 10, 10);
 		panelResult.setLayout(fl_panelResult);
@@ -231,7 +199,9 @@ public class SemestreEnCours extends JPanel {
 		splitPane.setLeftComponent(scrollPane);
 		scrollPane.setViewportView(panelResult);
 		
-		ItemEtudiant.initPanelItems(panelResult, splitPane, scrollPane);
+		ItemEtudiant.initPanelItems(panelResult, splitPane);
+		
+		// Affichage du profil de l'étudiant choisi //
 		
 		SemestreProfile panelProfile = new SemestreProfile();
 		panelProfile.setMinimumSize(new Dimension(0, 0));
