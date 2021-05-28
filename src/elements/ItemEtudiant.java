@@ -104,8 +104,10 @@ private static List<ItemEtudiant> arrItemEtudiant = new ArrayList<ItemEtudiant>(
 					public void mouseClicked(MouseEvent e) {
 						if (Math.round(splitPane.getDividerLocation()*0.1) == Math.round(splitPane.getMaximumDividerLocation()*0.1)) {
 							splitPane.setDividerLocation(0.38);
+							panelEtudiant.setBackground(new Color(240,240,240));
 						} else {
 							splitPane.setDividerLocation(1.0);
+							panelEtudiant.setBackground(Color.WHITE);
 						}
 					}
 				});
