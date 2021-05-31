@@ -27,6 +27,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.Border;
 
 import elements.ColorPalette;
+import sousFenetres.Enseignants;
+import sousFenetres.SemestreEnCours;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -72,6 +74,7 @@ public class SemestreProfile extends JPanel {
 	private JLabel lblNewLabel_27;
 	private JLabel lblNewLabel_28;
 	private JLabel lblNewLabel_29;
+	private JLabel lblNewLabel;
 	
 //	private JPanel contentPane;
 
@@ -135,6 +138,23 @@ public class SemestreProfile extends JPanel {
 		
 		lblNewLabel_9 = new JLabel("");
 		lblNewLabel_9.setIcon(new ImageIcon(SemestreProfile.class.getResource("/icons/critique.png")));
+		
+		
+		lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(SemestreProfile.class.getResource("/icons/menu/black/close32.png")));
+		lblNewLabel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				lblNewLabel.setIcon(new ImageIcon(SemestreProfile.class.getResource("/icons/menu/white/close32.png")));
+			}
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				lblNewLabel.setIcon(new ImageIcon(SemestreProfile.class.getResource("/icons/menu/black/close32.png")));
+				SemestreEnCours.getSplitPane().setDividerLocation(1.0);
+				//Enseignants.getSplitPane().repaint();
+			}
+		});
+		
 		GroupLayout gl_panelTop = new GroupLayout(panelTop);
 		gl_panelTop.setHorizontalGroup(
 			gl_panelTop.createParallelGroup(Alignment.LEADING)
@@ -146,7 +166,9 @@ public class SemestreProfile extends JPanel {
 						.addComponent(lblNewLabel_8))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(lblNewLabel_9, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(250,250))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
 		);
 		gl_panelTop.setVerticalGroup(
 			gl_panelTop.createParallelGroup(Alignment.LEADING)
@@ -159,10 +181,13 @@ public class SemestreProfile extends JPanel {
 							.addGap(38)
 							.addGroup(gl_panelTop.createParallelGroup(Alignment.BASELINE)
 								.addComponent(lblNewLabel_7)
-								.addComponent(lblNewLabel_9))
+								.addComponent(lblNewLabel))
 							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(lblNewLabel_8)))
-					.addContainerGap(39, Short.MAX_VALUE))
+							.addComponent(lblNewLabel_8))
+						.addGroup(gl_panelTop.createSequentialGroup()
+							.addGap(38)
+							.addComponent(lblNewLabel_9, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		panelTop.setLayout(gl_panelTop);
 		panelTop.setPreferredSize(new Dimension(350, 70));

@@ -232,8 +232,10 @@ public class UE extends JPanel {
 					public void mouseClicked(MouseEvent e) {
 						if (Math.round(splitPaneUE.getDividerLocation()*0.1) == Math.round(splitPaneUE.getMaximumDividerLocation()*0.1)) {
 							splitPaneUE.setDividerLocation(0.32);
+							UEItems.get(0).setBackground(new Color(240,240,240));
 						} else {
 							splitPaneUE.setDividerLocation(1.0);
+							UEItems.get(0).setBackground(Color.WHITE);
 						}
 					}
 				});

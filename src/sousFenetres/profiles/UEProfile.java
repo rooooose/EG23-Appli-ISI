@@ -27,6 +27,7 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 public class UEProfile extends JPanel {
 
@@ -130,7 +131,7 @@ public class UEProfile extends JPanel {
 		lblCategory.setForeground(new Color(60, 60, 60));
 		lblCategory.setFont(new Font("Raleway", Font.PLAIN, 32));
 		tagBkd.add(lblCategory);
-		panelTop.setLayout(gl_panelTop);
+		
 		
 		JPanel panelCenter = new JPanel();
 		panelCenter.setBackground(ColorPalette.BKD_BLUE_VERY_LIGHT.getColor());

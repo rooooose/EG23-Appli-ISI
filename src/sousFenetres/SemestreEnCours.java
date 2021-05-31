@@ -51,7 +51,11 @@ public class SemestreEnCours extends JPanel {
 	private JPanel contentPane;
 	private JPanel panelRequest;
 	private JTextField searchBar;
-	private JSplitPane splitPane;
+	private static JSplitPane splitPane = new JSplitPane();
+	public static JSplitPane getSplitPane() {
+		return splitPane;
+	}
+
 	private JScrollPane scrollPane;
 	private JPanel panelResult;
 
@@ -157,10 +161,10 @@ public class SemestreEnCours extends JPanel {
 		
 		// Espace d'affichage des résultats de recherche //
 		
-		JSplitPane splitPane = new JSplitPane();
+//		splitPane = new JSplitPane();
 		splitPane.setEnabled(false);
 		splitPane.setResizeWeight(1.0);
-		splitPane.setDividerLocation(1.0);
+//		splitPane.setDividerLocation(1.0);
 		splitPane.setContinuousLayout(true);
 		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
@@ -209,4 +213,6 @@ public class SemestreEnCours extends JPanel {
 		panelProfile.setBackground(new Color(255, 255, 240));
 		splitPane.setRightComponent(panelProfile);
 	}
+	
+	
 }

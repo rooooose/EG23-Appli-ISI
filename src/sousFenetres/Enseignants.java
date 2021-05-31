@@ -1,11 +1,13 @@
 package sousFenetres;
 
+import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.Frame;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -14,6 +16,7 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
@@ -28,6 +31,7 @@ import javax.swing.border.SoftBevelBorder;
 
 import elements.ColorPalette;
 import elements.ItemEnseignant;
+import fenetres.NavigationWindow;
 import sousFenetres.profiles.EnseignantProfile;
 import javax.swing.JCheckBox;
 import javax.swing.event.ChangeListener;
@@ -38,7 +42,9 @@ public class Enseignants extends JPanel {
 	
 	private static JSplitPane splitPane = new JSplitPane();;
 
-	private JPanel contentPane;
+	private static JPanel contentPane;
+	private static JPanel panelRequest;
+	private static JLabel lblAdd;
 	private JTextField searchBar;
 
 	/**
@@ -80,7 +86,7 @@ public class Enseignants extends JPanel {
 		layeredPanel.setLayer(backPanel, 0);
 		layeredPanel.add(backPanel);
 
-		JPanel panelRequest = new JPanel();
+		panelRequest = new JPanel();
 		panelRequest.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		backPanel.add(panelRequest);
 		
@@ -122,8 +128,6 @@ public class Enseignants extends JPanel {
 		cbBxStatut.setBackground(new Color(16, 120, 188));
 		((JLabel) cbBxStatut.getRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
 		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("TEST");
-		
 		GroupLayout gl_panelRequest = new GroupLayout(panelRequest);
 		gl_panelRequest.setHorizontalGroup(
 			gl_panelRequest.createParallelGroup(Alignment.LEADING)
@@ -136,9 +140,7 @@ public class Enseignants extends JPanel {
 					.addComponent(cbBxUE, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE)
 					.addGap(18)
 					.addComponent(cbBxStatut, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 332, Short.MAX_VALUE)
-					.addComponent(chckbxNewCheckBox, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap())
+					.addContainerGap(400, Short.MAX_VALUE))
 		);
 		gl_panelRequest.setVerticalGroup(
 			gl_panelRequest.createParallelGroup(Alignment.LEADING)
@@ -154,10 +156,7 @@ public class Enseignants extends JPanel {
 							.addComponent(lblSearch))
 						.addGroup(gl_panelRequest.createSequentialGroup()
 							.addGap(11)
-							.addComponent(searchBar, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panelRequest.createSequentialGroup()
-							.addGap(19)
-							.addComponent(chckbxNewCheckBox)))
+							.addComponent(searchBar, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap())
 		);
 		panelRequest.setLayout(gl_panelRequest);
@@ -209,8 +208,10 @@ public class Enseignants extends JPanel {
 			public void mouseClicked(MouseEvent e) {
 				if (Math.round(Enseignants.getSplitPane().getDividerLocation()*0.1) == Math.round(Enseignants.getSplitPane().getMaximumDividerLocation()*0.1)) {
 					Enseignants.getSplitPane().setDividerLocation(0.34);
+					panel_0.setBackground(new Color(240,240,240));
 				} else {
 					Enseignants.getSplitPane().setDividerLocation(1.0);
+					panel_0.setBackground(Color.WHITE);
 				}
 			}
 		});
@@ -239,23 +240,6 @@ public class Enseignants extends JPanel {
 		lblProf0.setBounds(97, 47, 233, 22);
 		panel_0.add(lblProf0);
 		
-		chckbxNewCheckBox.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				if (chckbxNewCheckBox.isSelected()) { //Math.round(splitPane.getDividerLocation()*0.1) == Math.round(splitPane.getMaximumDividerLocation()*0.1)
-					System.out.println("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy");
-					splitPane.setDividerLocation(0.34);
-					splitPane.repaint();
-					//splitPane.validate();
-				} else {
-					System.out.println("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz");
-					splitPane.setDividerLocation(1.0);
-					splitPane.repaint();
-					//splitPane.validate();
-				}
-			}
-		});
-		
 		EnseignantProfile panelProfile = new EnseignantProfile();
 		panelProfile.setMinimumSize(new Dimension(0, 0));
 		panelProfile.setPreferredSize(new Dimension(0, 0));
@@ -276,15 +260,38 @@ public class Enseignants extends JPanel {
 		layeredPanel.setLayer(frontPanel, 1);
 		layeredPanel.add(frontPanel);
 		
-		JLabel lblAdd = new JLabel();
+		lblAdd = new JLabel();
 		lblAdd.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				lblAdd.setIcon(new ImageIcon(Enseignants.class.getResource("/icons/menu/white/add64.png")));
+				
 			}
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				lblAdd.setIcon(new ImageIcon(Enseignants.class.getResource("/icons/menu/black/add64.png")));
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {
+//				JDialog createDialog = new JDialog(NavigationWindow.getFrame() , "Ajouter un Enseignant", true);  
+//				createDialog.setSize(300,300);   
+//				createDialog.setVisible(true);
+//				NavigationWindow.getFrame().setState(Frame.NORMAL);
+				
+				NavigationWindow.getFrame().getContentPane().remove(panelRequest);
+				NavigationWindow.getFrame().getContentPane().remove(splitPane);
+				panelRequest.setVisible(false);
+				splitPane.setVisible(false);
+				NavigationWindow.getFrame().getContentPane().remove(lblAdd);
+				lblAdd.setVisible(false);
+				
+				JPanel cE = new CreateEnseignant();
+				contentPane.add(cE);
+				cE.setVisible(true);
+//				NavigationWindow.getFrame().getContentPane().removeAll();
+//				
+//				PageAccueil pageAccueil = new PageAccueil();
+//				frame.getContentPane().add(pageAccueil, BorderLayout.CENTER);
 			}
 		});
 		lblAdd.setBounds(0, 0, 64, 64);
@@ -294,5 +301,17 @@ public class Enseignants extends JPanel {
 	
 	public static JSplitPane getSplitPane() {
 		return splitPane;
+	}
+	
+	public static JPanel getPanelRequest() {
+		return panelRequest;
+	}
+	
+	public static JPanel getContentPane() {
+		return contentPane;
+	}
+	
+	public static JLabel getPlus() {
+		return lblAdd;
 	}
 }
