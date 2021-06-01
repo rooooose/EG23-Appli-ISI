@@ -238,6 +238,17 @@ public class UE extends JPanel {
 							UEItems.get(0).setBackground(Color.WHITE);
 						}
 					}
+					@Override
+					public void mouseEntered(MouseEvent e) {
+						UEItems.get(0).setBackground(new Color(240,240,240));
+						
+					}
+					@Override
+					public void mouseExited(MouseEvent e) {
+						if (Math.round(splitPaneUE.getDividerLocation()*0.1) == Math.round(splitPaneUE.getMaximumDividerLocation()*0.1)) {
+							UEItems.get(0).setBackground(Color.WHITE);
+						}
+					}
 				});
 			}
 		}

@@ -135,6 +135,9 @@ public class CreateEnseignant extends JPanel {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
+				NavigationWindow.getFrame().getContentPane().remove(contentPane_1);
+				contentPane_1.setVisible(false);
+				
 				NavigationWindow.getFrame().getContentPane().add(Enseignants.getPanelRequest());
 				NavigationWindow.getFrame().getContentPane().add(Enseignants.getSplitPane());
 				Enseignants.getPanelRequest().setVisible(true);
@@ -143,8 +146,9 @@ public class CreateEnseignant extends JPanel {
 				Enseignants.getPlus().setVisible(true);
 				
 	
-//				Enseignants.getContentPane().remove(contentPane_1);
-				contentPane_1.setVisible(false);
+				
+				NavigationWindow.getFrame().getContentPane().revalidate();
+				
 			}
 		});
 		lblNewLabel_1.setIcon(new ImageIcon(CreateEnseignant.class.getResource("/icons/menu/black/close24.png")));

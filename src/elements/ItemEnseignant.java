@@ -9,15 +9,20 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.SoftBevelBorder;
 
+import fenetres.NavigationWindow;
+import sousFenetres.CreateEnseignant;
 import sousFenetres.Enseignants;
 import sousFenetres.PageAccueil;
 
@@ -102,11 +107,50 @@ public class ItemEnseignant {
 			lblStatut.setBounds(97, 47, 233, 22);
 			panelEnseignant.add(lblStatut);
 			
-//			JLabel lblDelete = new JLabel("fz");
-//			lblDelete.setBounds(290, 30, 250, 25);
-//			lblDelete.setPreferredSize(new Dimension(77, 20));
-//			lblDelete.setIcon(new ImageIcon(ItemEnseignant.class.getResource("/icons/menu/black/delete.png")));
-//			panelEnseignant.add(lblDelete);
+			JLabel lblDelete = new JLabel("");
+			
+			if(i==0) {
+				lblDelete.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mousePressed(MouseEvent e) {
+						lblDelete.setIcon(new ImageIcon(ItemEnseignant.class.getResource("/icons/menu/white/delete.png")));
+						
+					}
+					@Override
+					public void mouseReleased(MouseEvent e) {
+						lblDelete.setIcon(new ImageIcon(ItemEnseignant.class.getResource("/icons/menu/black/delete.png")));
+					}
+					@Override
+					public void mouseClicked(MouseEvent e) {
+						
+						UIManager.put("OptionPane.noButtonText", "Non");
+					    UIManager.put("OptionPane.yesButtonText", "Oui");
+						
+						JOptionPane jop = new JOptionPane();
+						int option = jop.showConfirmDialog(null, "Voulez-vous vraiment supprimer l'enseignant ?",
+						"Confirmation suppression d'enseignant", JOptionPane.YES_NO_OPTION,
+						JOptionPane.QUESTION_MESSAGE); 
+						
+						if(option == JOptionPane.OK_OPTION){
+							panelResult.remove(panelEnseignant);
+			                panelResult.revalidate();
+						} 
+					}
+					@Override
+					public void mouseEntered(MouseEvent e) {
+						lblDelete.setIcon(new ImageIcon(ItemEnseignant.class.getResource("/icons/menu/white/delete.png")));
+						
+					}
+					@Override
+					public void mouseExited(MouseEvent e) {
+						lblDelete.setIcon(new ImageIcon(ItemEnseignant.class.getResource("/icons/menu/black/delete.png")));
+					}
+				});
+			}
+			lblDelete.setBounds(290, 30, 250, 25);
+			lblDelete.setPreferredSize(new Dimension(77, 20));
+			lblDelete.setIcon(new ImageIcon(ItemEnseignant.class.getResource("/icons/menu/black/delete.png")));
+			panelEnseignant.add(lblDelete);
 
 			panelResult.add(panelEnseignant);
 			

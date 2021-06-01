@@ -107,6 +107,17 @@ private static List<ItemEtudiant> arrItemEtudiant = new ArrayList<ItemEtudiant>(
 							panelEtudiant.setBackground(Color.WHITE);
 						}
 					}
+					@Override
+					public void mouseEntered(MouseEvent e) {
+						panelEtudiant.setBackground(new Color(240,240,240));
+						
+					}
+					@Override
+					public void mouseExited(MouseEvent e) {
+						if (Math.round(splitPane.getDividerLocation()*0.1) == Math.round(splitPane.getMaximumDividerLocation()*0.1)) {
+							panelEtudiant.setBackground(Color.WHITE);
+						}
+					}
 				});
 			}
 		}

@@ -214,6 +214,17 @@ public class Enseignants extends JPanel {
 					panel_0.setBackground(Color.WHITE);
 				}
 			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				panel_0.setBackground(new Color(240,240,240));
+				
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				if (Math.round(Enseignants.getSplitPane().getDividerLocation()*0.1) == Math.round(Enseignants.getSplitPane().getMaximumDividerLocation()*0.1)) {
+					panel_0.setBackground(Color.WHITE);
+				}
+			}
 		});
 		panelResult.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
 		panel_0.setPreferredSize(new Dimension(itemWidth, itemHeight));
@@ -239,6 +250,12 @@ public class Enseignants extends JPanel {
 		lblProf0.setFont(new Font("Raleway Medium", Font.PLAIN, 12));
 		lblProf0.setBounds(97, 47, 233, 22);
 		panel_0.add(lblProf0);
+		
+		JLabel lblDelete = new JLabel("");
+		lblDelete.setBounds(290, 30, 250, 25);
+		lblDelete.setPreferredSize(new Dimension(77, 20));
+		lblDelete.setIcon(new ImageIcon(Enseignants.class.getResource("/icons/menu/black/delete.png")));
+		panel_0.add(lblDelete);
 		
 		EnseignantProfile panelProfile = new EnseignantProfile();
 		panelProfile.setMinimumSize(new Dimension(0, 0));
@@ -278,6 +295,7 @@ public class Enseignants extends JPanel {
 //				createDialog.setVisible(true);
 //				NavigationWindow.getFrame().setState(Frame.NORMAL);
 				
+				NavigationWindow.getFrame().getContentPane().remove(contentPane);
 				NavigationWindow.getFrame().getContentPane().remove(panelRequest);
 				NavigationWindow.getFrame().getContentPane().remove(splitPane);
 				panelRequest.setVisible(false);
