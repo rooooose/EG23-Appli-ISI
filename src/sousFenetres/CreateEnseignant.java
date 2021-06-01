@@ -44,8 +44,8 @@ public class CreateEnseignant extends JPanel {
 
 	private JPanel contentPane;
 	private JTextField textField_1;
-	private JTextField textField_2;
 	private JTextField textField;
+	private JTextField textField_2;
 
 	/**
 	 * Launch the application.
@@ -91,17 +91,17 @@ public class CreateEnseignant extends JPanel {
 		lblNewLabel_2.setForeground(ColorPalette.BKD_NAVBAR1.getColor());
 		
 		JLabel lblNewLabel = new JLabel("Nom :");
+		lblNewLabel.setFont(new Font("Raleway", Font.PLAIN, 16));
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		
-		JLabel lblNewLabel_3 = new JLabel("Statut :");
-		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
 	
 		
 		JButton btnNewButton_1 = new JButton("Ajouter");
+		btnNewButton_1.setFont(new Font("Raleway", Font.PLAIN, 13));
+		btnNewButton_1.setBackground(ColorPalette.BKD_NAVBAR1.getColor());
+		btnNewButton_1.setForeground(Color.WHITE);
+		
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -119,11 +119,14 @@ public class CreateEnseignant extends JPanel {
 		});
 		
 		JLabel lblNewLabel_3_1 = new JLabel("UEs :");
+		lblNewLabel_3_1.setFont(new Font("Raleway", Font.PLAIN, 16));
 		
 		textField = new JTextField();
 		textField.setColumns(10);
 		
 		JButton btnNewButton = new JButton("+");
+		 btnNewButton.setBackground(ColorPalette.BKD_NAVBAR1.getColor());
+		 btnNewButton.setForeground(Color.WHITE);
 
 		btnNewButton.setFont(new Font("Raleway", Font.PLAIN, 21));
 		
@@ -145,35 +148,39 @@ public class CreateEnseignant extends JPanel {
 			}
 		});
 		lblNewLabel_1.setIcon(new ImageIcon(CreateEnseignant.class.getResource("/icons/menu/black/close24.png")));
+		
+		JLabel lblNewLabel_3 = new JLabel("Statut :");
+		lblNewLabel_3.setFont(new Font("Raleway", Font.PLAIN, 16));
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
 		GroupLayout gl_panelAjout = new GroupLayout(panelAjout);
 		gl_panelAjout.setHorizontalGroup(
 			gl_panelAjout.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panelAjout.createSequentialGroup()
 					.addGap(30)
 					.addGroup(gl_panelAjout.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panelAjout.createSequentialGroup()
-							.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(105)
-							.addComponent(lblNewLabel_3, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(btnNewButton_1)
 						.addGroup(gl_panelAjout.createSequentialGroup()
 							.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 323, GroupLayout.PREFERRED_SIZE)
 							.addGap(700)
 							.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE))
 						.addGroup(gl_panelAjout.createSequentialGroup()
-							.addComponent(lblNewLabel_3_1, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+							.addGroup(gl_panelAjout.createParallelGroup(Alignment.TRAILING)
+								.addGroup(gl_panelAjout.createSequentialGroup()
+									.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_panelAjout.createSequentialGroup()
+									.addComponent(lblNewLabel_3_1, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(btnNewButton)
+							.addGap(31)
+							.addComponent(lblNewLabel_3, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGroup(gl_panelAjout.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_panelAjout.createSequentialGroup()
-									.addGap(616)
-									.addComponent(btnNewButton_1))
-								.addGroup(gl_panelAjout.createSequentialGroup()
-									.addPreferredGap(ComponentPlacement.UNRELATED)
-									.addComponent(btnNewButton)))))
+							.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap(26, Short.MAX_VALUE))
 		);
 		gl_panelAjout.setVerticalGroup(
@@ -183,22 +190,24 @@ public class CreateEnseignant extends JPanel {
 					.addGroup(gl_panelAjout.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblNewLabel_2)
 						.addComponent(lblNewLabel_1))
-					.addPreferredGap(ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+					.addGap(50)
 					.addGroup(gl_panelAjout.createParallelGroup(Alignment.TRAILING)
 						.addGroup(gl_panelAjout.createSequentialGroup()
 							.addGroup(gl_panelAjout.createParallelGroup(Alignment.BASELINE)
 								.addComponent(lblNewLabel)
-								.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblNewLabel_3)
-								.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addGap(34)
-							.addGroup(gl_panelAjout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(lblNewLabel_3_1)
-								.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-						.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnNewButton_1)
-					.addGap(20))
+								.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGroup(gl_panelAjout.createParallelGroup(Alignment.TRAILING)
+								.addGroup(gl_panelAjout.createParallelGroup(Alignment.BASELINE)
+									.addComponent(lblNewLabel_3_1)
+									.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE))
+							.addGap(42)
+							.addComponent(btnNewButton_1)
+							.addGap(723))
+						.addGroup(Alignment.LEADING, gl_panelAjout.createParallelGroup(Alignment.BASELINE)
+							.addComponent(lblNewLabel_3, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+							.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
 		);
 		panelAjout.setLayout(gl_panelAjout);
 		GroupLayout gl_backPanel = new GroupLayout(backPanel);

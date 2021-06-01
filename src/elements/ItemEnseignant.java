@@ -29,6 +29,7 @@ public class ItemEnseignant {
 	private String status;
 	private List<String> arrUE;
 	private ImageIcon photo = new ImageIcon(ItemEnseignant.class.getResource("/icons/menu/white/photo_default_x76.png"));
+//	private ImageIcon delete = new ImageIcon(ItemEnseignant.class.getResource("/icons/menu/black/delete.png"));
 	//Choix aléatoire parmis un set de graphique lors du changement de profil
 	
 	public ItemEnseignant(String name, String status) {
@@ -100,6 +101,12 @@ public class ItemEnseignant {
 			lblStatut.setFont(new Font("Raleway Medium", Font.PLAIN, 12));
 			lblStatut.setBounds(97, 47, 233, 22);
 			panelEnseignant.add(lblStatut);
+			
+//			JLabel lblDelete = new JLabel("fz");
+//			lblDelete.setBounds(290, 30, 250, 25);
+//			lblDelete.setPreferredSize(new Dimension(77, 20));
+//			lblDelete.setIcon(new ImageIcon(ItemEnseignant.class.getResource("/icons/menu/black/delete.png")));
+//			panelEnseignant.add(lblDelete);
 
 			panelResult.add(panelEnseignant);
 			
