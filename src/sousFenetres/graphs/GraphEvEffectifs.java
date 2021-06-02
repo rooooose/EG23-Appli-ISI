@@ -12,6 +12,7 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 
 import elements.ColorPalette;
+import javax.swing.ImageIcon;
 
 public class GraphEvEffectifs extends JPanel {
 
@@ -42,14 +43,15 @@ public class GraphEvEffectifs extends JPanel {
 		
 		JPanel contentPane = new JPanel();
 		contentPane.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		contentPane.setBackground(ColorPalette.BKD_GRAY_VERY_LIGHT.getColor());
+		contentPane.setBackground(Color.WHITE);
 		add(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
-		JLabel lblNewLabel = new JLabel("GRAPH EVOLUTION DES EFFECTIFS");
-		lblNewLabel.setForeground(Color.LIGHT_GRAY);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		contentPane.add(lblNewLabel);
+		JLabel lblGraph = new JLabel("");
+		lblGraph.setIcon(new ImageIcon(GraphEvEffectifs.class.getResource("/imgGraphOthers/GraphEffectifs.png")));
+		lblGraph.setForeground(Color.LIGHT_GRAY);
+		lblGraph.setHorizontalAlignment(SwingConstants.CENTER);
+		contentPane.add(lblGraph);
 	}
 
 }

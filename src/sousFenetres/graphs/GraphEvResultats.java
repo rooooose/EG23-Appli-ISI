@@ -72,24 +72,31 @@ public class GraphEvResultats extends JPanel {
 		lblSemestre.setForeground(ColorPalette.TLE_DEFAULT.getColor());
 		lblSemestre.setFont(new Font("Raleway", Font.PLAIN, 24));
 		contentPane.add(panelCenter, BorderLayout.CENTER);
+		
+		JLabel lblLeg = new JLabel();
+		lblLeg.setIcon(new ImageIcon(GraphEvResultats.class.getResource("/imgCamembert/results/camLeg.png")));
 		GroupLayout gl_panelCenter = new GroupLayout(panelCenter);
 		gl_panelCenter.setHorizontalGroup(
 			gl_panelCenter.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panelCenter.createSequentialGroup()
-					.addGap(87)
+					.addGap(35)
 					.addComponent(lblGraph)
-					.addPreferredGap(ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
-					.addComponent(lblSemestre)
+					.addPreferredGap(ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+					.addGroup(gl_panelCenter.createParallelGroup(Alignment.TRAILING)
+						.addComponent(lblSemestre)
+						.addComponent(lblLeg, GroupLayout.PREFERRED_SIZE, 251, GroupLayout.PREFERRED_SIZE))
 					.addGap(55))
 		);
 		gl_panelCenter.setVerticalGroup(
-			gl_panelCenter.createParallelGroup(Alignment.LEADING)
+			gl_panelCenter.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panelCenter.createSequentialGroup()
 					.addGap(22)
+					.addComponent(lblSemestre)
+					.addPreferredGap(ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
 					.addGroup(gl_panelCenter.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblSemestre)
-						.addComponent(lblGraph))
-					.addContainerGap())
+						.addComponent(lblGraph)
+						.addComponent(lblLeg, GroupLayout.PREFERRED_SIZE, 270, GroupLayout.PREFERRED_SIZE))
+					.addGap(29))
 		);
 		panelCenter.setLayout(gl_panelCenter);
 		
