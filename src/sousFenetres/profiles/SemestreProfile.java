@@ -39,7 +39,7 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 
-// Profil d'un étudiant
+// Profil d'un ï¿½tudiant
 
 public class SemestreProfile extends JPanel {
 	
@@ -52,11 +52,11 @@ public class SemestreProfile extends JPanel {
 	private JLabel lblHeader_1;
 	private JLabel lblHeader_3;
 	private JLabel lblHeader_4;
-	private JLabel lblNewLabel_1;
-	private JLabel lblNewLabel_3;
-	private JLabel lblNewLabel_5;
+	private JLabel lblCS_line1;
+	private JLabel lblME_line1;
+	private JLabel lblCT_line1;
 	private JLabel lblHeader_2;
-	private JLabel lblNewLabel_21;
+	private JLabel lblTM_line1;
 	private JLabel lblHeader_5;
 	private JLabel lblHeader_6;
 	private JLabel lblHeader_7;
@@ -111,7 +111,7 @@ public class SemestreProfile extends JPanel {
 		panelBoard.setLayout(new BoxLayout(panelBoard, BoxLayout.Y_AXIS));
 		panelBoard.setBackground(ColorPalette.BKD_BLUE_VERY_LIGHT.getColor());
 		
-		// En-tête du profil
+		// En-tï¿½te du profil
 		
 		JPanel panelTop = new JPanel();
 		panelBoard.add(panelTop);
@@ -237,32 +237,32 @@ public class SemestreProfile extends JPanel {
 		table1.add(lblHeader_4);
 		lblHeader_4.setBorder(new MatteBorder(0, 0, 1, 0, Color.BLACK));
 		
-		lblNewLabel_1 = new JLabel("4/12");
-		lblNewLabel_1.setToolTipText("-1CS");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setForeground(new Color(178, 34, 34));
-		lblNewLabel_1.setFont(new Font("Raleway", Font.PLAIN, 15));
-		table1.add(lblNewLabel_1);
+		lblCS_line1 = new JLabel("4/12");
+		lblCS_line1.setToolTipText("-1CS");
+		lblCS_line1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCS_line1.setForeground(new Color(178, 34, 34));
+		lblCS_line1.setFont(new Font("Raleway", Font.PLAIN, 15));
+		table1.add(lblCS_line1);
 		
-		lblNewLabel_21 = new JLabel("6/12");
-		lblNewLabel_21.setToolTipText("-1CS");
-		lblNewLabel_21.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_21.setForeground(new Color(178, 34, 34));
-		lblNewLabel_21.setFont(new Font("Raleway", Font.PLAIN, 15));
-		table1.add(lblNewLabel_21);
+		lblTM_line1 = new JLabel("6/12");
+		lblTM_line1.setToolTipText("-1TM");
+		lblTM_line1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTM_line1.setForeground(new Color(178, 34, 34));
+		lblTM_line1.setFont(new Font("Raleway", Font.PLAIN, 15));
+		table1.add(lblTM_line1);
 		
-		lblNewLabel_3 = new JLabel("7/6");
-		lblNewLabel_3.setToolTipText("+1CS");
-		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setForeground(new Color(0, 128, 0));
-		lblNewLabel_3.setFont(new Font("Raleway", Font.PLAIN, 15));
-		table1.add(lblNewLabel_3);
+		lblME_line1 = new JLabel("7/6");
+		lblME_line1.setToolTipText("+1ME");
+		lblME_line1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblME_line1.setForeground(new Color(0, 128, 0));
+		lblME_line1.setFont(new Font("Raleway", Font.PLAIN, 15));
+		table1.add(lblME_line1);
 		
-		lblNewLabel_5 = new JLabel("2/6");
-		lblNewLabel_5.setToolTipText("+0CS");
-		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_5.setFont(new Font("Raleway", Font.PLAIN, 15));
-		table1.add(lblNewLabel_5);
+		lblCT_line1 = new JLabel("2/6");
+		lblCT_line1.setToolTipText("+0CT");
+		lblCT_line1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCT_line1.setFont(new Font("Raleway", Font.PLAIN, 15));
+		table1.add(lblCT_line1);
 		
 		panelBottom.add(Box.createRigidArea(new Dimension(0, 50)));
 		

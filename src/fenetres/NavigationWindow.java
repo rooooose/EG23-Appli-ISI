@@ -2,6 +2,7 @@ package fenetres;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -45,6 +46,9 @@ public class NavigationWindow {
 	private static JLabel lblTitle = new JLabel("Titre de la sous-fenêtre");
 	private static JLabel lblIcon = new JLabel("");
 	private static JPanel linePanel;
+	
+	private static String[] arrTitles = {"Gestion du semestre en cours", "Gestion des enseignants", "Gestion des UE", 
+			"R\u00E9partition des \u00E9tudiants dans le parcours", "Statistiques des flux entrants et sortants"};
 
 	/**
 	 * Launch the application.
@@ -99,6 +103,7 @@ public class NavigationWindow {
 		///---LOGO PANEL---///
 		
 		JPanel logoPanel = new JPanel();
+		logoPanel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		logoPanel.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -266,18 +271,23 @@ public class NavigationWindow {
 	private JButton[] initButtons() {
 		JButton btnNav1 = new JButton("");
 		btnNav1.setBackground(ColorPalette.BKD_NAVBAR0.getColor());
+		btnNav1.setToolTipText(arrTitles[0]);
 		
 		JButton btnNav2 = new JButton("");
 		btnNav2.setBackground(ColorPalette.BKD_NAVBAR1.getColor());
+		btnNav2.setToolTipText(arrTitles[1]);
 		
 		JButton btnNav3 = new JButton("");
 		btnNav3.setBackground(ColorPalette.BKD_NAVBAR2.getColor());
+		btnNav3.setToolTipText(arrTitles[2]);
 		
 		JButton btnNav4 = new JButton("");
 		btnNav4.setBackground(ColorPalette.BKD_NAVBAR3.getColor());
+		btnNav4.setToolTipText(arrTitles[3]);
 		
 		JButton btnNav5 = new JButton("");
 		btnNav5.setBackground(ColorPalette.BKD_NAVBAR4.getColor());
+		btnNav5.setToolTipText(arrTitles[4]);
 		
 		JButton[] arrBtnNav = {btnNav1, btnNav2, btnNav3, btnNav4, btnNav5};
 		return arrBtnNav;
@@ -305,8 +315,6 @@ public class NavigationWindow {
 	private void addActList(JPanel[] arrJPanel, JButton[] btnNav, int num) {
 		btnNav[num].addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String[] arrTitles = {"Gestion du semestre encours", "Gestion des enseignants", "Gestion des UE", 
-						"R\u00E9partition des \u00E9tudiants dans le parcours", "Statistiques des flux entrants et sortants"};
 				String[] arrFileNames = {"SemestreEnCours", "Enseignants", "UE", "RepartitionEtudiants", "EntreesSorties"};
 				NavigationWindow.setTitle(arrTitles[num], arrFileNames[num]);
 				

@@ -30,6 +30,7 @@ import javax.swing.UIManager;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Cursor;
 
 public class PageAccueil extends JPanel {
 
@@ -73,7 +74,7 @@ public class PageAccueil extends JPanel {
 		JComboBox comboBox = new JComboBox();
 		comboBox.setForeground(Color.BLACK);
 		comboBox.setBackground(Color.WHITE);
-		comboBox.setFont(new Font("Raleway Bold", Font.PLAIN, 12));
+		comboBox.setFont(new Font("Raleway", Font.PLAIN, 20));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"ISI", "RT", "MTE", "GI", "A2I", "GM"}));
 		comboBox.setSelectedIndex(0);
 		comboBox.setPreferredSize(new Dimension(100,30));
@@ -87,8 +88,8 @@ public class PageAccueil extends JPanel {
 				.addGroup(gl_topPanel.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(logoPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
-					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
 		gl_topPanel.setVerticalGroup(
@@ -100,7 +101,7 @@ public class PageAccueil extends JPanel {
 							.addComponent(logoPanel, GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE))
 						.addGroup(gl_topPanel.createSequentialGroup()
 							.addGap(40)
-							.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+							.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap())
 		);
 		topPanel.setLayout(gl_topPanel);
@@ -129,7 +130,7 @@ public class PageAccueil extends JPanel {
 		
 	}
 	
-	// Fonction de création des boutons + Effet Hover pour chacun
+	// Fonction de crï¿½ation des boutons + Effet Hover pour chacun
 	private JButton[] initButtons() {
 		
 		JButton btnSemestre = new JButton("");
@@ -269,7 +270,7 @@ public class PageAccueil extends JPanel {
 		return arrBtn;
 	}
 	
-	// Initialisation des différentes pages de l'appli
+	// Initialisation des diffï¿½rentes pages de l'appli
 	private JPanel[] initSousFenetres() {
 		//Init. JPanel
 		SemestreEnCours frameSemEnCours = new SemestreEnCours();
@@ -282,7 +283,7 @@ public class PageAccueil extends JPanel {
 		return arrJPanel;
 	}
 	
-	// Fonction onClick permettant de passer aux différentes rubriques de l'appli
+	// Fonction onClick permettant de passer aux diffï¿½rentes rubriques de l'appli
 	private void addActList(JPanel[] arrJPanel, JButton[] btnNav, int num) {
 		
 		btnNav[num].addActionListener(new ActionListener() {
